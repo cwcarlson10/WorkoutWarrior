@@ -20,6 +20,7 @@ gem 'country_select'
 gem 'cocoon'
 gem 'jquery-turbolinks'
 
+
 group :development, :test do
   gem 'pry-rails'
   # gem 'pry-byebug'
