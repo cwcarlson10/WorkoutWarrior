@@ -6,17 +6,22 @@ Capstone Project Name: Workout Warrior
 
 Team Members:
 
--Chris Carlson - The man with the plan
--Nick(Epic Mustache), ‘nuf said
--Kevin Murphy
--Evan Allred
+Chris Carlson - The man with the plan
+Nick(Epic Mustache), ‘nuf said
+Kevin Murphy
+Evan Allred
 
-Objective: To create an application for personal trainers/coaches to set workouts for and follow up with clients to gauge client progress.
+Objective: To create an application for personal trainers/coaches
+to set workouts for and follow up with clients to gauge client progress.
 
 Description:
-  The idea behind the project is to assist personal trainers or coaches in setting customized workouts for their clients so that the Trainer know better how to assist the clients.
+  The idea behind the project is to assist personal trainers or coaches in
+  setting customized workouts for their clients so that the Trainer know better how to assist the clients.
 
-It will give trainers the ability to set workouts for clients and then send the workout to the client and follow up to ensure program is completed. The client will be able to update their program and leave feedback for the trainer on how they did, any notes, etc.
+It will give trainers the ability to set workouts for clients
+and then send the workout to the client and follow up to ensure program is completed.
+The client will be able to update their program and leave feedback for the trainer on how they did,
+any notes, etc.
 
 Requirements/Use Cases:
 Must be a web application with front and back end components.
@@ -56,7 +61,8 @@ Create Initial Schema, associate tables and have CRUD working and tested.
 Phase 2:
 Routine Model
 Create form that can be accessed by the Trainer to create a workout routine
-Routines will be options for either muscle groups or exercises classes (i.e. legs, chest, shoulders or cardio, free weights, etc.)
+Routines will be options for either muscle groups or exercises classes
+  (i.e. legs, chest, shoulders or cardio, free weights, etc.)
 form should have:
  different muscle groups with a drop down lists of exercises for the trainer to choose from.
 Adds number of reps and sets for each workout
@@ -80,7 +86,3 @@ Add Associations to our Application
 Phase 4
 Add Styling to our Application
 Add any additional features to our Application
-
-
-
-
