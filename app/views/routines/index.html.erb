@@ -1,0 +1,9 @@
+<h1>Routines</h1>
+<% @routines.each do |routine| %>
+  <p>
+  <%= link_to routine.name, '#' %>
+  <%= link_to 'Edit', '#' %>
+  <%= link_to 'Delete', '#' %>
+  </p>
+<% end %>
+<%= link_to 'Create new routine', new_routine_path %>

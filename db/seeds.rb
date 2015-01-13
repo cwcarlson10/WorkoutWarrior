@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Routine.create(name: 'First Routine')
+Routine.create(name: 'Second Routine')
