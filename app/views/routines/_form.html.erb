@@ -1,0 +1,9 @@
+<%= simple_form_for [@exercise, @routine] do |f| %>
+
+  <%= f.input :sets %>
+  <%= f.input :reps %>
+  <%= f.input :duration %>
+  <%= f.input :instructions %>
+
+  <%= f.submit %>
+<% end %>
