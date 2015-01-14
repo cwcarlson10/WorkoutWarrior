@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'routines/new'
+
+  get 'routines/show'
+
+  get 'routines/index'
+
+  get 'routines/edit'
+
   devise_for :users
   root 'static_pages#home'
 
