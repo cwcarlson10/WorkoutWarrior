@@ -9,12 +9,11 @@ class RoutinesController < ApplicationController
   end
 
   def new
-    @routine = @program.routines.build
-    @routine = @exercise.routines.build
+    @routine = Routine.new
   end
 
   def create
-    @routine = Routine.new
+    @routine = @exercise.routines.build(routine_params)
     if @routine.save
       redirect_to @routine
     else
