@@ -4,7 +4,7 @@
   <%= form_for @exercise do |f| %>
 
     <%= f.select :category, [ 'Upper Body', 'Lower Body', 'Core', 'Cardio' ] %>
-    <%= f.select :title, [@lower_body, @upper_body, @core, @cardio %>
+    <%= f.select :title, [ @upper_body, @lower_body, @core, @cardio ] %>
 
     <%= f.submit %>
 
