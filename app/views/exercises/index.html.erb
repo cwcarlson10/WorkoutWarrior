@@ -1,0 +1,20 @@
+
+
+<!-- <%# @exercises.each do |exercise| %> -->
+  <%= form_for @exercise do |f| %>
+
+    <%= f.select :category, [ 'Upper Body', 'Lower Body', 'Core', 'Cardio' ] %>
+    <%= f.select :title, [@lower_body, @upper_body, @core, @cardio %>
+
+    <%= f.submit %>
+
+  <% end %>
+<!-- <%# end %> -->
+
+<!-- <%# @exercises.each do |exercise| %>
+
+  <%# exercise.title %>
+  <%# exercise.description %>
+  <%# exercise.category %>
+
+<%# end %> -->

@@ -5,3 +5,24 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+lower_body = ['Squats', 'Lunges', 'Calf Raises', 'Glute Kick-Back']
+upper_body = ['Pull-ups', 'Bench Press', 'Rows', 'Push-ups']
+core = ['Leg Lifts', 'Sit-Ups', 'Russian Twists', 'Plank']
+cardio = ['Running', 'Elyptical', 'Jump Rope', 'Stair Climber']
+
+lower_body.each do |e|
+  Exercise.create(title: e, category: 'Lower Body')
+end
+
+upper_body.each do |e|
+  Exercise.create(title: e, category: 'Upper Body')
+end
+
+core.each do |e|
+  Exercise.create(title: e, category: 'Core')
+end
+
+cardio.each do |e|
+  Exercise.create(title: e, category: 'Cardio')
+end
