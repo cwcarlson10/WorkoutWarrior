@@ -28,11 +28,15 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'spring'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
+  gem 'spring-commands-rspec'
 end
 
 group :test do
   gem 'minitest-reporters'
   # gem 'mini_backtrace'
+  gem 'simplecov', :require => false
 end
 
 

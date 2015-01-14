@@ -2,85 +2,96 @@
 
 DevPoint Labs Winter 2015
 
-Capstone Project Name: Workout Warrior
+Capstone Project Name:
+  Workout Warrior
 
 Team Members:
+  Chris Carlson - The man with the plan
+  Nick(Epic Mustache), ‘nuf said
+  Kevin Murphy
+  Evan Allred
 
--Chris Carlson - The man with the plan
--Nick(Epic Mustache), ‘nuf said
--Kevin Murphy
--Evan Allred
-
-Objective: To create an application for personal trainers/coaches to set workouts for and follow up with clients to gauge client progress.
+Objective: To create an application for personal trainers/coaches
+to set workouts for and follow up with clients to gauge client progress.
 
 Description:
-  The idea behind the project is to assist personal trainers or coaches in setting customized workouts for their clients so that the Trainer know better how to assist the clients.
+  The idea behind the project is to assist personal trainers or coaches in
+  setting customized workouts for their clients so that the Trainer know better how to assist the clients.
 
-It will give trainers the ability to set workouts for clients and then send the workout to the client and follow up to ensure program is completed. The client will be able to update their program and leave feedback for the trainer on how they did, any notes, etc.
+  It will give trainers the ability to set workouts for clients
+  and then send the workout to the client and follow up to ensure program is completed.
+  The client will be able to update their program and leave feedback for the trainer on how they did,
+  any notes, etc.
 
 Requirements/Use Cases:
-Must be a web application with front and back end components.
-Must persist data in a database.
-Must have multiple models with corresponding tables.
-Must have associations between models (where applicable).
-Must incorporate Ruby Logic.
-Must incorporate JavaScript Logic.
-Must integrate with at least one external API.
-Must have User accounts
-Devise is preferred
-Must be fully styled.
-Bootstrap or Foundation are acceptable.
-Using an external template is permitted.
-Must be mobile friendly.
-Must have minimum 80% test coverage.
-Must be available on Github for review.
-Must be deployed with Heroku.
-Must contain the following pages:
-Contact Page with email integration.
-About Us Page:
-All team members with descriptions and contact/social info.
-Story behind the idea
-List of tools, gems, plugins and technologies used.
-Link to Devpoint Labs
-Must have accompanying 5min slide presentation
+
+  Must be a web application with front and back end components.
+  Must persist data in a database.
+  Must have multiple models with corresponding tables.
+  Must have associations between models (where applicable).
+  Must incorporate Ruby Logic.
+  Must incorporate JavaScript Logic.
+  Must integrate with at least one external API.
+  Must have User accounts
+  Devise is preferred
+  Must be fully styled.
+  Bootstrap or Foundation are acceptable.
+  Using an external template is permitted.
+  Must be mobile friendly.
+  Must have minimum 80% test coverage.
+  Must be available on Github for review.
+  Must be deployed with Heroku.
+  Must contain the following pages:
+  Contact Page with email integration.
+  About Us Page:
+  All team members with descriptions and contact/social info.
+  Story behind the idea
+  List of tools, gems, plugins and technologies used.
+  Link to Devpoint Labs
+  Must have accompanying 5min slide presentation
 
 
 Roadmap/Milestones:
 
 Phase 0:
-Create blank application.
-Prepare Repo (https://github.com/DevPointLabsFall2014/)
-https://github.com/your_github_username/capstone
+  Create blank application.
+  Prepare Repo (https://github.com/DevPointLabsFall2014/)
+  https://github.com/your_github_username/capstone
+
+
 Phase 1:
-Create Initial Schema, associate tables and have CRUD working and tested.
+  Create Initial Schema, associate tables and have CRUD working and tested.
+
+
 Phase 2:
-Routine Model
-Create form that can be accessed by the Trainer to create a workout routine
-Routines will be options for either muscle groups or exercises classes (i.e. legs, chest, shoulders or cardio, free weights, etc.)
-form should have:
- different muscle groups with a drop down lists of exercises for the trainer to choose from.
-Adds number of reps and sets for each workout
-Links to illustrations or video tutorials of how to do each workout
-An option to add their own exercises with a description and link to an example of how to complete the exercise
-Trainer Model
-Should have a Home page
-with list of clients
-list of routines
-Should be able to create a new routine and assign it to a client, or make it a generic
-Should be able to add a new client
-Client Model
-Should be able to see current routines with the ability to:
-Check routine as completed
-leave comments about the routine
-Should be able to see previous routines
-Should be able to communicate with their trainer
-Should be able to edit personal info
+  Program Model
+  Create form that can be accessed by the Trainer to create a workout program
+  Programs will be options for either muscle groups or exercises classes
+    (i.e. legs, chest, shoulders or cardio, free weights, etc.)
+  form should have:
+   different muscle groups with a drop down lists of exercises for the trainer to choose from.
+  Adds number of reps and sets for each workout
+  Links to illustrations or video tutorials of how to do each workout
+  An option to add their own exercises with a description and link to an example of how to complete the exercise
+  Trainer Model
+  Should have a Home page
+  with list of clients
+  list of programs
+  Should be able to create a new program and assign it to a client, or make it a generic
+  Should be able to add a new client
+  Client Model
+  Should be able to see current programs with the ability to:
+  Check program as completed
+  leave comments about the program
+  Should be able to see previous programs
+  Should be able to communicate with their trainer
+  Should be able to edit personal info
+
+
 Phase 3
-Add Associations to our Application
+  Add Associations to our Application
+
+
 Phase 4
-Add Styling to our Application
-Add any additional features to our Application
-
-
-
-
+  Add Styling to our Application
+  Add any additional features to our Application
