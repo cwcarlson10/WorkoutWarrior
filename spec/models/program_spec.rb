@@ -1,5 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Program, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe "it should check models", :type => :model do
+  it "should require a username" do
+    Program.new(:name => "").should_not be_valid
+  end
 end
