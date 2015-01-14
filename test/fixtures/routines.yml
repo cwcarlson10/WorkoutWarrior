@@ -5,13 +5,13 @@ one:
   reps: 1
   instructions: MyText
   duration: MyString
-  resources: 
-  resources: 
+  exercise_id: 
+  program_id: 
 
 two:
   sets: 1
   reps: 1
   instructions: MyText
   duration: MyString
-  resources: 
-  resources: 
+  exercise_id: 
+  program_id: 
