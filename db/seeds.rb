@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
 lower_body = ['Squats', 'Lunges', 'Calf Raises', 'Glute Kick-Back']
 upper_body = ['Pull-ups', 'Bench Press', 'Rows', 'Push-ups']
 core = ['Leg Lifts', 'Sit-Ups', 'Russian Twists', 'Plank']
@@ -26,3 +27,6 @@ end
 cardio.each do |e|
   Exercise.create(title: e, category: 'Cardio')
 end
+
+Program.create(name: 'First Program')
+Program.create(name: 'Second Program')
