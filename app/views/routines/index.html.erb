@@ -3,7 +3,8 @@
   <p>
   <%= link_to routine.name, '#' %>
   <%= link_to 'Edit', '#' %>
-  <%= link_to 'Delete', '#' %>
+  <%= link_to 'Delete', routine_path(routine), method: :delete, data: { confirm: "Are
+                                                               you sure?" } %>
   </p>
 <% end %>
 <%= link_to 'Create new routine', new_routine_path %>
