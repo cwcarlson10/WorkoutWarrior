@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20150113015950) do
     t.datetime "updated_at"
   end
 
-  create_table "routines", force: true do |t|
+  create_table "programs", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"

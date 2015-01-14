@@ -64,9 +64,9 @@ Phase 1:
 
 
 Phase 2:
-  Routine Model
-  Create form that can be accessed by the Trainer to create a workout routine
-  Routines will be options for either muscle groups or exercises classes
+  Program Model
+  Create form that can be accessed by the Trainer to create a workout program
+  Programs will be options for either muscle groups or exercises classes
     (i.e. legs, chest, shoulders or cardio, free weights, etc.)
   form should have:
    different muscle groups with a drop down lists of exercises for the trainer to choose from.
@@ -76,14 +76,14 @@ Phase 2:
   Trainer Model
   Should have a Home page
   with list of clients
-  list of routines
-  Should be able to create a new routine and assign it to a client, or make it a generic
+  list of programs
+  Should be able to create a new program and assign it to a client, or make it a generic
   Should be able to add a new client
   Client Model
-  Should be able to see current routines with the ability to:
-  Check routine as completed
-  leave comments about the routine
-  Should be able to see previous routines
+  Should be able to see current programs with the ability to:
+  Check program as completed
+  leave comments about the program
+  Should be able to see previous programs
   Should be able to communicate with their trainer
   Should be able to edit personal info
 
