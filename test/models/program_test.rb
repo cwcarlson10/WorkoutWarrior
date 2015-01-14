@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RoutineTest < ActiveSupport::TestCase
+class ProgramTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
