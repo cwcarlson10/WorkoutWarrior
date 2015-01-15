@@ -19,7 +19,7 @@ gem 'simple_form'
 gem 'country_select'
 gem 'cocoon'
 gem 'jquery-turbolinks'
-gem 'cancancan', '~> 1.10'
+
 
 
 group :development, :test do

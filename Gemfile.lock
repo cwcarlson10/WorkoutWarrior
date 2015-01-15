@@ -40,7 +40,6 @@ GEM
       sass (~> 3.2)
     bootstrap_form (2.2.0)
     builder (3.2.2)
-    cancancan (1.10.1)
     cocoon (1.2.6)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -205,7 +204,6 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass (>= 3.3.1.0)
   bootstrap_form
-  cancancan (~> 1.10)
   cocoon
   coffee-rails (~> 4.0.0)
   country_select
