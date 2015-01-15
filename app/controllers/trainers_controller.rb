@@ -25,10 +25,17 @@ class TrainersController < ApplicationController
   end
 
   def update
-
+    @trainer.update_attributes(trainer_params)
+    if@trainer.save
+      redirect_to @trainer
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @trainer.delete
+    redirect_to root_path
   end
 
   private
