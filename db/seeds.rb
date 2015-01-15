@@ -30,3 +30,5 @@ end
 
 Program.create(name: 'First Program')
 Program.create(name: 'Second Program')
+
+user = User.create! :email => 'john@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
