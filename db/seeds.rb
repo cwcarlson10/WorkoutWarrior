@@ -13,19 +13,27 @@ core = ['Leg Lifts', 'Sit-Ups', 'Russian Twists', 'Plank']
 cardio = ['Running', 'Elyptical', 'Jump Rope', 'Stair Climber']
 
 lower_body.each do |e|
-  Exercise.create(title: e, category: 'Lower Body')
+  Exercise.find_or_create_by(title: e) do |exercise| 
+  	exercise.category = 'Lower Body'
+  end
 end
 
 upper_body.each do |e|
-  Exercise.create(title: e, category: 'Upper Body')
+  Exercise.find_or_create_by(title: e) do |exercise| 
+  	exercise.category = 'Upper Body'
+  end
 end
 
 core.each do |e|
-  Exercise.create(title: e, category: 'Core')
+  Exercise.find_or_create_by(title: e) do |exercise| 
+  	exercise.category = 'Core'
+  end
 end
 
 cardio.each do |e|
-  Exercise.create(title: e, category: 'Cardio')
+  Exercise.find_or_create_by(title: e) do |exercise|
+  	exercise.category = 'Cardio'
+  end
 end
 
 Program.create(name: 'First Program')

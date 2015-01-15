@@ -2,11 +2,11 @@ class ExercisesController < ApplicationController
 
 
   def index
-    @exercise = Exercise.new
-      @lower_body = ['Squats', 'Lunges', 'Calf Raises', 'Glute Kick-Back']
-      @upper_body = ['Pull-ups', 'Bench Press', 'Rows', 'Push-ups']
-      @core = ['Leg Lifts', 'Sit-Ups', 'Russian Twists', 'Plank']
-      @cardio = ['Running', 'Elyptical', 'Jump Rope', 'Stair Climber']
+    @exercises = Exercise.all
+    	@lower_body = Exercise.where(category: 'Lower Body')
+    	@upper_body = Exercise.where(category: 'Upper Body')
+    	@core = Exercise.where(category: 'Core')
+    	@cardio = Exercise.where(category: 'Cardio')
   end
 
 
