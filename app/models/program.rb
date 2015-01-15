@@ -1,5 +1,6 @@
 class Program < ActiveRecord::Base
   belongs_to :user
+  has_many :routines
 
   validates :name, format: { with: /\A[ a-zA-Z0-9]+[a-zA-Z0-9]+\z/,
                              message: "only allows letters" }
