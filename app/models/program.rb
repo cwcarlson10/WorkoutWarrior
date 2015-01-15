@@ -3,4 +3,6 @@ class Program < ActiveRecord::Base
                              message: "only allows letters" }
   validates :name, length: { maximum: 100 }
   validates :name, presence: true
+
+  belongs_to :user
 end
