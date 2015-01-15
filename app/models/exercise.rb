@@ -7,4 +7,5 @@ class Exercise < ActiveRecord::Base
   #   @categories = ['']
   # end
   has_many :routines
+  has_many :programs, through: :routines
 end
