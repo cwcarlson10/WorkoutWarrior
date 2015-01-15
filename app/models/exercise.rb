@@ -6,4 +6,5 @@ class Exercise < ActiveRecord::Base
   # def categories
   #   @categories = ['']
   # end
+  has_many :routines
 end
