@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'trainers/index'
+
+  get 'trainers/show'
+
+  get 'trainers/new'
+
+  get 'trainers/edit'
+
   devise_for :users, :controllers => { registrations: 'registrations' }
 
   root 'static_pages#home'
@@ -12,5 +20,6 @@ Rails.application.routes.draw do
 
   resources :programs
   resources :routines
+  resources :trainers
 
 end
