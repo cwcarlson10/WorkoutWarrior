@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'athletes/new'
+
+  get 'athletes/edit'
+
   devise_for :users, :controllers => { registrations: 'registrations' }
 
   get '/about', to: 'static_pages#about', as: :about

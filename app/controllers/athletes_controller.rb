@@ -1,4 +1,4 @@
-class AlthetesController < ApplicationController
+class AthletesController < ApplicationController
   before_action :set_athlete, only: [:edit, :update, :destroy]
 
   def new
