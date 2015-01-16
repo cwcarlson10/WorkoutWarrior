@@ -6,5 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :programs, dependent: :destroy
 
+  validate :role, presence: true
+
   enum role: [:athlete, :trainer]
 end
