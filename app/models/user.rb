@@ -25,12 +25,21 @@ class User < ActiveRecord::Base
   end
 
   def athlete?
-    false
+    !!self.athlete
+  end
+
+  def athlete
+    @athlete ||= self.athlete!
+  end
+
+  def athlete!
+    @athlete = Athlete.where(user_id: self.id).first
   end
 
   private
-  def load_role
-    self.trainer? || self.athlete?
-  end
+
+    def load_role
+      self.trainer? || self.athlete?
+    end
 
 end
