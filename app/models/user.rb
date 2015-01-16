@@ -20,4 +20,9 @@ class User < ActiveRecord::Base
   def trainer!
     @trainer = Trainer.where(user_id: self.id).first
   end
+
+  def athlete?
+    false
+  end
+
 end
