@@ -1,18 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'trainers/index'
-
-  get 'trainers/show'
-
-  get 'trainers/new'
-
-  get 'trainers/edit'
-
   devise_for :users, :controllers => { registrations: 'registrations' }
 
-  root 'static_pages#home'
-
-  get 'exercises' => 'exercises#index'
   get '/about', to: 'static_pages#about', as: :about
 
   resources :users, :only => [:show, :index]
@@ -21,5 +10,8 @@ Rails.application.routes.draw do
   resources :programs
   resources :routines
   resources :trainers
+  resources :athletes
+
+  root 'static_pages#home'
 
 end

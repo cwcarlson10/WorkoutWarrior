@@ -1,0 +1,2 @@
+module AlthetesHelper
+end
