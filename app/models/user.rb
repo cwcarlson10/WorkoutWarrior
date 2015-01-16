@@ -9,4 +9,7 @@ class User < ActiveRecord::Base
   validate :role, presence: true
 
   enum role: [:athlete, :trainer]
+  def trainer?
+    !!self.trainer
+  end
 end
