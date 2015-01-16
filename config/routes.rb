@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/role', to: 'static_pages#role', as: :role
 
   resources :users, :only => [:show, :index]
-  get '/profile', to: 'users#profile', as: :profile
+    get '/profile', to: 'users#profile', as: :profile
 
   resources :programs do
     resources :routines
