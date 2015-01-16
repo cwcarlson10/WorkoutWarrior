@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/about', to: 'static_pages#about', as: :about
 
   resources :users, :only => [:show, :index]
-  get '/profile', to: 'users#profile', as: :profile
+    get '/profile', to: 'users#profile', as: :profile
 
   resources :programs do
     resources :routines
