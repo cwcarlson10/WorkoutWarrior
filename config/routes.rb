@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   resources :users, :only => [:show, :index]
   get '/profile', to: 'users#profile', as: :profile
 
-  resources :programs
-  resources :routines
+  resources :programs do
+    resources :routines
+  end
+
   resources :trainers
   resources :athletes
 

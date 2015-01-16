@@ -4,13 +4,13 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :type, "I am a Coach" %><br />
-    <%= f.check_box :type, autofocus: true %>
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :role %><br />
+    <%= f.select :role, User.roles.keys %>
   </div>
 
   <div class="field">

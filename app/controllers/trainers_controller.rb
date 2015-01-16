@@ -1,12 +1,6 @@
 class TrainersController < ApplicationController
-  before_action :set_trainer, only: [:show, :edit, :update, :destroy]
+  before_action :set_trainer, only: [:edit, :update, :destroy]
 
-  def index
-    @trainers = Trainer.all
-  end
-
-  def show
-  end
 
   def new
     @trainer = Trainer.new
@@ -40,7 +34,7 @@ class TrainersController < ApplicationController
 
   private
     def trainer_params
-      params.require(:trainer).permit(:name, :organization, :certification, :email)
+      params.require(:trainer).permit(:name, :organization, :certification)
     end
 
     def set_trainer

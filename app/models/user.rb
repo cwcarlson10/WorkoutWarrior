@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :programs, dependent: :destroy
+
+  enum role: [:athlete, :trainer]
 end
