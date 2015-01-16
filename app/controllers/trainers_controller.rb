@@ -40,7 +40,7 @@ class TrainersController < ApplicationController
 
   private
     def trainer_params
-      params.require(:trainer).permit(:name, :organization, :certification, :email)
+      params.require(:trainer).permit(:name, :organization, :certification)
     end
 
     def set_trainer
