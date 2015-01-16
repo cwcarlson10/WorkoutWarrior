@@ -17,4 +17,7 @@ class User < ActiveRecord::Base
     @trainer ||= self.trainer!
   end
 
+  def trainer!
+    @trainer = Trainer.where(user_id: self.id).first
+  end
 end
