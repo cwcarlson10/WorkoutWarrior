@@ -11,8 +11,7 @@ Rails.application.routes.draw do
     resources :routines
   end
 
-  resources :trainers
-  resources :athletes
+  resources :trainers, :athletes
 
   root 'static_pages#home'
 
