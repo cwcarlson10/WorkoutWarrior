@@ -6,5 +6,31 @@ class User < ActiveRecord::Base
 
   has_many :programs, dependent: :destroy
 
+  validate :role, presence: true
+
   enum role: [:athlete, :trainer]
+
+  after_find :load_role
+
+  def trainer?
+    !!self.trainer
+  end
+
+  def trainer
+    @trainer ||= self.trainer!
+  end
+
+  def trainer!
+    @trainer = Trainer.where(user_id: self.id).first
+  end
+
+  def athlete?
+    false
+  end
+
+  private
+  def load_role
+    self.trainer? || self.athlete?
+  end
+
 end
