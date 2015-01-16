@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
   validate :role, presence: true
 
   enum role: [:athlete, :trainer]
+
+  after_find :load_role
+
   def trainer?
     !!self.trainer
   end
@@ -23,6 +26,11 @@ class User < ActiveRecord::Base
 
   def athlete?
     false
+  end
+
+  private
+  def load_role
+    self.trainer? || self.athlete?
   end
 
 end
