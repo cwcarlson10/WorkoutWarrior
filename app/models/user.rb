@@ -12,4 +12,9 @@ class User < ActiveRecord::Base
   def trainer?
     !!self.trainer
   end
+
+  def trainer
+    @trainer ||= self.trainer!
+  end
+
 end
