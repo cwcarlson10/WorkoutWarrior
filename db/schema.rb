@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20150116151246) do
 
   create_table "trainers", force: true do |t|
     t.string   "name"
+    t.string   "email"
     t.string   "organization"
     t.string   "certifications"
     t.datetime "created_at"
@@ -71,6 +72,7 @@ ActiveRecord::Schema.define(version: 20150116151246) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "type"
     t.integer  "role",                   default: 0
   end
 
