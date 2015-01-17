@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
-  get 'exercises' => 'exercises#index'
+  get '/exercises' => 'exercises#index'
   get '/about', to: 'static_pages#about', as: :about
 
   resources :users, :only => [:show, :index]
