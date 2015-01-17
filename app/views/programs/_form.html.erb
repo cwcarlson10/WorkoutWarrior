@@ -1,0 +1,15 @@
+<%= simple_form_for @program do |f| %>
+
+  <%= f.input :name %>
+  <h3>Routines</h3>
+
+  <div id="routines">
+    <%= f.simple_fields_for :routines do |r| %>
+      <%= render 'routine_fields', :f => r %>
+    <% end %>
+
+    <span class="links"><%= link_to_add_association 'add exercise', f, :routines %></span>
+  </div>
+
+  <%= f.submit %>
+<% end %>
