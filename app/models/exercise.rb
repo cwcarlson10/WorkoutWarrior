@@ -4,7 +4,7 @@ class Exercise < ActiveRecord::Base
 
   @categories = ["Upper Body", "Lower Body", "Cardio", "Core"]
 
-  def self.exercise_categories
+  def self.categories
     return @categories
   end
 
