@@ -1,4 +1,6 @@
 class ProgramsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_user
   before_action :set_program, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -10,9 +12,12 @@ class ProgramsController < ApplicationController
   end
 
   def create
-    @program = Program.new(program_params)
-    @program.save
-    redirect_to programs_path
+    @program = @user.programs.build(program_params)
+    if @program.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def update
@@ -33,7 +38,11 @@ class ProgramsController < ApplicationController
       @program = Program.find(params[:id])
     end
 
+    def set_user
+     @user = current_user
+   end
+
     def program_params
-      params.require(:program).permit(:name)
+      params.require(:program).permit(:name, :user_id, routines_attributes: [:id, :sets, :reps, :duration, :intructions, :exercise_id, :_destroy ])
     end
 end

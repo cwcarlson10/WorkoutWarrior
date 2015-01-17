@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations' }
 
+  get '/exercises' => 'exercises#index'
+
   get '/about', to: 'static_pages#about', as: :about
   get '/role', to: 'static_pages#role', as: :role
 

@@ -1,0 +1,12 @@
+<div class="nested-fields">
+  <h4><%= Exercise.name %></h4>
+
+  <div class="col-md-2"><%= f.select :exercise_id, Exercise.all.collect { |e| [e.title, e.id] } %></div>
+  <div class="col-md-2"><%= f.select :exercise_id, Exercise.all.collect { |e| [e.category, e.id] } %></div>
+  <div class="col-md-2"><%= f.input :sets %></div>
+  <div class="col-md-2"><%= f.input :reps %></div>
+  <div class="col-md-2"><%= f.input :duration %></div>
+  <div class="col-md-4"><%= f.input :instructions %></div>
+
+  <%= link_to_remove_association "remove exercise", f %>
+</div>
