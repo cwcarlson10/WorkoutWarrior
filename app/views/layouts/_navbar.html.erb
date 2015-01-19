@@ -16,9 +16,9 @@
         <li><%= link_to 'Home', root_path %></li>
         <li><%= link_to 'About', about_path %></li>
         <li><%= link_to 'Contact', "#" %></li>
+        <li><%= link_to 'Profile', trainer_path(@trainer.id) if @trainer %></li>
         <% if current_user %>
           <li><%= link_to current_user.email, edit_user_registration_path %></li>
-          <li><%= link_to 'Profile', trainer_path(@trainer.id) if @trainer %></li>
           <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to 'Login', new_user_session_path %></li>
