@@ -4,8 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :programs, dependent: :destroy
-
   validate :role, presence: true
 
   enum role: [:athlete, :trainer]

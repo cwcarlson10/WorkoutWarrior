@@ -1,7 +1,9 @@
 class Program < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :trainer
+  has_many :athletes
   has_many :routines
   has_many :exercises, through: :routines
+
   accepts_nested_attributes_for :routines, :reject_if => :all_blank, :allow_destroy => true
 
   validates :name, format: { with: /\A[ a-zA-Z0-9]+[a-zA-Z0-9]+\z/,
