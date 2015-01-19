@@ -40,7 +40,7 @@ class AthletesController < ApplicationController
   private
 
     def athlete_params
-      params.require(:athlete).permit(:name, :trainer_id, :user_id)
+      params.require(:athlete).permit(:name, :user_id)
     end
 
     def set_athlete
