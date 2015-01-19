@@ -1,16 +1,16 @@
 <h1><%= @program.name %></h1>
 <div>
-  <% @program.exercises.each do |e| %>
-    <%= e.title %> <%= e.description %> <%= e.category %>
-
-    <% e.routines.each do |r| %>
-      <%= r.reps %>
-      <%= r.sets %>
-      <%= r.duration %>
-      <%= r.instructions %><br/>
-
-    <% end %>      <br/>
+  <% @program.routines.each do |r| %>
+    <%= r.exercise.title %><br/>
+    <%= r.exercise.description %>
+    (<%= r.exercise.category %>)
+    sets: <%= r.sets %>
+    reps: <%= r.reps %>
+    duration: <%= r.duration %><br/>
+    instrucions: <%= r.instructions %>
+    <br/>
+    <br/>
 <% end %>
 </div>
-<%= link_to "Edit", edit_program_path %>
-<%= link_to "Back", programs_path %>
+<%= link_to "Edit", edit_program_path, class: 'btn btn-info btn-xs' %>
+<%= link_to "Back", programs_path, class: 'btn btn-info btn-xs' %>
