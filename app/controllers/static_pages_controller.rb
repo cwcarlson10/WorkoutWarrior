@@ -4,11 +4,19 @@ class StaticPagesController < ApplicationController
     if (current_user && current_user.trainer?)
       @trainer = Trainer.find_by(user_id: current_user.id.to_i)
     end
+
+    if (current_user && current_user.athlete?)
+      @athlete = Athlete.find_by(user_id: current_user.id.to_i)
+    end
   end
 
   def about
     if (current_user && current_user.trainer?)
       @trainer = Trainer.find_by(user_id: current_user.id.to_i)
+    end
+
+    if (current_user && current_user.athlete?)
+      @athlete = Athlete.find_by(user_id: current_user.id.to_i)
     end
   end
 

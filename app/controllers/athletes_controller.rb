@@ -25,7 +25,7 @@ class AthletesController < ApplicationController
 
   def update
     @athlete.update_attributes(athlete_params)
-    if@athlete.save
+    if @athlete.save
       redirect_to @athlete
     else
       render :edit
