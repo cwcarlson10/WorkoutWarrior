@@ -2,15 +2,19 @@ class TrainersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_trainer, only: [:edit, :update, :destroy]
 
+  def show
+    @trainer = Trainer.find(params[:id])
+  end
 
   def new
-    @trainer = Trainer.new
+    @new_trainer = Trainer.new
   end
 
   def create
-    @trainer = Trainer.new(trainer_params)
-    if @trainer.save
-      redirect_to @trainer
+    @new_trainer = Trainer.new(trainer_params)
+    @new_trainer.user_id = current_user.id
+    if @new_trainer.save
+      redirect_to @new_trainer
     else
       render :new
     end
