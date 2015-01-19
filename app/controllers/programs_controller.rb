@@ -14,7 +14,7 @@ class ProgramsController < ApplicationController
   def create
     @program = @user.programs.build(program_params)
     if @program.save
-      redirect_to root_path
+      redirect_to programs_path
     else
       render :new
     end

@@ -1,3 +1,16 @@
 <h1><%= @program.name %></h1>
+<div>
+  <% @program.exercises.each do |e| %>
+    <%= e.title %> <%= e.description %> <%= e.category %>
+
+    <% e.routines.each do |r| %>
+      <%= r.reps %>
+      <%= r.sets %>
+      <%= r.duration %>
+      <%= r.instructions %><br/>
+
+    <% end %>      <br/>
+<% end %>
+</div>
 <%= link_to "Edit", edit_program_path %>
 <%= link_to "Back", programs_path %>

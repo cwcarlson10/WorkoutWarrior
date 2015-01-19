@@ -1,10 +1,11 @@
 <h1>Programs</h1>
 <% @programs.each do |program| %>
   <p>
-  <%= link_to program.name, '#' %>
-  <%= link_to 'Edit', '#' %>
-  <%= link_to 'Delete', '#', method: :delete, data: { confirm: "Are
+  <%= link_to "#{program.name}", program_path(program) %>
+  <%= link_to 'Edit', edit_program_path(program), class: 'btn btn-info btn-xs' %>
+  <%= link_to 'Delete', '#', class: 'btn btn-danger btn-xs', method: :delete, data: { confirm: "Are
                                                                you sure?" } %>
   </p>
 <% end %>
-<%= link_to 'Create new program', new_program_path %>
+<%= link_to 'Create new program', new_program_path, class: 'btn btn-default' %>
+<%= link_to 'Back', '#',class: 'btn btn-default' %>
