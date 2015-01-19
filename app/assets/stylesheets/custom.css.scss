@@ -1,0 +1,19 @@
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+.navbar {
+  background-color: #AE1616;
+  }
+
+.navbar-brand {
+  color: #000;
+  link-hover-color: #777;
+}
+
+.navbar-nav > li > a {
+  color: #000;
+  hover {
+    color: #777;
+  }
+}

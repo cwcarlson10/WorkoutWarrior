@@ -9,11 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Business Frontpage - Start Bootstrap Template</title>
-
-  <!-- Bootstrap Core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-
+  <title>Workout Warrior - The Ultimate Tool for Creating Workouts</title>
   <!-- Custom CSS -->
   <link href="css/business-frontpage.css" rel="stylesheet">
 
@@ -34,10 +30,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h1 class="tagline">Business Name or Tagline</h1>
-          <ul>
-            <li><%= link_to 'Programs', programs_path %></li>
-          </ul>
+
+          <h1 class="tagline">Take Your Workout to Next Level</h1>
         </div>
       </div>
     </div>
@@ -50,15 +44,13 @@
 
     <div class="row">
       <div class="col-sm-8">
-        <h2>What We Do</h2>
-        <p>Introduce the visitor to the business using clear, informative text. Use well-targeted keywords within your sentences to make sure search engines can find the business.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et molestiae similique eligendi reiciendis sunt distinctio odit? Quia, neque, ipsa, adipisci quisquam ullam deserunt accusantium illo iste exercitationem nemo voluptates asperiores.</p>
-        <p>
-            <a class="btn btn-default btn-lg" href="#">Call to Action &raquo;</a>
-        </p>
+        <h2>What Is Workout Warrior?</h2>
+        <p>Are you tired of handwriting programs for clients? Tired of keeping files? Do you ever wonder if your clients are actually doing the programs successfully? We've got the solution. Workout Warrior is the ultimate tool for trainers to maximize client progress. Use Workout Warrior to create and assign custom workouts for your clients, track their progress and receive feedback to maximize progress and experience.</p>
+        <p>Create an account today (it's free right now!) and change the way you train!</p>
+        <p><%= link_to 'Get Started', new_user_registration_path, class: "btn btn-danger" %></p>
       </div>
       <div class="col-sm-4">
-        <h2>Contact Us</h2>
+<!--         <h2>Contact Us</h2>
         <address>
           <strong>Start Bootstrap</strong>
           <br>3481 Melrose Place
@@ -70,7 +62,7 @@
           <br>
           <abbr title="Email">E:</abbr> <a href="mailto:#">name@example.com</a>
         </address>
-      </div>
+ -->      </div>
     </div>
     <!-- /.row -->
 
@@ -78,18 +70,19 @@
 
     <div class="row">
       <div class="col-sm-4">
-        <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
-        <h2>Marketing Box #1</h2>
+        <!-- <img class="img-circle img-responsive img-center" src="images/ninja31.jpg" alt=""> -->
+        <%= image_tag('skinny_kid.gif', class: "img-circle img-responsive img-center", size: '300x300') %>
+        <h2>Help your clients get from this...</h2>
         <p>These marketing boxes are a great place to put some information. These can contain summaries of what the company does, promotional information, or anything else that is relevant to the company. These will usually be below-the-fold.</p>
       </div>
       <div class="col-sm-4">
-        <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
-        <h2>Marketing Box #2</h2>
+        <%= image_tag('work_out.jpg', class: "img-circle img-responsive img-center", size: '300x300') %>
+        <h2>To this...</h2>
         <p>The images are set to be circular and responsive. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
       </div>
       <div class="col-sm-4">
-        <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
-        <h2>Marketing Box #3</h2>
+        <%= image_tag('bodybuilder.jpg', class: "img-circle img-responsive img-center", size: '300x300') %>
+        <h2>And ultimately to this!</h2>
         <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
       </div>
     </div>
