@@ -7,14 +7,14 @@ class TrainersController < ApplicationController
   end
 
   def new
-    @new_trainer = Trainer.new
+    @trainer = Trainer.new
   end
 
   def create
-    @new_trainer = Trainer.new(trainer_params)
-    @new_trainer.user_id = current_user.id
-    if @new_trainer.save
-      redirect_to @new_trainer
+    @trainer = Trainer.new(trainer_params)
+    @trainer.user_id = current_user.id
+    if @trainer.save
+      redirect_to @trainer
     else
       render :new
     end
