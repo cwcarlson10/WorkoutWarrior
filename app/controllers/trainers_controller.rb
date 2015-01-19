@@ -25,7 +25,7 @@ class TrainersController < ApplicationController
 
   def update
     @trainer.update_attributes(trainer_params)
-    if@trainer.save
+    if @trainer.save
       redirect_to @trainer
     else
       render :edit
