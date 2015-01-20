@@ -15,8 +15,10 @@ class AthletesController < ApplicationController
   end
 
   def create
-    @athlete = Athlete.new(athlete_params)
-    @athlete.user_id = current_user.id
+    @athlete = athlete.new(trainer_params)
+    @user = User.find(current_user.id)
+    @athlete.user_id = @user.id
+    @user.update_attributes(role: "athlete")
     if @athlete.save
       redirect_to @athlete
     else

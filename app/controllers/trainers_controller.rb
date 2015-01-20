@@ -12,7 +12,9 @@ class TrainersController < ApplicationController
 
   def create
     @trainer = Trainer.new(trainer_params)
-    @trainer.user_id = current_user.id
+    @user = User.find(current_user.id)
+    @trainer.user_id = @user.id
+    @user.update_attributes(role: "trainer")
     if @trainer.save
       redirect_to @trainer
     else
@@ -39,7 +41,7 @@ class TrainersController < ApplicationController
 
   private
     def trainer_params
-      params.require(:trainer).permit(:name, :organization, :certification)
+      params.require(:trainer).permit(:name, :organization, :certification, :user_id)
     end
 
     def set_trainer
