@@ -1,3 +1,19 @@
 // Place all the styles related to the Trainers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.profile-pic {
+  padding: 130px 0px;
+  text-align: center;
+  background-color: #AE1616;
+  height: 300px;
+  width: 250px;
+  border-radius: 40%;
+  border: solid black 2px;
+}
+
+.profile-info {
+  float: right;
+  text-align: center;
+}

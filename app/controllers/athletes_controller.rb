@@ -10,6 +10,10 @@ class AthletesController < ApplicationController
     @athlete = Athlete.find(params[:id])
   end
 
+  def index
+    @athletes = Athlete.all
+  end
+
   def new
     @athlete = Athlete.new
   end

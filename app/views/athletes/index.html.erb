@@ -1,0 +1,6 @@
+<div class="athlete-index">
+  <% @athletes.each do |a| %>
+    Name: <%= a.name %>
+    Trainer: <%= a.trainer.empty? ? a.trainer : 'none' %><br/>
+  <% end %>
+</div>
