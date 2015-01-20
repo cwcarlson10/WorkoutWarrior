@@ -8,12 +8,14 @@
 
 .navbar-brand {
   color: #000;
-  link-hover-color: #777;
+  &:hover {
+    color: #777;
+  }
 }
 
 .navbar-nav > li > a {
   color: #000;
-  hover {
+  &:hover {
     color: #777;
   }
 }

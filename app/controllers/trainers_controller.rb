@@ -1,6 +1,6 @@
 class TrainersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_trainer, only: [:edit, :update, :destroy]
+  before_action :set_trainer, only: [:edit, :update, :destroy, :trainer_athletes]
 
   def show
     @trainer = Trainer.find(params[:id])
@@ -37,6 +37,10 @@ class TrainersController < ApplicationController
   def destroy
     @trainer.delete
     redirect_to root_path
+  end
+
+  def trainer_athletes
+    @athletes = @trainer.athletes
   end
 
   private
