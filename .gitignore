@@ -20,3 +20,6 @@
 
 # Ignore simplecov
 coverage
+
+# Ignore Rubymine
+/.idea
