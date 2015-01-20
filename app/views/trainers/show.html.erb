@@ -1,2 +1,16 @@
-<h1>Trainers#show</h1>
-<p>Find me in app/views/trainers/show.html.erb</p>
+<h1> <%= @trainer.name %> (<%= current_user.role.capitalize %>)</h1>
+<div class="profile-pic">Profile Pic Goes Here</div>
+
+<div class="profile-info">
+  <ul>
+    <li><%= @trainer.organization %></li>
+    <li><%= @trainer.certifications %></li>
+  </ul>
+  <p class="personal-info">
+    Here goes some stuff about me
+  </p>
+</div>
+
+<div><%= link_to 'Athletes', athletes_path, class: 'btn btn-info' %></div>
+<div><%= link_to 'Programs', '#', class: 'btn btn-info' %></div>
+
