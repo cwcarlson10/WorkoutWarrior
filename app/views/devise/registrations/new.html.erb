@@ -9,11 +9,6 @@
   </div>
 
   <div class="field">
-    <%= f.label :role %><br />
-    <%= f.select :role, User.roles.keys %>
-  </div>
-
-  <div class="field">
     <%= f.label :password %>
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
