@@ -19,7 +19,7 @@ class AthletesController < ApplicationController
   end
 
   def create
-    @athlete = athlete.new(trainer_params)
+    @athlete = Athlete.new(athlete_params)
     @user = User.find(current_user.id)
     @athlete.user_id = @user.id
     @user.update_attributes(role: "athlete")
