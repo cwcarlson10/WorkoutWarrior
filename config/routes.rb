@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'athletes/new'
-
-  get 'athletes/edit'
-
   devise_for :users, :controllers => { registrations: 'registrations' }
 
   get '/exercises' => 'exercises#index'
@@ -21,6 +17,8 @@ Rails.application.routes.draw do
   patch '/assign_trainer', to: 'athletes#assign_trainer', as: :assign_trainer
 
   resources :trainers, :athletes
+
+  get 'my_athletes/:id', to: 'trainers#trainer_athletes', as: :trainer_athletes
 
   root 'static_pages#home'
 
