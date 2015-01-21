@@ -33,7 +33,7 @@ class UserTest < ActiveSupport::TestCase
     user = User.new(email: "an@ema.il", password: "password",
                     password_confirmation: "password", role: 0)
     assert user.save
-    assert user.role == "new"
+    assert user.role == "newuser"
   end
 
   test "role 1 should be athlete" do
