@@ -1,6 +1,10 @@
 <%= simple_form_for @program do |f| %>
-
+<div style="float: left;">
   <%= f.input :name %>
+</div>
+<div id="athlete_selector">
+  Athlete: <%= f.select :athlete_id, Athlete.all.collect { |a| [a.name, a.id] }, style: "float: left;" %>
+</div>
 
   <div id="routines">
     <%= f.simple_fields_for :routines do |r| %>
