@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119232902) do
+ActiveRecord::Schema.define(version: 20150121164636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 20150119232902) do
 
   add_index "athletes", ["trainer_id"], name: "index_athletes_on_trainer_id", using: :btree
   add_index "athletes", ["user_id"], name: "index_athletes_on_user_id", using: :btree
+
+  create_table "athletes_programs", id: false, force: true do |t|
+    t.integer "program_id", null: false
+    t.integer "athlete_id", null: false
+  end
+
+  add_index "athletes_programs", ["athlete_id", "program_id"], name: "index_athletes_programs_on_athlete_id_and_program_id", using: :btree
+  add_index "athletes_programs", ["program_id", "athlete_id"], name: "index_athletes_programs_on_program_id_and_athlete_id", using: :btree
 
   create_table "exercises", force: true do |t|
     t.string   "title"
@@ -62,7 +70,6 @@ ActiveRecord::Schema.define(version: 20150119232902) do
 
   create_table "trainers", force: true do |t|
     t.string   "name"
-    t.string   "email"
     t.string   "organization"
     t.string   "certifications"
     t.datetime "created_at"
@@ -85,7 +92,6 @@ ActiveRecord::Schema.define(version: 20150119232902) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "type"
     t.integer  "role",                   default: 0
   end
 
