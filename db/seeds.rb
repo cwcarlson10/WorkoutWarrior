@@ -51,7 +51,8 @@ users = User.all
 
 (0..4).each do |id|
   users[id].update_attribute(:role, 1)
-  Trainer.create(name: users[id].email.split('@')[0], user_id: users[id].id)
+  Trainer.create(name: users[id].email.split('@')[0], organization: "none",
+                 certifications: "none", user_id: users[id].id)
 end
 
 (5..9).each do |id|
