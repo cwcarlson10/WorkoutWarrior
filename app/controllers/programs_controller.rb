@@ -1,10 +1,10 @@
 class ProgramsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user
+  before_action :set_trainer
   before_action :set_program, only: [:show, :edit, :update, :destroy]
 
   def index
-    @programs = Program.all
+    @programs = Program.where(trainer_id: @trainer.id)
   end
 
   def show
@@ -16,7 +16,7 @@ class ProgramsController < ApplicationController
   end
 
   def create
-    @program = @user.programs.build(program_params)
+    @program = @trainer.programs.build(program_params)
     if @program.save
       redirect_to programs_path
     else
@@ -42,8 +42,8 @@ class ProgramsController < ApplicationController
       @program = Program.find(params[:id])
     end
 
-    def set_user
-     @user = current_user
+    def set_trainer
+      @trainer = current_user.trainer
    end
 
     def program_params
