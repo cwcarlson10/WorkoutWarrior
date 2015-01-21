@@ -1,6 +1,6 @@
 class Program < ActiveRecord::Base
   belongs_to :trainer
-  has_many :athletes
+  has_and_belongs_to_many :athletes
   has_many :routines
   has_many :exercises, through: :routines
 
@@ -11,7 +11,4 @@ class Program < ActiveRecord::Base
   validates :name, length: { maximum: 100 }
   validates :name, presence: true
   validates :trainer_id, presence: true
-
-
-
 end

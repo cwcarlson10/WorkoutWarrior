@@ -7,6 +7,10 @@ class ProgramsController < ApplicationController
     @programs = Program.all
   end
 
+  def show
+    @athletes = @program.athletes
+  end
+
   def new
     @program = Program.new
   end

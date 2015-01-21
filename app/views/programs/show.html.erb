@@ -1,3 +1,4 @@
+<%= link_to "Back", programs_path, class: 'btn btn-info btn-xs' %>
 <h1><%= @program.name %></h1>
 
   <% @program.routines.each do |r| %>
@@ -13,6 +14,14 @@
     <br/>
     </div>
 <% end %>
-
 <%= link_to "Edit", edit_program_path(@program), class: 'btn btn-info btn-xs' %>
-<%= link_to "Back", programs_path, class: 'btn btn-info btn-xs' %>
+
+<h1>Athletes Assigned to this Program</h1>
+<table>
+  <% @athletes.each do |athlete| %>
+    <tr>
+      <td><%= athlete.name %></td>
+      <td><%= link_to "Profile", athlete_path, class: 'btn btn-info btn-x' %>
+    </tr>
+  <% end %>
+</table>
