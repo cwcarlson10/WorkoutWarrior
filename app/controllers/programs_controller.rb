@@ -7,6 +7,10 @@ class ProgramsController < ApplicationController
     @programs = Program.all
   end
 
+  def show
+    @athletes = Athlete.where(program_id: params[:id])
+  end
+
   def new
     @program = Program.new
   end
