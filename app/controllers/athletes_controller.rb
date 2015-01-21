@@ -3,7 +3,7 @@ class AthletesController < ApplicationController
   before_action :set_athlete, only: [:edit, :update, :destroy]
 
   def index
-    @athletes = Athlete.all
+    @athletes = Athlete.where(trainer_id: nil)
   end
 
   def show
@@ -55,7 +55,7 @@ class AthletesController < ApplicationController
     # @trainer # This is the trainer to be assigned to the athlete
     # @athlete # This is the athlete to be used
     # @athelete.associate_to(@trainer) # Implement this method in Athlete
-      redirect_to root_path
+      redirect_to trainer_athletes_path(params[:trainer_id])
       # flash (read how to do that again)
   end
 
