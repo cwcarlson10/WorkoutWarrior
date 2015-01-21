@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   validate :role, presence: true
 
-  enum role: [:new, :athlete, :trainer]
+  enum role: [:newuser, :athlete, :trainer]
 
   after_find :load_role
 
