@@ -1,12 +1,14 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  has_one :trainer
+  has_one :athlete
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   validate :role, presence: true
 
-  enum role: [:athlete, :trainer]
+  enum role: [:new, :athlete, :trainer]
 
   after_find :load_role
 
