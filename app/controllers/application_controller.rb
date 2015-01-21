@@ -7,8 +7,10 @@ class ApplicationController < ActionController::Base
     @athlete = Athlete.find_by(user_id: @user.id)
     @trainer = Trainer.find_by(user_id: @user.id)
     if @user.role == 'athlete' && @athlete
+      flash[:notice] = "You have been signed in as an athlete!"
       athlete_path(@athlete)
     elsif @user.role == 'trainer' && @trainer
+      flash[:notice] = "You have been signed in as an trainer!"
       trainer_path(@trainer)
     end
   end
