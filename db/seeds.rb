@@ -50,12 +50,12 @@ User.create! :email => 'peter@example.com', :password => 'topsecret', :password_
 users = User.all
 
 (0..4).each do |id|
-  users[id].role = 1
+  users[id].update_attribute(:role, 1)
   Trainer.create(user_id: users[id].id)
 end
 
 (5..9).each do |id|
-  users[id].role = 0
+  users[id].update_attribute(:role, 0)
   Athlete.create(user_id: users[id].id)
 end
 
