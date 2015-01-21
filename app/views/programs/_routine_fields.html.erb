@@ -3,8 +3,8 @@
   <div class="col-md-2" id="categories-div"><%= @a = f.select :exercise_id, Exercise.categories { |e| [e.title, e.id] } %></div>
   <% @exercises = Exercise.select(:tite).where( :category => "#{@a}") %>
   <div class="col-md-2"><%= f.select :exercise_id, Exercise.all.collect { |e| [e.title, e.id] } %></div>
-  <div class="col-md-1"><%= f.input :sets %></div>
-  <div class="col-md-1"><%= f.input :reps %></div>
+  <div class="col-md-1" id="sets"><%= f.input :sets %></div>
+  <div class="col-md-1" id="reps"><%= f.input :reps %></div>
   <div class="col-md-2"><%= f.input :duration %></div>
   <div class="col-md-4"><%= f.input :instructions %></div>
 
