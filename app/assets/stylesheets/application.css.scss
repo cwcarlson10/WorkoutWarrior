@@ -14,3 +14,37 @@
  *= require_tree .
  *= require_self
  */
+
+#program_name {
+  padding: 10px;
+  display: inline-block;
+  width: 200px;
+  margin-right: 130px;
+}
+
+#program_athlete_id {
+  background-color: white;
+  margin: 12px;
+  padding: 10px;
+  font-size: 16px;
+  width: 100px;
+}
+
+.nested-fields {
+  padding: 10px;
+  margin: 2px;
+  border: solid black 2px;
+  border-radius: 5px;
+}
+
+#routines {
+  clear: all;
+}
+
+h1 {
+  text-align: center;
+}
+
+#athlete_selector {
+
+}
