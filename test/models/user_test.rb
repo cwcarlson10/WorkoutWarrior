@@ -28,4 +28,25 @@ class UserTest < ActiveSupport::TestCase
                     password_confirmation: "password")
     assert user.save
   end
+
+  test "role 0 should be new" do
+    user = User.new(email: "an@ema.il", password: "password",
+                    password_confirmation: "password", role: 0)
+    assert user.save
+    assert user.role == "newuser"
+  end
+
+  test "role 1 should be athlete" do
+    user = User.new(email: "an@ema.il", password: "password",
+                    password_confirmation: "password", role: 1)
+    assert user.save
+    assert user.role == "athlete"
+  end
+
+  test "role 2 should be trainer" do
+    user = User.new(email: "an@ema.il", password: "password",
+                    password_confirmation: "password", role: 2)
+    assert user.save
+    assert user.role == "trainer"
+  end
 end
