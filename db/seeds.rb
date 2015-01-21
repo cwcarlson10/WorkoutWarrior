@@ -36,12 +36,33 @@ cardio.each do |e|
   end
 end
 
-user = User.create! :email => 'john@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+User.create! :email => 'doug@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+User.create! :email => 'dave@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+User.create! :email => 'sam@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+User.create! :email => 'evan@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+User.create! :email => 'nicholas@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+User.create! :email => 'kevin@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+User.create! :email => 'chris@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+User.create! :email => 'sarah@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+User.create! :email => 'alice@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+User.create! :email => 'peter@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+
+users = User.all
+
+(0..4).each do |id|
+  users[id].role = 1
+  Trainer.create(user_id: users[id].id)
+end
+
+(5..9).each do |id|
+  users[id].role = 0
+  Athlete.create(user_id: users[id].id)
+end
 
 @program1 = Program.new(name: 'First Program')
 @program2 = Program.new(name: 'Second Program')
-@program1.user_id = user.id
-@program2.user_id = user.id
+@program1.trainer_id = Trainer.first.user_id
+@program2.trainer_id = Trainer.first.user_id
 @routine1 = Routine.create(exercise: Exercise.find(1), sets: 3, reps: 3)
 @routine2 = Routine.create(exercise: Exercise.find(2), sets: 3, reps: 3)
 @routine3 = Routine.create(exercise: Exercise.find(3), sets: 3, reps: 3)
@@ -60,4 +81,3 @@ user = User.create! :email => 'john@example.com', :password => 'topsecret', :pas
 @program2.routines.push @routine8
 @program1.save
 @program2.save
-

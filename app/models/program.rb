@@ -10,7 +10,7 @@ class Program < ActiveRecord::Base
                              message: "only allows letters" }
   validates :name, length: { maximum: 100 }
   validates :name, presence: true
-  validates :user_id, presence: true
+  validates :trainer_id, presence: true
 
 
 
