@@ -9,7 +9,6 @@
         <span class="icon-bar"></span>
       </button>
       <% if user_signed_in? %>
-        <h2>
         <% if current_user.role == "trainer" %>
           <% @tag = " for Trainers" %>
         <% elsif %>
