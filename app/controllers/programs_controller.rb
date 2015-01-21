@@ -8,7 +8,7 @@ class ProgramsController < ApplicationController
   end
 
   def show
-    @athletes = Athlete.where(program_id: params[:id])
+    @athletes = @program.athletes
   end
 
   def new

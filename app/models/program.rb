@@ -11,7 +11,4 @@ class Program < ActiveRecord::Base
   validates :name, length: { maximum: 100 }
   validates :name, presence: true
   validates :trainer_id, presence: true
-
-
-
 end
