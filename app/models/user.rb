@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_one :trainer
   has_one :athlete
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :omniauthable
          :recoverable, :rememberable, :trackable, :validatable
 
   validate :role, presence: true
