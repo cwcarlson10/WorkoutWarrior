@@ -11,6 +11,45 @@
  * file per style scope.
  *
  *= require rails_bootstrap_forms
+ *= require select2
+ *= require select2-bootstrap
  *= require_tree .
  *= require_self
  */
+
+#program_name {
+  padding: 10px;
+  display: inline-block;
+  width: 200px;
+  margin: 6px 50px 6px 5px
+}
+
+#program_athlete_id {
+  background-color: white;
+  margin: 12px;
+  padding: 10px;
+  font-size: 16px;
+  width: 100px;
+}
+
+.nested-fields {
+  padding: 10px;
+  margin: 2px;
+  border: solid black 2px;
+  border-radius: 5px;
+}
+
+#routines {
+  clear: all;
+}
+
+h1 {
+  text-align: center;
+}
+
+#program_name_div {
+  margin: 15px 0px;
+  border: solid black 2px;
+  border-radius: 5px;
+  padding: 5px;
+}
