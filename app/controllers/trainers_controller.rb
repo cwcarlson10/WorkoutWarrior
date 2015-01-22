@@ -23,6 +23,9 @@ class TrainersController < ApplicationController
   end
 
   def edit
+    if (current_user && current_user.trainer?)
+      @trainer = Trainer.find_by(user_id: current_user.id.to_i)
+    end
   end
 
   def update
@@ -45,7 +48,7 @@ class TrainersController < ApplicationController
 
   private
     def trainer_params
-      params.require(:trainer).permit(:name, :organization, :certification, :user_id)
+      params.require(:trainer).permit(:name, :organization, :certifications, :user_id)
     end
 
     def set_trainer
