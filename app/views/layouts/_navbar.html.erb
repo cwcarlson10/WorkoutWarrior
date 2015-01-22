@@ -31,7 +31,7 @@
           <% else %>
             <li><%= link_to 'Profile', athlete_path(@athlete) if @athlete && @athlete.id %></li>
           <% end %>
-          <li><%= link_to current_user.email, edit_user_registration_path %></li>
+          <li><%= link_to 'User Settings', edit_user_registration_path %></li>
           <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to 'Login', new_user_session_path %></li>
