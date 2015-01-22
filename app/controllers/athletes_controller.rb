@@ -15,14 +15,14 @@ class AthletesController < ApplicationController
   end
 
   def create
-    @user = User.find(current_user.id)
-    @user.role = "athlete"
     @athlete = Athlete.new(athlete_params)
+    @user = User.find(current_user.id)
     @athlete.user_id = @user.id
-    if @user.valid? && @athlete.valid?
-      @user.save && @athlete.save
+    @user.update_attributes(role: "athlete")
+    if @athlete.save
       redirect_to @athlete
     else
+      @user.update_attributes(role: "newuser")
       render :new
     end
   end
