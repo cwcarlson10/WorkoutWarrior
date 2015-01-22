@@ -3,11 +3,14 @@
 
   <% @program.routines.each do |r| %>
   <div id="program-show">
+  <%= @program.athletes.any? %>
     <%= r.exercise.title %><br/>
     <%= r.exercise.description %>
     (<%= r.exercise.category %>)
-    sets: <%= r.sets %>
-    reps: <%= r.reps %>
+    <% unless r.exercise.category == 'Cardio' %>
+      sets: <%= r.sets %>
+      reps: <%= r.reps %>
+    <% end %>
     duration: <%= r.duration %><br/>
     <p>instrucions: <%= r.instructions %></p>
     <br/>
