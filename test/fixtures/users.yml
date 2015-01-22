@@ -9,3 +9,12 @@
 #
 # two: {}
 #  column: value
+athlete:
+  email: joe@athlete.com
+  encrypted_password: <%= BCrypt::Password.create("password", cost: 4) %>
+  role: 1
+
+trainer:
+  email: joe@trainer.com
+  encrypted_password: <%= BCrypt::Password.create("password", cost: 4) %>
+  role: 2

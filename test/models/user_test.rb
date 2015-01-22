@@ -49,4 +49,9 @@ class UserTest < ActiveSupport::TestCase
     assert user.save
     assert user.role == "trainer"
   end
+
+  test "athlete should have athlete role" do
+    user = User.where(role: 1).first
+    assert user.role == "athlete"
+  end
 end
