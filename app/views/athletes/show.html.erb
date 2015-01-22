@@ -1,2 +1,10 @@
-<h1>This is the Show page</h1>
+<h1> <%= @athlete.name %></h1>
+
+<p>I am an Athlete and I know nothing.</p>
+<div class="profile-info">
+  <p class="personal-info">
+    Here goes some stuff about me
+  </p>
+</div>
+
 <div><%= link_to 'Edit Profile', edit_athlete_path(@athlete.id), class: 'btn btn-info' %></div>
