@@ -19,6 +19,7 @@ gem 'simple_form'
 gem 'country_select'
 gem 'cocoon'
 gem 'jquery-turbolinks'
+gem "select2-rails"
 
 
 
