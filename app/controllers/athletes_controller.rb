@@ -22,6 +22,7 @@ class AthletesController < ApplicationController
     if @athlete.save
       redirect_to @athlete
     else
+      @user.update_attributes(role: "newuser")
       render :new
     end
   end
