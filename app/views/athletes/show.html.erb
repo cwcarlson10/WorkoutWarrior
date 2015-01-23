@@ -1,10 +1,16 @@
-<h1> <%= @athlete.name %></h1>
+<h1> <%= @athlete.name %>
 
-<p>I am an Athlete and I know nothing.</p>
 <div class="profile-info">
+  <p>I am an athlete and I know nothing.</p>
   <p class="personal-info">
     Here goes some stuff about me
   </p>
 </div>
 
 <div><%= link_to 'Edit Profile', edit_athlete_path(@athlete.id), class: 'btn btn-info' %></div>
+
+<div>
+  <% if current_user.trainer? %>
+      <%= link_to 'Add', assign_trainer_path(athlete_id: @athlete.id, trainer_id: current_user.trainer.id), class: 'btn btn-default', method: :patch %>
+  <% end %>
+</div>
