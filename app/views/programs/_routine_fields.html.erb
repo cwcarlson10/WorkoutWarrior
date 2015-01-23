@@ -1,7 +1,8 @@
 <div class="nested-fields">
   <% @exercises = Exercise.all %>
-  <div class="col-md-2"><%= f.input :exercise_id, :collection => @exercises, :label_method => :title, :value_method => :id, :label => "Exercises", id: "categories-div" %></div>
-
+  <fieldset>
+    <div class="col-md-2"><%= f.input :exercise_id, :collection => @exercises, :label_method => :title, :value_method => :id, :label => "Exercises", id: "categories-div" %></div>
+  </fieldset>
   <div class="col-md-2" id="exercises-div"><%= f.select :exercise_id, Exercise.all.collect { |e| [e.title, e.id] } %></div>
   <div class="col-md-1" id="sets"><%= f.input :sets %></div>
   <div class="col-md-1" id="reps"><%= f.input :reps %></div>
