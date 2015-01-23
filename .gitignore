@@ -25,4 +25,4 @@ coverage
 /.idea
 
 # Do not commit .env
-/.env
+.env
