@@ -4,13 +4,21 @@ class User < ActiveRecord::Base
   has_one :trainer
   has_one :athlete
   devise :database_authenticatable, :registerable, :omniauthable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauth_providers => [:facebook]
 
   validate :role, presence: true
 
   enum role: [:newuser, :athlete, :trainer]
 
   after_find :load_role
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = "#{auth.info.nickname}@facebook.com"
+      user.password = Devise.friendly_token[0,20]
+      # user.username = auth.info.nickname I might need this later
+    end
+  end
 
   def trainer?
     !!self.trainer
