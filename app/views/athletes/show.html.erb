@@ -7,10 +7,14 @@
   </p>
 </div>
 
-<div><%= link_to 'Edit Profile', edit_athlete_path(@athlete.id), class: 'btn btn-info' %></div>
-
 <div>
-  <% if current_user.trainer? %>
+<% if current_user.athlete? %>
+<%= link_to 'Edit Profile', edit_athlete_path(@athlete.id), class: 'btn btn-info' %></div>
+<% end %>
+<div>
+  <% if current_user.trainer? && @athlete.trainer_id.nil? %>
       <%= link_to 'Add', assign_trainer_path(athlete_id: @athlete.id, trainer_id: current_user.trainer.id), class: 'btn btn-default', method: :patch %>
+  <% elsif current_user.trainer? %>
+      <%= link_to 'Back', trainer_path(@trainer), class: 'btn btn-default' %>
   <% end %>
 </div>
