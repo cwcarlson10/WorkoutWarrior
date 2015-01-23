@@ -1,12 +1,6 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  def setup
-    @athlete = users(:athlete)
-    @trainer = users(:trainer)
-    @newuser = users(:newuser)
-  end
-
   test "should not create user without email" do
     user = User.new(email: "", password: "passwor",
                     password_confirmation: "passwor")
@@ -54,17 +48,5 @@ class UserTest < ActiveSupport::TestCase
                     password_confirmation: "password", role: 2)
     assert user.save
     assert user.role == "trainer"
-  end
-
-  test "athlete should have athlete role" do
-    assert @athlete.role == "athlete"
-  end
-
-  test "trainer should have trainer role" do
-    assert @trainer.role == "trainer"
-  end
-
-  test "newuser should have newuser role" do
-    assert @newuser.role == "newuser"
   end
 end

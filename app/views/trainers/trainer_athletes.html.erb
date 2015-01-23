@@ -1,8 +1,7 @@
-<ul style="list-style-type:none;">
+<ul>
 <% @athletes.each do |athlete| %>
-  <li><%= link_to athlete.name, athlete_path(athlete) %></li>
+  <li><%= athlete.name %></li>
 <% end %>
 </ul>
 <%= link_to 'Add Athlete', athletes_path, class: 'btn btn-default' %>
 
-<%= link_to 'Back', trainer_path, class: 'btn btn-warning' %>

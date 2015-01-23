@@ -1,7 +1,8 @@
 <div class="athlete-index">
   <ul>
-  <% @athletes.each do |athlete| %>
-    <li>Name: <%= link_to athlete.name, athlete_path(athlete) %></li>
+  <% @athletes.each do |a| %>
+    <li>Name: <%= a.name %></li>
+    <%= link_to 'Add', assign_trainer_path(athlete_id: a.id, trainer_id: current_user.trainer.id), class: 'btn btn-default', method: :patch %>
 <% end %>
     </ul>
 

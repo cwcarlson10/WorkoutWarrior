@@ -23,6 +23,3 @@ coverage
 
 # Ignore Rubymine
 /.idea
-
-# Do not commit .env
-.env

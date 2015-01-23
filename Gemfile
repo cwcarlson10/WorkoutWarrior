@@ -21,7 +21,6 @@ gem 'country_select'
 gem 'cocoon'
 gem 'jquery-turbolinks'
 gem "select2-rails"
-gem 'omniauth-facebook'
 
 
 
@@ -33,8 +32,6 @@ group :development, :test do
   gem 'spring'
   gem 'factory_girl_rails'
 end
-
-gem 'dotenv-rails', :groups => [:development, :test]
 
 group :test do
   gem 'minitest-rails'

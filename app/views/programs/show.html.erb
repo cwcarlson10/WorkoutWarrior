@@ -24,7 +24,7 @@
   <% @athletes.each do |athlete| %>
     <tr>
       <td><%= athlete.name %></td>
-      <td><%= link_to "Profile", athlete_path(athlete), class: 'btn btn-info btn-xs' %>
+      <td><%= link_to "Profile", athlete_path, class: 'btn btn-info btn-x' %>
     </tr>
   <% end %>
 </table>

@@ -12,10 +12,6 @@ class ApplicationController < ActionController::Base
     elsif @user.role == 'trainer' && @trainer
       flash[:notice] = "You have been signed in as an trainer!"
       trainer_path(@trainer)
-    elsif @user.role == 'newuser'
-      flash[:notice] = "Please finish signing up!"
-      role_path
-
     end
   end
 
