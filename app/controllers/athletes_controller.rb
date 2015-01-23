@@ -48,12 +48,7 @@ class AthletesController < ApplicationController
     @athlete = Athlete.find(params[:athlete_id])
     @athlete.trainer_id = params[:trainer_id]
     @athlete.save
-    # @trainer = Trainer.find_by(user_id: current_user)
-    # @trainer # This is the trainer to be assigned to the athlete
-    # @athlete # This is the athlete to be used
-    # @athelete.associate_to(@trainer) # Implement this method in Athlete
       redirect_to trainer_athletes_path(params[:trainer_id])
-      # flash (read how to do that again)
   end
 
   private
