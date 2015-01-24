@@ -2,19 +2,31 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+body::after {
+  content: "";
+  background-image: url(weight-plates.jpg);
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
 .navbar {
-  background-color: #AE1616;
+  background-color: rgba(0, 0, 0, 0.85);
   }
 
 .navbar-brand {
-  color: #000;
+  color: #FFF;
   &:hover {
     color: #777;
   }
 }
 
 .navbar-nav > li > a {
-  color: #000;
+  color: #FFF;
   &:hover {
     color: #777;
   }
