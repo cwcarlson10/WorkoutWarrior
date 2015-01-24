@@ -48,6 +48,6 @@ class ProgramsController < ApplicationController
    end
 
     def program_params
-      params.require(:program).permit(:name, :trainer_id, :athlete_id, routines_attributes: [:id, :sets, :reps, :duration, :intructions, :exercise_id, :_destroy ])
+      params.require(:program).permit(:name, :trainer_id, :athlete_id, routines_attributes: [:id, :sets, :reps, :duration, :instructions, :exercise_id, :_destroy ])
     end
 end
