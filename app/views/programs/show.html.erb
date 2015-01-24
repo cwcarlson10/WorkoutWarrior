@@ -1,5 +1,10 @@
 <body class='home-page-background'>
-  <%= link_to "Back", programs_path, class: 'btn btn-danger btn-xs' %>
+  <% if current_user.trainer? %>
+    <%= link_to "Back", programs_path, class: 'btn btn-danger btn-xs' %>
+  <% elsif current_user.athlete? %>
+    <%= link_to "Back", athlete_path(current_user.athlete.id), class: 'btn btn-danger btn-xs' %>
+  <% end %>
+
   <h1><%= @program.name %></h1>
 
     <% @program.routines.each do |r| %>
@@ -25,8 +30,11 @@
           </dl>
         </div>
       </div>
+      <div>
     <% end %>
-  <%= link_to "Edit", edit_program_path(@program), class: 'btn btn-danger btn-xs' %>
+    <% if current_user.trainer? %>
+    <%= link_to "Edit", edit_program_path(@program), class: 'btn btn-danger btn-xs' %>
+
   <br>
   <div class='panel panel-default'>
     <div class='panel-heading'>
@@ -43,5 +51,7 @@
         </dl>
       <% end %>
     </div>
+  </div>
+    <% end %>
   </div>
 </body>
