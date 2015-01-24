@@ -34,8 +34,8 @@
           <li><%= link_to 'User Settings', edit_user_registration_path %></li>
           <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
         <% else %>
-          <li><%= link_to 'Login', new_user_session_path %></li>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <li><%= link_to 'Login', '#', 'data-target' => '#sign_in', 'data-toggle' => 'modal' %></li>
+          <li><%= link_to 'Sign Up', '#', 'data-target' => '#sign_up', 'data-toggle' => 'modal' %></li>
         <% end %>
       </ul>
     </div>
