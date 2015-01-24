@@ -1,5 +1,4 @@
 <div class="nested-fields">
-
   <div class="col-md-2" id="categories-div"><%= @a = f.select :exercise_id, Exercise.categories { |e| [e.title, e.id] } %></div>
   <% @exercises = Exercise.select(:tite).where( :category => "#{@a}") %>
   <div class="col-md-2" id="exercises-div"><%= f.select :exercise_id, Exercise.all.collect { |e| [e.title, e.id] } %></div>
