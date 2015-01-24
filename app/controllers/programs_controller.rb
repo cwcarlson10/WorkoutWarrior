@@ -17,7 +17,9 @@ class ProgramsController < ApplicationController
 
   def create
     @program = @trainer.programs.build(program_params)
-    @program.athletes << Athlete.find(program_params[:athlete_id])
+    if program_params[:athlete_id]
+      @program.athletes << Athlete.find(program_params[:athlete_id])
+    end
     if @program.save
       redirect_to programs_path
     else
