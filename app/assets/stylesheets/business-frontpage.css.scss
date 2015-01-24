@@ -12,7 +12,7 @@ body {
 
 .business-header {
     height: 400px;
-    background-image: image-url('barbell.jpg') center center no-repeat scroll; // link to /assets/images/barbell.jpg
+    background-image: url(training.jpg);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -24,6 +24,7 @@ body {
 .tagline {
     text-shadow: 0 0 10px #000;
     color: #fff;
+    font-size: 40px;
 }
 
 .img-center {
