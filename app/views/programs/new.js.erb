@@ -2,3 +2,6 @@ $(console.log('Hit me'));
 $('#new_program_div').html('<%= j render "new_modal" %>');
 $('#new_program').modal('show');
 
+$('.nested_fields').on('cocoon:after-insert', function(e, addedRoutine)
+ console.log("Added routine");
+});
