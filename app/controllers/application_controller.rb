@@ -4,15 +4,19 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def after_sign_in_path_for(resource_or_scope)
-    @athlete = Athlete.find_by(user_id: @user.id)
-    @trainer = Trainer.find_by(user_id: @user.id)
-    if @user.role == 'athlete' && @athlete
+    if current_user.role != 'newuser'
+      @athlete = Athlete.find_by(user_id: @user.id)
+    end
+    if current_user.role != 'newuser'
+      @trainer = Trainer.find_by(user_id: @user.id)
+    end
+    if current_user.role == 'athlete' && @athlete
       flash[:notice] = "You have been signed in as an athlete!"
       athlete_path(@athlete)
-    elsif @user.role == 'trainer' && @trainer
+    elsif current_user.role == 'trainer' && @trainer
       flash[:notice] = "You have been signed in as an trainer!"
       trainer_path(@trainer)
-    elsif @user.role == 'newuser'
+    elsif current_user.role == 'newuser'
       flash[:notice] = "Please finish signing up!"
       role_path
 
