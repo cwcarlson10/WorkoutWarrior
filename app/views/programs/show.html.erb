@@ -1,45 +1,47 @@
-<%= link_to "Back", programs_path, class: 'btn btn-danger btn-xs' %>
-<h1><%= @program.name %></h1>
+<body class='home-page-background'>
+  <%= link_to "Back", programs_path, class: 'btn btn-danger btn-xs' %>
+  <h1><%= @program.name %></h1>
 
-  <% @program.routines.each do |r| %>
-    <div class='panel panel-default'>
-  <!--   <%= @program.athletes.name %> -->
-      <div class='panel-heading'>
-        <%= r.exercise.title %>
+    <% @program.routines.each do |r| %>
+      <div class='panel panel-default'>
+    <!--   <%= @program.athletes.name %> -->
+        <div class='panel-heading'>
+          <%= r.exercise.title %>
+        </div>
+        <div class='panel-body'>
+          <dl class= 'dl-horizontal'>
+            <dt>Description:</dt>
+            <dd><%= r.exercise.description %></dd>
+            <% unless r.exercise.category == 'Cardio' %>
+            <dt>Sets:</dt>
+            <dd><%= r.sets %></dd>
+            <dt>Reps:</dt>
+            <dd><%= r.reps %></dd>
+            <% end %>
+            <dt>Rest:</dt>
+            <dd><%= r.duration %></dd>
+            <dt>Instructions:</dt>
+            <dd><%= r.instructions %></dd>
+          </dl>
+        </div>
       </div>
-      <div class='panel-body'>
-        <dl class= 'dl-horizontal'>
-          <dt>Description:</dt>
-          <dd><%= r.exercise.description %></dd>
-          <% unless r.exercise.category == 'Cardio' %>
-          <dt>Sets:</dt>
-          <dd><%= r.sets %></dd>
-          <dt>Reps:</dt>
-          <dd><%= r.reps %></dd>
-          <% end %>
-          <dt>Rest:</dt>
-          <dd><%= r.duration %></dd>
-          <dt>Instructions:</dt>
-          <dd><%= r.instructions %></dd>
-        </dl>
-      </div>
-    </div>
-  <% end %>
-<%= link_to "Edit", edit_program_path(@program), class: 'btn btn-danger btn-xs' %>
-<br>
-<div class='panel panel-default'>
-  <div class='panel-heading'>
-    <h1>Athletes Assigned to this Program</h1>
-  </div>
-  <div class='panel-body'>
-    <% @athletes.each do |athlete| %>
-      <dl class='dl-horizontal'>
-        <dt>Name:</dt>
-        <dd>
-          <%= athlete.name %>
-          <%= link_to "Profile", athlete_path(athlete), class: 'btn btn-danger btn-xs' %>
-        </dd>
-      </dl>
     <% end %>
+  <%= link_to "Edit", edit_program_path(@program), class: 'btn btn-danger btn-xs' %>
+  <br>
+  <div class='panel panel-default'>
+    <div class='panel-heading'>
+      <h1>Athletes Assigned to this Program</h1>
+    </div>
+    <div class='panel-body'>
+      <% @athletes.each do |athlete| %>
+        <dl class='dl-horizontal'>
+          <dt>Name:</dt>
+          <dd>
+            <%= athlete.name %>
+            <%= link_to "Profile", athlete_path(athlete), class: 'btn btn-danger btn-xs' %>
+          </dd>
+        </dl>
+      <% end %>
+    </div>
   </div>
-</div>
+</body>
