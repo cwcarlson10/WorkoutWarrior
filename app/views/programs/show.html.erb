@@ -26,13 +26,20 @@
     </div>
   <% end %>
 <%= link_to "Edit", edit_program_path(@program), class: 'btn btn-danger btn-xs' %>
-
-<h1>Athletes Assigned to this Program</h1>
-<table>
-  <% @athletes.each do |athlete| %>
-    <tr>
-      <td><%= athlete.name %></td>
-      <td><%= link_to "Profile", athlete_path(athlete), class: 'btn btn-danger btn-xs' %>
-    </tr>
-  <% end %>
-</table>
+<br>
+<div class='panel panel-default'>
+  <div class='panel-heading'>
+    <h1>Athletes Assigned to this Program</h1>
+  </div>
+  <div class='panel-body'>
+    <% @athletes.each do |athlete| %>
+      <dl class='dl-horizontal'>
+        <dt>Name:</dt>
+        <dd>
+          <%= athlete.name %>
+          <%= link_to "Profile", athlete_path(athlete), class: 'btn btn-danger btn-xs' %>
+        </dd>
+      </dl>
+    <% end %>
+  </div>
+</div>
