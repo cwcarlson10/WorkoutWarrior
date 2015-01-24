@@ -8,6 +8,9 @@ class AthletesController < ApplicationController
 
   def show
     @athlete = Athlete.find(params[:id])
+    if current_user.trainer?
+      @trainer = Trainer.find(current_user.trainer.id)
+    end
   end
 
   def new
