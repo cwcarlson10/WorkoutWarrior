@@ -1,3 +1,4 @@
+<%= render 'trainer_sidebar' %>
 <h1> <%= @trainer.name %> (<%= current_user.role.capitalize %>)</h1>
 <div class="profile-pic">Profile Pic Goes Here</div>
 
@@ -11,9 +12,10 @@
   </p>
 </div>
 
-<div><%= link_to 'Athletes', trainer_athletes_path(@trainer), class: 'btn btn-info' %></div>
-<br>
-<div><%= link_to 'Programs', programs_path, class: 'btn btn-info' %></div>
-<br>
-<div><%= link_to 'Edit Profile', edit_trainer_path(@trainer.id), class: 'btn btn-info' %></div>
+<div class="">
+  <div><%= link_to 'Athletes', trainer_athletes_path(@trainer), class: 'btn btn-info' %></div>
 
+  <div><%= link_to 'Programs', programs_path, class: 'btn btn-info' %></div>
+
+  <div><%= link_to 'Edit Profile', edit_trainer_path(@trainer.id), class: 'btn btn-info' %></div>
+</div>
