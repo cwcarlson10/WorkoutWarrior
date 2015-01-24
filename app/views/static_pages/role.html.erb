@@ -1,9 +1,4 @@
-
-
-<div>
-  <%= link_to 'Trainer', new_trainer_path, class: 'btn btn-danger' %>
-</div>
-<br>
-<div>
-  <%= link_to 'Athlete', new_athlete_path, class: 'btn btn-success' %>
-</div>
+<%= render layout: 'modals/mymodal', locals: {modal_id: 'role', backdrop: 'static', keyboard: 'false'} do %>
+  <%= render 'role' %>
+<% end %>
+<script type="text/javascript">$('#role').modal("show");</script>

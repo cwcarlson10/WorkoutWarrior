@@ -41,10 +41,10 @@
 
   <div>
     <% unless current_user %>
-      <%= render layout: 'modals/mymodal', locals: {modal_id: 'sign_up'} do %>
+      <%= render layout: 'modals/mymodal', locals: {modal_id: 'sign_up', backdrop: 'true', keyboard: 'true'} do %>
         <%= render file: 'devise/registrations/new' %>
       <% end %>
-      <%= render layout: 'modals/mymodal', locals: {modal_id: 'sign_in'} do %>
+      <%= render layout: 'modals/mymodal', locals: {modal_id: 'sign_in', backdrop: 'true', keyboard: 'true'} do %>
         <%= render file: 'devise/sessions/new' %>
       <% end %>
     <% end %>
