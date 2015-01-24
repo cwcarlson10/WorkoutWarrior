@@ -1,0 +1,17 @@
+<div class="trainer-sidebar">
+  <h3 class="sidebar-header">Programs</h3>
+  <ul class="sidebar-list">
+  <% @programs = Program.all %>
+  <% @athletes = Athlete.all %>
+  <% @programs.each do |prog| %>
+    <li><%= prog.name %></li>
+  <% end %>
+
+  </ul>
+  <h3 class="sidebar-header">Athletes</h3>
+  <ul class="sidebar-list">
+  <% @athletes.each do |athlete| %>
+    <li><%= athlete.name %></li>
+  <% end %>
+  </ul>
+</div>

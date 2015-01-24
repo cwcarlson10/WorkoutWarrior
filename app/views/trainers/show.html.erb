@@ -1,19 +1,37 @@
-<h1> <%= @trainer.name %> (<%= current_user.role.capitalize %>)</h1>
-<div class="profile-pic">Profile Pic Goes Here</div>
-
-<div class="profile-info">
-  <ul>
-    <li><%= @trainer.organization %></li>
-    <li><%= @trainer.certifications %></li>
-  </ul>
-  <p class="personal-info">
-    Here goes some stuff about me
-  </p>
+<div class='col-md-3 hidden-xs' id="trainer-profile-div">
+  <%= render 'trainer_sidebar' %>
 </div>
 
-<div><%= link_to 'Athletes', trainer_athletes_path(@trainer), class: 'btn btn-info' %></div>
-<br>
-<div><%= link_to 'Programs', programs_path, class: 'btn btn-info' %></div>
-<br>
-<div><%= link_to 'Edit Profile', edit_trainer_path(@trainer.id), class: 'btn btn-info' %></div>
+<div class='col-md-9'>
+  <div class="row">
+    <div class="col-md-4">
+      <h1 class="profile-title"> <%= @trainer.name %> (<%= current_user.role.capitalize %>)</h1>
+      <div class="profile-pic">
+        <img src="http://www.personaltrainingbusinessschool.com/wp-content/uploads/2010/01/personal-training-business.jpg", alt="Profile Pic", style="width:250px;height:300px">
+      </div>
+    </div>
 
+    <div class="col-md-3">
+      <div class="profile-info">
+        <ul>
+          <li><%= @trainer.organization %></li>
+          <li><%= @trainer.certifications %></li>
+
+          <li><p class="personal-info">
+            Here goes some stuff about me
+          </p></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-5"></div>
+  </div>
+
+  <div class="row" id="button-toolbar">
+
+    <%= link_to 'Athletes', trainer_athletes_path(@trainer), class: 'btn btn-info' %>
+    <%= link_to 'Programs', programs_path, class: 'btn btn-info' %>
+    <%= link_to 'Edit Profile', edit_trainer_path(@trainer.id), class: 'btn btn-info' %>
+
+  </div>
+</div>
