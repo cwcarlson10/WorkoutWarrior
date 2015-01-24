@@ -7,18 +7,36 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'layouts/navbar' %>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1602584136628254',
+        xfbml      : true,
+        version    : 'v2.2'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <%= render 'layouts/navbar' %>
   <% if notice %><div class="notice"><%= notice %></div><% end %>
   <% if alert %><div class="alert"><%= alert %></div><% end %>
   <div class="container">
     <%= yield %>
+    <div
+      class="fb-like"
+      data-share="true"
+      data-width="450"
+      data-show-faces="true">
+    </div>
+
   </div>
-
-  <script type="text/javascript">
-  $(document).ready(function() {
-    <%= yield :document_ready %>
-  });
-  </script>
-
 </body>
 </html>
