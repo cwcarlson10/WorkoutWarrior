@@ -15,7 +15,7 @@
     <% end %>
   </div>
 
-    <span class="links"><%= link_to_add_association 'Add an Exercise', f, :routines, class: 'btn btn-success' %></span>
+    <span class="links"><%= link_to_add_association 'Add an Exercise', f, :routines, class: 'btn btn-success', :onclick => 'myselect()' %></span>
 
 
   <%= f.submit %>
