@@ -31,6 +31,7 @@ class AthletesController < ApplicationController
   end
 
   def edit
+    @old_athlete = 1
   end
 
   def update

@@ -2,5 +2,9 @@
   <%= f.input :name %>
   <%= f.input :organization %>
   <%= f.input :certifications %>
-  <%= f.button :submit, "Create Account" %>
+  <% if @old_trainer.present? %>
+    <%= f.button :submit, "Update Account" %>
+  <% else %>
+    <%= f.button :submit, "Create Account" %>
+  <% end %>
 <% end %>
