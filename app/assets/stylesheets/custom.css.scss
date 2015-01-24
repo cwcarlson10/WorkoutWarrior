@@ -1,6 +1,6 @@
-
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-over-rides";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 body::after {
   content: "";
