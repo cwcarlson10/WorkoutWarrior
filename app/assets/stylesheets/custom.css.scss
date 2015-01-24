@@ -1,6 +1,11 @@
-
+ @import "bootstrap-over-rides";
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+
+body {
+  color: #000;
+}
 
 body::after {
   content: "";
