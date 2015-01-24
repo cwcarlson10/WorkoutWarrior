@@ -2,21 +2,29 @@
 <h1><%= @program.name %></h1>
 
   <% @program.routines.each do |r| %>
-  <div id="program-show">
-  <%= @program.athletes.any? %>
-    <%= r.exercise.title %><br/>
-    <%= r.exercise.description %>
-    (<%= r.exercise.category %>)
-    <% unless r.exercise.category == 'Cardio' %>
-      sets: <%= r.sets %>
-      reps: <%= r.reps %>
-    <% end %>
-    duration: <%= r.duration %><br/>
-    <p>instrucions: <%= r.instructions %></p>
-    <br/>
-    <br/>
+    <div class='panel panel-default'>
+  <!--   <%= @program.athletes.name %> -->
+      <div class='panel-heading'>
+        <%= r.exercise.title %>
+      </div>
+      <div class='panel-body'>
+        <dl class= 'dl-horizontal'>
+          <dt>Description:</dt>
+          <dd><%= r.exercise.description %></dd>
+          <% unless r.exercise.category == 'Cardio' %>
+          <dt>Sets:</dt>
+          <dd><%= r.sets %></dd>
+          <dt>Reps:</dt>
+          <dd><%= r.reps %></dd>
+          <% end %>
+          <dt>Rest:</dt>
+          <dd><%= r.duration %></dd>
+          <dt>Instructions:</dt>
+          <dd><%= r.instructions %></dd>
+        </dl>
+      </div>
     </div>
-<% end %>
+  <% end %>
 <%= link_to "Edit", edit_program_path(@program), class: 'btn btn-info btn-xs' %>
 
 <h1>Athletes Assigned to this Program</h1>
