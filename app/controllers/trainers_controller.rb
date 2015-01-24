@@ -4,6 +4,11 @@ class TrainersController < ApplicationController
 
   def show
     @trainer = Trainer.find(params[:id])
+    @programs = @trainer.programs
+    @athletes =
+      @programs.map do |program|
+        program.athletes
+      end.flatten
   end
 
   def new
