@@ -1,6 +1,7 @@
-<h1>Edit Athletes</h1>
-
-<%= render 'athleteform' %>
-
-<%= link_to 'Cancel', athlete_path(@athlete.id) %>
+<%= render layout: 'modals/mymodal', locals: {modal_id: 'athlete', backdrop: 'static', keyboard: 'false'} do %>
+  <h4>Edit Profile</h4>
+  <%= render 'athleteform' %>
+  <%= link_to 'Cancel', athlete_path(@athlete.id) %>
+<% end %>
+<script type="text/javascript">$('#athlete').modal("show");</script>
 
