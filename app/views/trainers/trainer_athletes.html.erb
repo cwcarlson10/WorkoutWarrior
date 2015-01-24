@@ -1,8 +1,11 @@
-<ul style="list-style-type:none;">
-<% @athletes.each do |athlete| %>
-  <li><%= link_to athlete.name, athlete_path(athlete) %></li>
-<% end %>
+<ul class='list-group'>
+  <h2 class='text-center'>My Athlete List</h2>
+  <% @athletes.each do |athlete| %>
+    <li class='list-group-item'>
+      <h4><%= link_to athlete.name, athlete_path(athlete) %></h4>
+    </li>
+  <% end %>
 </ul>
-<%= link_to 'Add Athlete', athletes_path, class: 'btn btn-default' %>
+<%= link_to 'Add Athlete', athletes_path, class: 'btn btn-danger' %>
 
-<%= link_to 'Back', trainer_path, class: 'btn btn-warning' %>
+<%= link_to 'Back', trainer_path, class: 'btn btn-primary' %>

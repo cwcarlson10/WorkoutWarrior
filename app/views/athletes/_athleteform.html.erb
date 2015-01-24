@@ -1,4 +1,8 @@
 <%= simple_form_for(@athlete) do |f| %>
   <%= f.input :name %>
-  <%= f.button :submit, 'Create Account' %>
+  <% if @old_athlete.present? %>
+    <%= f.button :submit, "Update Account" %>
+  <% else %>
+    <%= f.button :submit, "Create Account" %>
+  <% end %>
 <% end %>
