@@ -17,13 +17,13 @@
           <dl class= 'dl-horizontal'>
             <dt>Description:</dt>
             <dd><%= r.exercise.description %></dd>
-            <% unless r.exercise.category == 'Cardio' %>
+          <% unless r.exercise.category == 'Cardio' %>
             <dt>Sets:</dt>
             <dd><%= r.sets %></dd>
             <dt>Reps:</dt>
             <dd><%= r.reps %></dd>
-            <% end %>
-            <dt>Rest:</dt>
+          <% end %>
+            <dt>Duration:</dt>
             <dd><%= r.duration %></dd>
             <dt>Instructions:</dt>
             <dd><%= r.instructions %></dd>
