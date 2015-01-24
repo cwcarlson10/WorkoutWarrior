@@ -3,12 +3,12 @@
 
   <div class='panel panel-defaut'>
     <h1><%= link_to "#{program.name}", program_path(program) %></h1>
-    <%= link_to 'Edit', '#', class: 'btn btn-primary btn-xs', 'data-target' => '#edit_program', 'data-toggle' => 'modal' %>
+    <%= link_to 'Edit', edit_program_path(program.id), class: 'btn btn-primary btn-xs' %>
     <%= link_to 'Delete', '#', class: 'btn btn-danger btn-xs', method: :delete, data: { confirm: "Are you sure?" } %>
   </div>
 
 <% end %>
-<%= link_to 'Create New Program', '#', class: 'btn btn-primary btn-xs', 'data-target' => '#new_program', 'data-toggle' => 'modal', remote: true %>
+<%= link_to 'Create New Program', new_program_path, id: 'new-project-ajax', class: 'btn btn-primary btn-xs', remote: true %>
 <%= link_to 'Back', trainer_path(@trainer.id), class: 'btn btn-default' %>
 
 <div id="new_program_div">
