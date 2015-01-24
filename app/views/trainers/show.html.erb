@@ -1,11 +1,11 @@
 <div class='col-md-3 hidden-xs' id="trainer-profile-div">
-  <%= render 'trainer_sidebar' %>
+  <%= render 'trainer_sidebar', locals: {programs: @programs, athletes: @athletes } %>
 </div>
 
 <div class='col-md-9'>
   <div class="row">
     <div class="col-md-4">
-      <h1 class="profile-title"> <%= @trainer.name %> (<%= current_user.role.capitalize %>)</h1>
+      <h1 class="profile-title"> <%= @trainer.name.capitalize %> (<%= current_user.role.capitalize %>)</h1>
       <div class="profile-pic">
         <img src="http://www.personaltrainingbusinessschool.com/wp-content/uploads/2010/01/personal-training-business.jpg", alt="Profile Pic", style="width:250px;height:300px">
       </div>

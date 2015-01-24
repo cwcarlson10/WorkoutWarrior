@@ -5,7 +5,7 @@
       <%= f.input :name %>
     </div>
     <div id="athlete_selector">
-      Athlete: <%= f.select :athlete_id, @trainer.athletes.collect { |a| [a.name, a.id] } %>
+      Athlete: <%= f.collection_select 'athlete_ids', @trainer.athletes, :id, :name, {}, { name: 'athlete_ids[]', multiple: true} %>
     </div>
   </div>
 

@@ -17,9 +17,7 @@ class ProgramsController < ApplicationController
 
   def create
     @program = @trainer.programs.build(program_params)
-    if program_params[:athlete_id]
-      @program.athletes << Athlete.find(program_params[:athlete_id])
-    end
+    @program.athletes = Athlete.where(id: athlete_ids)
     if @program.save
       redirect_to programs_path
     else
@@ -50,6 +48,10 @@ class ProgramsController < ApplicationController
    end
 
     def program_params
-      params.require(:program).permit(:name, :trainer_id, :athlete_id, routines_attributes: [:id, :sets, :reps, :duration, :instructions, :exercise_id, :_destroy ])
+      params.require(:program).permit(:name, :trainer_id, routines_attributes: [:id, :sets, :reps, :duration, :instructions, :exercise_id, :_destroy ])
+    end
+
+    def athlete_ids
+      params.require(:athlete_ids)
     end
 end
