@@ -1,8 +1,6 @@
 <div class="nested-fields">
   <% @exercises = Exercise.all %>
-  <fieldset>
     <div class="col-md-2"><%= f.input :exercise_id, :collection => @exercises, :label_method => :title, :value_method => :id, :label => "Exercises", id: "categories-div" %></div>
-  </fieldset>
   <div class="col-md-2" id="exercises-div"><%= f.select :exercise_id, Exercise.all.collect { |e| [e.title, e.id] } %></div>
   <div class="col-md-1" id="sets"><%= f.input :sets %></div>
   <div class="col-md-1" id="reps"><%= f.input :reps %></div>
@@ -10,8 +8,13 @@
   <div class="col-md-4"><%= f.input :instructions %></div>
 
   <%= link_to_remove_association "remove exercise", f, class: 'btn btn-danger btn-xs' %>
-</div>
 
 <% content_for :document_ready do %>
-  $('select#categories-div').select2();
+  var ids = $.map($(".program_routines_exercise_id [id]"), function(n, i) {
+    return n.id;
+  });
+  var this_id = ids[ids.length -1];
+  console.log(this_id);
+  $('select'+this_id).select2();
 <% end %>
+</div>

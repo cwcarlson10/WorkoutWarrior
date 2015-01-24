@@ -1,15 +1,11 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
-
-$('#categories-div').on('change', function () {
-  $('#exercises-div').
-
-});
-
-$(function() {
-    var categories = Exercise.categories
-    $( "#categories-div" ).autocomplete({
-      source: categories
+$(document).ready(function() {
+  $('#new_program').on('cocoon:after-insert', function(e, addedRoutine) {
+    console.log("Added routine");
+    var ids = $.map($(".program_routines_exercise_id [id]"), function(n, i) {
+      return n.id;
     });
+    var this_id = ids[ids.length -1];
+    console.log(this_id);
+    $('#'+this_id).select2();
   });
+});
