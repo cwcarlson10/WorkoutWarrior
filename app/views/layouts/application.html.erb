@@ -37,6 +37,17 @@
       data-show-faces="true">
     </div>
 
+     </div>
+
+  <div>
+    <% unless current_user %>
+      <%= render layout: 'modals/mymodal', locals: {modal_id: 'sign_up'} do %>
+        <%= render file: 'devise/registrations/new' %>
+      <% end %>
+      <%= render layout: 'modals/mymodal', locals: {modal_id: 'sign_in'} do %>
+        <%= render file: 'devise/sessions/new' %>
+      <% end %>
+    <% end %>
   </div>
 </body>
 </html>
