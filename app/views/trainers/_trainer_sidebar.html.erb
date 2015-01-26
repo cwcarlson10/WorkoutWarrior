@@ -1,18 +1,31 @@
-<div class="trainer-sidebar">
-  <h3 class="sidebar-header">Programs</h3>
-  <ul class="sidebar-list">
-  <%# @programs = Program.all %>
-
-  <% @programs.each do |program| %>
-    <li><%= program.name %></li>
-  <% end %>
-
-  </ul>
-  <h3 class="sidebar-header">Athletes</h3>
-  <ul class="sidebar-list">
-  <%# @athletes = Athlete.all %>
-  <% @athletes.each do |athlete| %>
-    <li><%= athlete.name %></li>
-  <% end %>
-  </ul>
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+      Programs
+    <span class="caret"></span>
+  </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+      <li role="presentation"><%= link_to 'All Programs', programs_path %></li>
+      <li role="presentation" class="divider"></li>
+      <li role="presentation"><%= link_to 'New Program', new_program_path %></li>
+      <li role="presentation" class="divider"></li>
+      <li role="presentation"><% @programs.each do |program| %>
+        <%= link_to program.name, program_path(program) %>
+        <% end %></li>
+    </ul>
 </div>
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+      Athletes
+    <span class="caret"></span>
+  </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation"><%= link_to 'All Athletes', trainer_athletes_path %></li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation"><%= link_to 'Add an Athlete', athletes_path %></li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation"><% @athletes.uniq.each do |athlete| %>
+          <%= link_to athlete.name, athlete_path(athlete) %>
+        <% end %></li>
+      </ul>
+  </div>
+
