@@ -10,7 +10,7 @@
 
 .body-background::after {
   content: "";
-  background-image: url(weight-plates.jpg);
+  background: image-url('weight-plates.jpg');
   opacity: 0.4;
   top: 0;
   left: 0;
