@@ -1,11 +1,12 @@
 <%= simple_form_for @program do |f| %>
 
-  <div id="program_name_div">
-    <div style="float: left;">
-      <%= f.input :name %>
+  <div class="row" id="program_name_div">
+    <div class="col-md-8" style="float: left;">
+      <%= f.input :name, placeholder: 'Name of the Program' %>
     </div>
-    <div id="athlete_selector">
-      Athlete: <%= f.collection_select 'athlete_ids', @trainer.athletes, :id, :name, {}, { name: 'athlete_ids[]', multiple: true} %>
+    <div class="col-md-4" id="athlete_selector">
+      <%= f.label 'Athlete(s)' %>
+      <%= f.collection_select 'athlete_ids', @trainer.athletes, :id, :name, {}, { name: 'athlete_ids[]', multiple: true, id: 'program-athlete-select-box', remote: true } %>
     </div>
   </div>
 
@@ -18,5 +19,5 @@
     <span class="links"><%= link_to_add_association 'Add an Exercise', f, :routines, class: 'btn btn-success', :onclick => 'myselect()' %></span>
 
 
-  <%= f.submit %>
+  <%= f.submit class: 'btn btn-primary pull-right' %>
 <% end %>

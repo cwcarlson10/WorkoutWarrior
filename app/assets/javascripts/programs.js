@@ -6,6 +6,8 @@ var myselect = function() {
     });
     var this_id = ids[ids.length -1];
     console.log(this_id);
-    $('#'+this_id).select2();
+    $('#'+this_id).select2({
+      placeholder: "Select or Type an Exercise"
+    });
   });
 };
