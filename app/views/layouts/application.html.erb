@@ -7,27 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
   <div class='body-background img-responsive' alt='Responsive image'>
-  <script>
-  // $(document).ready(function(){
-
-  //   window.fbAsyncInit = function() {
-  //     FB.init({
-  //       appId      : '1602584136628254',
-  //       xfbml      : true,
-  //       version    : 'v2.2'
-  //     });
-  //   };
-
-  //   (function(d, s, id){
-  //      var js, fjs = d.getElementsByTagName(s)[0];
-  //      if (d.getElementById(id)) {return;}
-  //      js = d.createElement(s); js.id = id;
-  //      js.src = "//connect.facebook.net/en_US/sdk.js";
-  //      fjs.parentNode.insertBefore(js, fjs);
-  //    }(document, 'script', 'facebook-jssdk'));
-  // });
-  </script>
 
   <%= render 'layouts/navbar' %>
   <% if notice %><div class="notice alert-success text-center"><%= notice %></div><% end %>

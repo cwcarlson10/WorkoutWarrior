@@ -27,6 +27,8 @@ class ProgramsController < ApplicationController
 
   def update
     if @program.update_attributes(program_params)
+    @program.athletes << Athlete.find(program_params[:athlete_id])
+
       redirect_to program_path
     else
       render :edit
@@ -36,6 +38,25 @@ class ProgramsController < ApplicationController
   def destroy
     @program.destroy
     redirect_to programs_url
+  end
+
+  def program_athletes
+    @athletes = @trainer.athletes
+    @program = Program.find(params[:id])
+  end
+
+  def add_athlete_to_program
+    @program = Program.find(params[:id])
+    athlete = Athlete.find(params[:athlete_id])
+    @program.athletes <<  athlete
+        # binding.pry
+    @program.save
+      redirect_to program_path
+  end
+
+  def remove_athlete_from_program
+    @program.athletes.find(params[:id])
+    redirect_to program_path
   end
 
   private

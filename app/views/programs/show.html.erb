@@ -9,7 +9,7 @@
   <div class='row'>
     <% @program.routines.each do |r| %>
       <div class='panel panel-default col-md-12'>
-    <!--   <%= @program.athletes.name %> -->
+      <%= @program.athletes.name %>
         <div class='panel-heading'>
           <%= r.exercise.title %>
         </div>
@@ -36,6 +36,10 @@
     <div class='col-md-12'>
       <%= link_to "Edit", edit_program_path(@program), class: 'btn btn-danger btn-xs' %>
     </div>
+    <% end %>
+    <%= link_to "Edit", edit_program_path(@program), class: 'btn btn-info btn-xs' %>
+    <%= link_to "Add Athlete to Program", program_athletes_path(@program), class: 'btn btn-info btn-xs' %>
+    <%= link_to "Remove Athlete from Program", edit_program_path(@program), class: 'btn btn-info btn-xs' %>
   </div>
 
   <div class='row'>
@@ -56,6 +60,5 @@
     </div>
   </div>
   </div>
-    <% end %>
   </div>
 </body>

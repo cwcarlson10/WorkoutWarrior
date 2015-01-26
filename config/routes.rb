@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   get '/about', to: 'static_pages#about', as: :about
   get '/role', to: 'static_pages#role', as: :role
 
+  get '/programs/:id/athletes', to: 'programs#program_athletes', as: :program_athletes
+
+  put '/programs/:id', to: 'programs#add_athlete_to_program', as: :assign_to_program
+  delete '/programs/:id', to: 'programs#remove_athlete_from_program', as: :remove_from_program
+
   resources :users, :only => [:show, :index]
   get '/profile', to: 'users#profile', as: :profile
 
