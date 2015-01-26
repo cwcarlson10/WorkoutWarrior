@@ -6,19 +6,16 @@
       <div class='thumbnail'>
         <h1><%= image_tag("barbell.jpg", class: "img-thumbnail") %><%= link_to "#{program.name}", program_path(program) %></h1>
         <div class='text-center'>
-        <%= link_to 'Edit', edit_program_path(program.id), class: 'btn btn-primary btn-xs' %>
+        <%= link_to 'Edit', edit_program_path(program.id), id: 'edit-project-ajax', class: 'btn btn-primary btn-xs', remote: true %>
         <%= link_to 'Delete', '#', class: 'btn btn-danger btn-xs', method: :delete, data: { confirm: "Are you sure?" } %>
         </div>
       </div>
     </div>
   <% end %>
   </div>
-  <%= link_to 'Create New Program', new_program_path, id: 'new-project-ajax', class: 'btn btn-primary btn-xs', remote: true %>
+  <%= link_to 'Create New Program', new_program_path, id: 'modal-ajax', class: 'btn btn-primary btn-xs', remote: true %>
   <%= link_to 'Back', trainer_path(@trainer.id), class: 'btn btn-default' %>
 
-  <div id="new_program_div">
-  </div>
-
-  <div id="edit_program_div">
+  <div id="modal">
   </div>
 </body>

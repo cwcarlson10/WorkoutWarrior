@@ -1,5 +1,6 @@
-$('#modal').html('<%= j render "new_modal" %>');
-$('#new_program').modal('show');
+console.log('Hit edit program js')
+$('#modal').html('<%= j render "edit_modal" %>');
+$('[id^=edit_program]').modal('show');
 
 $('#program-athlete-select-box').mouseenter( function() {
  $('#program-athlete-select-box').animate({
