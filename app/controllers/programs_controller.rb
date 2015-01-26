@@ -27,7 +27,10 @@ class ProgramsController < ApplicationController
 
   def update
     if @program.update_attributes(program_params)
-    @program.athletes << Athlete.find(program_params[:athlete_id])
+      # Remove empty strings to avoid collection_select issues
+      (params[:athlete_ids] - [""]).each do |athlete_id|
+        @program.athletes << Athlete.find(athlete_id)
+      end
 
       redirect_to program_path
     else
@@ -70,9 +73,5 @@ class ProgramsController < ApplicationController
 
     def program_params
       params.require(:program).permit(:name, :trainer_id, routines_attributes: [:id, :sets, :reps, :duration, :instructions, :exercise_id, :_destroy ])
-    end
-
-    def athlete_ids
-      params.require(:athlete_ids)
     end
 end
