@@ -1,3 +1,15 @@
 $(console.log('Hit me'));
 $('#new_program_div').html('<%= j render "new_modal" %>');
 $('#new_program').modal('show');
+
+$('#program-athlete-select-box').mouseenter( function() {
+ $('#program-athlete-select-box').animate({
+   height: '63px'
+ }, 250 );
+});
+
+$('#program-athlete-select-box').mouseleave( function() {
+ $('#program-athlete-select-box').animate({
+   height: '34px'
+ }, 250 );
+});
