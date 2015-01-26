@@ -4,7 +4,6 @@ class UserTest < ActiveSupport::TestCase
   def setup
     @athlete_user = users(:athlete)
     @trainer_user = users(:trainer)
-
   end
 
   test "trainer should have a user_id" do
