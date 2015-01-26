@@ -27,7 +27,7 @@ class ProgramsController < ApplicationController
 
   def update
     if @program.update_attributes(program_params)
-      # Remove empty string elements and iterate
+      # Remove empty strings to avoid collection_select issues
       (params[:athlete_ids] - [""]).each do |athlete_id|
         @program.athletes << Athlete.find(athlete_id)
       end
