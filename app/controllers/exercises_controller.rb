@@ -17,7 +17,7 @@ class ExercisesController < ApplicationController
         result_hash = HTTParty.get("https://wger.de/api/v2/exercise/?page=#{page}&language=2")
         result_hash['next']
         result_hash['results'].each do |result|
-        Exercise.create!(title: result['name'], description: result['description'])
+          Exercise.create!(title: result['name'], description: result['description'])
         end
         page += 1
       end
