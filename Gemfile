@@ -22,6 +22,7 @@ gem 'cocoon'
 gem 'jquery-turbolinks'
 gem "select2-rails"
 gem 'omniauth-facebook'
+gem 'httparty'
 
 
 
