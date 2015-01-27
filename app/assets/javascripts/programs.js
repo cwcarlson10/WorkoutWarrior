@@ -1,5 +1,4 @@
-var myselect = function() {
-  $('#modal').on('cocoon:after-insert', function(e, addedRoutine) {
+function myselect() {
     console.log("Added routine");
     var ids = $.map($(".program_routines_exercise_id [id]"), function(n, i) {
       return n.id;
@@ -9,5 +8,13 @@ var myselect = function() {
     $('#'+this_id).select2({
       placeholder: "Select or Type an Exercise"
     });
-  });
 };
+
+$(function(){
+  $('#modal').on('shown.bs.modal', function() {
+    myselect();
+  });
+  $('#modal').on('cocoon:after-insert', function(e, addedRoutine) {
+    myselect();
+  });
+});
