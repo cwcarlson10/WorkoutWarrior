@@ -6,7 +6,7 @@
     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
       <li role="presentation"><%= link_to 'All Programs', programs_path %></li>
       <li role="presentation" class="divider"></li>
-      <li role="presentation"><%= link_to 'New Program', new_program_path %></li>
+      <li role="presentation"><%= link_to 'New Program', new_program_path, id: 'new-program-ajax', remote: true %></li>
       <li role="presentation" class="divider"></li>
       <li role="presentation"><% @programs.each do |program| %>
         <%= link_to program.name, program_path(program) %>
@@ -27,5 +27,8 @@
           <%= link_to athlete.name, athlete_path(athlete) %>
         <% end %></li>
       </ul>
+  </div>
+
+  <div id="modal">
   </div>
 
