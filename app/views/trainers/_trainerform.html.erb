@@ -1,9 +1,9 @@
-<%= simple_form_for(@trainer) do |f| %>
+<%= simple_form_for(@trainer, :remote => true) do |f| %>
   <%= f.input :name %>
   <%= f.input :organization %>
   <%= f.input :certifications %>
   <% if @old_trainer.present? %>
-    <%= f.button :submit, "Update Account" %>
+    <%= f.button :submit, "Update Account", remote: true %>
   <% else %>
     <%= f.button :submit, "Create Account" %>
   <% end %>
