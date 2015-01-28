@@ -36,10 +36,15 @@ class TrainersController < ApplicationController
 
   def update
     @trainer.update_attributes(trainer_params)
-    if @trainer.save
-      redirect_to @trainer
-    else
-      render :edit
+    respond_to do |format|
+      format.html {
+        if @trainer.save
+          redirect_to @trainer
+        else
+          render :edit
+        end
+      }
+      format.js
     end
   end
 
