@@ -38,6 +38,10 @@ class ProgramsController < ApplicationController
     end
   end
 
+  def athlete_ids
+   params.require(:athlete_ids)
+ end
+
   def destroy
     @program.destroy
     redirect_to programs_url
