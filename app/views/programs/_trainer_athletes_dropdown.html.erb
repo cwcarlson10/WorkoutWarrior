@@ -1,0 +1,5 @@
+<% @trainer_athletes.uniq.each do |athlete| %>
+  <li role="presentation" class="ath-list">
+    <%= link_to athlete.name, assign_to_program_path(@program, :athlete_id => athlete), remote: true, method: :put, id: 'add-athlete' %>
+  </li>
+<% end %>
