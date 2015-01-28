@@ -19,3 +19,13 @@ $(document).on('page:change', function(){
     myselect();
   });
 });
+
+$(document).on('click','.remove-button', function(){
+   $(this).parents(".dl-horizontal").hide();
+   console.log("tada");
+});
+
+$(document).on('click','#add-athlete', function(){
+   $(this).parents(".ath-list").hide();
+   console.log("tada");
+});

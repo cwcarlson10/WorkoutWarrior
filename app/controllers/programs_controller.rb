@@ -1,7 +1,10 @@
 class ProgramsController < ApplicationController
+  respond_to :html, :json, :js
   before_action :authenticate_user!
   before_action :set_trainer
-  before_action :set_program, only: [:show, :edit, :update, :destroy]
+  before_action :set_program_athletes, only: [:show, :add_athlete_to_program, :remove_athlete_from_program]
+  before_action :set_trainer_athletes_temp, only: [:show, :add_athlete_to_program, :remove_athlete_from_program]
+  before_action :set_program, only: [:show, :edit, :update, :destroy, :add_athlete_to_program, :remove_athlete_from_program]
 
   def index
     @programs = Program.where(trainer_id: @trainer.id)
@@ -9,6 +12,11 @@ class ProgramsController < ApplicationController
 
   def show
     @athletes = @program.athletes
+    @trainer_athletes = @trainer_athletes - @program_athletes
+      respond_to do |format|
+        format.js
+        format.html
+      end
   end
 
   def new
@@ -28,10 +36,9 @@ class ProgramsController < ApplicationController
   def update
     if @program.update_attributes(program_params)
       # Remove empty strings to avoid collection_select issues
-      (params[:athlete_ids] - [""]).each do |athlete_id|
+      (params[:athlete_ids] - []).each do |athlete_id|
         @program.athletes << Athlete.find(athlete_id)
       end
-
       redirect_to program_path
     else
       render :edit
@@ -39,8 +46,8 @@ class ProgramsController < ApplicationController
   end
 
   def athlete_ids
-   params.require(:athlete_ids)
- end
+    params.require(:athlete_ids)
+  end
 
   def destroy
     @program.destroy
@@ -53,20 +60,33 @@ class ProgramsController < ApplicationController
   end
 
   def add_athlete_to_program
-    @program = Program.find(params[:id])
     athlete = Athlete.find(params[:athlete_id])
-    @program.athletes <<  athlete
-        # binding.pry
-    @program.save
-      redirect_to program_path
+    @program_athletes << athlete
+    @trainer_athletes.delete(athlete)
+    respond_to do |format|
+        format.js
+        format.html
+      end
   end
 
   def remove_athlete_from_program
-    @program.athletes.find(params[:id])
-    redirect_to program_path
+    athlete = Athlete.find(params[:athlete_id])
+    @program_athletes.delete(athlete)
+    @trainer_athletes << athlete
+      redirect_to program_path
   end
 
   private
+
+    def set_program_athletes
+      @program = Program.find(params[:id])
+      @program_athletes = @program.athletes
+    end
+
+    def set_trainer_athletes_temp
+      @trainer_athletes = @trainer.athletes.flatten
+    end
+
     def set_program
       @program = Program.find(params[:id])
     end
