@@ -18,9 +18,11 @@
           </p></li>
         </ul>
       <div class="row" id="button-toolbar">
-        <%= link_to 'Edit Profile', edit_trainer_path(@trainer.id), class: 'btn btn-danger' %>
+        <%= link_to 'Edit Profile', edit_trainer_path(@trainer.id), class: 'btn btn-danger', remote: true %>
       </div>
     </div><!-- /.col-xs-12 main -->
     </div><!--/.row-->
   </div><!--/.container-->
 </div><!--/.page-container-->
+<div id="mymodal">
+</div>

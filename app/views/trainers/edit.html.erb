@@ -1,7 +1,3 @@
-<%= render layout: 'modals/mymodal', locals: {modal_id: 'trainer', backdrop: 'static', keyboard: 'false'} do %>
-  <h4>Edit Profile</h4>
-  <%= render 'trainerform' %>
-  <%= link_to 'Cancel', trainer_path(@trainer.id) %>
-<% end %>
-<script type="text/javascript">$('#trainer').modal("show");</script>
-
+<h4>Edit Profile</h4>
+<%= render 'trainerform' %>
+<%= link_to 'Cancel', trainer_path(@trainer.id) %>
