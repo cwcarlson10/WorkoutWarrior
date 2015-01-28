@@ -6,6 +6,11 @@
   <% end %>
 
   <h1><%= @program.name %></h1>
+    <% if current_user.trainer? %>
+    <div class='col-md-12'>
+      <%= link_to "Edit", edit_program_path(@program), class: 'btn btn-danger btn-xs' %>
+    </div>
+    <% end %>
   <div class='row'>
     <% @program.routines.each do |r| %>
       <div class='panel panel-default col-md-12'>
@@ -39,33 +44,30 @@
       </div>
       <div>
     <% end %>
-    <% if current_user.trainer? %>
-    <div class='col-md-12'>
-      <%= link_to "Edit", edit_program_path(@program), class: 'btn btn-danger btn-xs' %>
-    </div>
-    <% end %>
-    <%= link_to "Edit", edit_program_path(@program), class: 'btn btn-info btn-xs' %>
-    <%= link_to "Add Athlete to Program", program_athletes_path(@program), class: 'btn btn-info btn-xs' %>
-    <%= link_to "Remove Athlete from Program", edit_program_path(@program), class: 'btn btn-info btn-xs' %>
   </div>
 
   <div class='row'>
-  <div class='panel panel-default col-md-6'>
-    <div class='panel-heading'>
-      <h3 class='text-center'>Athletes Assigned to this Program</h3>
+    <div class='panel panel-default col-md-6'>
+      <div class='panel-heading'>
+        <h3 class='text-center'>Athletes Assigned to this Program</h3>
+      </div>
+      <div class="row">
+        <div class="col-md-8 panel-body" id="prog-athlete-list">
+          <%= render 'program_athlete_list', program_athletes: @program_athletes, program: @program %>
+        </div>
+        <div class="col-md-4">
+          <div class="dropup">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+              Add an Athlete
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation" class="dropdown-header">My Athletes</li>
+              <%= render 'trainer_athletes_dropdown', locals: { @trainer_athletes => @trainer_athletes, @program => @program } %>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class='panel-body'>
-      <% @athletes.each do |athlete| %>
-        <dl class='dl-horizontal'>
-          <dt>Name:</dt>
-          <dd>
-            <%= athlete.name %>
-            <%= link_to "Profile", athlete_path(athlete), class: 'btn btn-danger btn-xs' %>
-          </dd>
-        </dl>
-      <% end %>
-    </div>
-  </div>
-  </div>
   </div>
 </body>
