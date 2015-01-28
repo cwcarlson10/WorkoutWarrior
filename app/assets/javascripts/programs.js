@@ -10,7 +10,8 @@ function myselect() {
     });
 };
 
-$(function(){
+$(document).on('page:change', function(){
+  console.log('hit page:change');
   $('#modal').on('shown.bs.modal', function() {
     myselect();
   });
