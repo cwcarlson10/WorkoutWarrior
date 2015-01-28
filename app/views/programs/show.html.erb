@@ -9,24 +9,31 @@
   <div class='row'>
     <% @program.routines.each do |r| %>
       <div class='panel panel-default col-md-12'>
-      <%= @program.athletes.name %>
         <div class='panel-heading'>
-          <%= r.exercise.title %>
+         <h3 class='text-center'><%= r.exercise.title %></h3>
         </div>
         <div class='panel-body'>
           <dl class= 'dl-horizontal'>
+          <% if r.exercise.description.present? %>
             <dt>Description:</dt>
             <dd><%= r.exercise.description %></dd>
-          <% unless r.exercise.category == 'Cardio' %>
+          <% end %>
+          <% if r.sets.present? %>
             <dt>Sets:</dt>
             <dd><%= r.sets %></dd>
+          <% end %>
+          <% if r.reps.present? %>
             <dt>Reps:</dt>
             <dd><%= r.reps %></dd>
           <% end %>
+          <% if r.duration.present? %>
             <dt>Duration:</dt>
             <dd><%= r.duration %></dd>
+          <% if r.instructions.present? %>
+          <% end %>
             <dt>Instructions:</dt>
             <dd><%= r.instructions %></dd>
+          <% end %>
           </dl>
         </div>
       </div>
