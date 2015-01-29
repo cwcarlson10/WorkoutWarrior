@@ -9,7 +9,7 @@ namespace :exercise_info do
 
       result_hash['next']
       result_hash['results'].each do |result|
-        Exercise.create!(title: result['name'], description: result['description'])
+        Exercise.create!(title: result['name'], description: result['description'], category: result['category'])
       end
       page += 1
     end
