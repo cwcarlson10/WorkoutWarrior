@@ -36,10 +36,15 @@ class AthletesController < ApplicationController
 
   def update
     @athlete.update_attributes(athlete_params)
-    if @athlete.save
-      redirect_to @athlete
-    else
-      render :edit
+    respond_to do |format|
+      format.html {
+        if @athlete.save
+          redirect_to @athlete
+        else
+          render :edit
+        end
+      }
+      format.js
     end
   end
 
