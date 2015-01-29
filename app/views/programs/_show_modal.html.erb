@@ -1,0 +1,15 @@
+<!-- Modal -->
+<div class="modal fade" id="show_program" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-size">
+    <div class="modal-content">
+      <div class="modal-header text-center" id="edit-program-header"><strong>Build A Program</strong>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <% if notice %><div class="notice"><%= notice %></div><% end %>
+        <% if alert %><div class="alert"><%= alert %></div><% end %>
+        <%= render file: 'programs/show.html.erb' %>
+      </div>
+    </div>
+  </div>
+</div>
