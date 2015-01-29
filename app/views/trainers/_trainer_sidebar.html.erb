@@ -4,7 +4,8 @@
     <span class="caret"></span>
   </button>
     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-      <li role="presentation"><%= link_to 'All Programs', programs_path %></li>
+      <li role="presentation"><%= link_to 'All Programs', programs_path,
+        remote: true %></li>
       <li role="presentation" class="divider"></li>
       <li role="presentation"><%= link_to 'New Program', new_program_path, id: 'new-program-ajax', remote: true %></li>
       <li role="presentation" class="divider"></li>
