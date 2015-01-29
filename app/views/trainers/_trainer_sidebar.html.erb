@@ -10,7 +10,7 @@
       <li role="presentation"><%= link_to 'New Program', new_program_path, id: 'new-program-ajax', remote: true %></li>
       <li role="presentation" class="divider"></li>
       <li role="presentation"><% @programs.each do |program| %>
-        <%= link_to program.name, program_path(program) %>
+        <%= link_to program.name, program_path(program), remote: true %>
         <% end %></li>
     </ul>
 </div>
