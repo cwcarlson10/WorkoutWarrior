@@ -1,0 +1,12 @@
+<div id="program-athlete-list-items">
+  <% @program_athletes.uniq.each do |athlete| %>
+    <dl class='dl-horizontal'>
+      <dt>Name:</dt>
+      <dd>
+        <%= athlete.name %>
+        <%= link_to "Profile", athlete_path(athlete), class: 'btn btn-danger btn-xs' %>
+        <%= link_to "Remove", remove_from_program_path(program, :athlete_id => athlete.id), remote: true, class: 'btn btn-danger btn-xs remove-button' %>
+      </dd>
+    </dl>
+  <% end %>
+</div>

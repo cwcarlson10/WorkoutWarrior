@@ -1,7 +1,7 @@
 <ul style="list-style-type:none;">
 <% @athletes.each do |athlete| %>
   <li><%= link_to athlete.name, athlete_path(athlete) %></li>
-  <%= link_to 'Add Athlete', assign_to_program_path(@program, :athlete_id => athlete), method: :put, class: 'btn btn-default' %>
+  <%= link_to 'Add Athlete', assign_to_program_path(@program, :athlete_id => athlete), remote: true, method: :put, class: 'btn btn-default' %>
 <% end %>
 
 </ul>
