@@ -7,9 +7,9 @@
 
   <h1><%= @program.name %></h1>
     <% if current_user.trainer? %>
-    <div class='col-md-12'>
-      <%= link_to "Edit", edit_program_path(@program), class: 'btn btn-danger btn-xs' %>
-    </div>
+      <div class='col-md-12'>
+        <%= link_to "Edit", edit_program_path(@program), class: 'btn btn-danger btn-xs' %>
+      </div>
     <% end %>
   <div class='row'>
     <% @program.routines.each do |r| %>
@@ -34,18 +34,19 @@
           <% if r.duration.present? %>
             <dt>Duration:</dt>
             <dd><%= r.duration %></dd>
-          <% if r.instructions.present? %>
           <% end %>
+          <% if r.instructions.present? %>
             <dt>Instructions:</dt>
             <dd><%= r.instructions %></dd>
           <% end %>
           </dl>
         </div>
-      </div>
-      <div>
     <% end %>
-  </div>
-
+      </div>
+    <div class="completed">
+      <%= link_to "Completed", activity_path(activity), method: :patch, class: 'btn btn-danger' %>
+    </div>
+  <% if current_user.trainer? %>
   <div class='row'>
     <div class='panel panel-default col-md-6'>
       <div class='panel-heading'>
@@ -70,4 +71,5 @@
       </div>
     </div>
   </div>
+  <% end %>
 </body>
