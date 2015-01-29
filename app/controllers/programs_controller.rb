@@ -3,7 +3,6 @@ class ProgramsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_trainer
   before_action :set_program_athletes, only: [:show, :add_athlete_to_program, :remove_athlete_from_program]
-  before_action :set_trainer_athletes_temp, only: [:show, :add_athlete_to_program, :remove_athlete_from_program]
   before_action :set_program, only: [:show, :edit, :update, :destroy, :add_athlete_to_program, :remove_athlete_from_program]
 
   def index
@@ -12,11 +11,14 @@ class ProgramsController < ApplicationController
 
   def show
     @athletes = @program.athletes
+    if current_user.trainer
+    @trainer_athletes = @trainer.athletes.flatten
     @trainer_athletes = @trainer_athletes - @program_athletes
       respond_to do |format|
         format.js
         format.html
       end
+    end
   end
 
   def new
@@ -62,6 +64,7 @@ class ProgramsController < ApplicationController
   def add_athlete_to_program
     athlete = Athlete.find(params[:athlete_id])
     @program_athletes << athlete
+    @trainer_athletes = @trainer.athletes.flatten
     @trainer_athletes.delete(athlete)
     respond_to do |format|
         format.js
@@ -72,6 +75,7 @@ class ProgramsController < ApplicationController
   def remove_athlete_from_program
     athlete = Athlete.find(params[:athlete_id])
     @program_athletes.delete(athlete)
+    @trainer_athletes = @trainer.athletes.flatten
     @trainer_athletes << athlete
       redirect_to program_path
   end
@@ -81,10 +85,6 @@ class ProgramsController < ApplicationController
     def set_program_athletes
       @program = Program.find(params[:id])
       @program_athletes = @program.athletes
-    end
-
-    def set_trainer_athletes_temp
-      @trainer_athletes = @trainer.athletes.flatten
     end
 
     def set_program
