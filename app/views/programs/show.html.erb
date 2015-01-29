@@ -21,7 +21,7 @@
           <dl class= 'dl-horizontal'>
           <% if r.exercise.description.present? %>
             <dt>Description:</dt>
-            <dd><%= r.exercise.description %></dd>
+            <dd><%= r.exercise.description.html_safe %></dd>
           <% end %>
           <% if r.sets.present? %>
             <dt>Sets:</dt>
