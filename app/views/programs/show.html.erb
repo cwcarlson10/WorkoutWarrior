@@ -9,56 +9,58 @@
   <div class='row'>
     <% @program.routines.each do |r| %>
       <div class='panel panel-default col-md-12'>
-      <%= @program.athletes.name %>
         <div class='panel-heading'>
           <%= r.exercise.title %>
         </div>
         <div class='panel-body'>
           <dl class= 'dl-horizontal'>
             <dt>Description:</dt>
-            <dd><%= r.exercise.description %></dd>
-          <% unless r.exercise.category == 'Cardio' %>
+              <dd><%= r.exercise.description.html_safe %></dd>
+                <% unless r.exercise.category == 'Cardio' %>
             <dt>Sets:</dt>
-            <dd><%= r.sets %></dd>
+              <dd><%= r.sets %></dd>
             <dt>Reps:</dt>
-            <dd><%= r.reps %></dd>
-          <% end %>
+              <dd><%= r.reps %></dd>
+              <% end %>
             <dt>Duration:</dt>
-            <dd><%= r.duration %></dd>
+              <dd><%= r.duration %></dd>
             <dt>Instructions:</dt>
-            <dd><%= r.instructions %></dd>
+              <dd><%= r.instructions %></dd>
           </dl>
         </div>
-      </div>
-      <div>
-    <% end %>
-    <% if current_user.trainer? %>
-    <div class='col-md-12'>
-      <%= link_to "Edit", edit_program_path(@program), class: 'btn btn-danger btn-xs' %>
     </div>
     <% end %>
-    <%= link_to "Edit", edit_program_path(@program), class: 'btn btn-info btn-xs' %>
-    <%= link_to "Add Athlete to Program", program_athletes_path(@program), class: 'btn btn-info btn-xs' %>
-    <%= link_to "Remove Athlete from Program", edit_program_path(@program), class: 'btn btn-info btn-xs' %>
-  </div>
+    <div class="completed"><%= link_to "Completed", activity_path(activity), method: :patch, class: 'btn btn-danger' %>
+    </div>
 
-  <div class='row'>
-  <div class='panel panel-default col-md-6'>
-    <div class='panel-heading'>
-      <h3 class='text-center'>Athletes Assigned to this Program</h3>
-    </div>
-    <div class='panel-body'>
-      <% @athletes.each do |athlete| %>
-        <dl class='dl-horizontal'>
-          <dt>Name:</dt>
-          <dd>
-            <%= athlete.name %>
-            <%= link_to "Profile", athlete_path(athlete), class: 'btn btn-danger btn-xs' %>
-          </dd>
-        </dl>
+    <div>
+      <% if current_user.trainer? %>
+        <div class='col-md-12'>
+          <%= link_to "Edit", edit_program_path(@program), class: 'btn btn-danger btn-xs' %>
+        </div>
+          <%= link_to "Edit", edit_program_path(@program), class: 'btn btn-info btn-xs' %>
+          <%= link_to "Add Athlete to Program", program_athletes_path(@program), class: 'btn btn-info btn-xs' %>
+          <%= link_to "Remove Athlete from Program", edit_program_path(@program), class: 'btn btn-info btn-xs' %>
+      </div>
+
+      <div class='row'>
+        <div class='panel panel-default col-md-6'>
+          <div class='panel-heading'>
+            <h3 class='text-center'>Athletes Assigned to this Program</h3>
+          </div>
+          <div class='panel-body'>
+            <% @athletes.each do |athlete| %>
+            <dl class='dl-horizontal'>
+              <dt>Name:</dt>
+              <dd>
+                <%= athlete.name %>
+                <%= link_to "Profile", athlete_path(athlete), class: 'btn btn-danger btn-xs' %>
+              </dd>
+            </dl>
+            <% end %>
       <% end %>
+        </div>
+      </div>
     </div>
-  </div>
-  </div>
   </div>
 </body>

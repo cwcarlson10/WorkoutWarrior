@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations', :omniauth_callbacks => "users/omniauth_callbacks"  }
 
-  get '/exercises' => 'exercises#index'
-
   get '/about', to: 'static_pages#about', as: :about
   get '/role', to: 'static_pages#role', as: :role
 
@@ -19,10 +17,11 @@ Rails.application.routes.draw do
     resources :routines
   end
 
+  resources :activities
+
   patch '/assign_trainer', to: 'athletes#assign_trainer', as: :assign_trainer
 
   resources :trainers, :athletes
-
   get 'my_athletes/:id', to: 'trainers#trainer_athletes', as: :trainer_athletes
 
   root 'static_pages#home'
