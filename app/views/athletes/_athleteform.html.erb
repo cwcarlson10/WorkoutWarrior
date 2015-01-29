@@ -1,8 +1,15 @@
-<%= simple_form_for(@athlete, remote: true) do |f| %>
+<% if @old_athlete.present? %>
+  <% remote_flag = true %>
+  <% button_text = "Update Account" %>
+<% else %>
+  <% remote_flag = false %>
+  <% button_text = "Create User" %>
+<% end %>
+<%= simple_form_for(@athlete, remote: remote_flag) do |f| %>
   <%= f.input :name %>
   <% if @old_athlete.present? %>
-    <%= f.button :submit, "Update Account", remote: true %>
+    <%= f.button :submit, button_text %>
   <% else %>
-    <%= f.button :submit, "Create Account" %>
+    <%= f.button :submit, button_text %>
   <% end %>
 <% end %>
