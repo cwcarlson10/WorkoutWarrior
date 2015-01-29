@@ -1,16 +1,10 @@
-<h1> <%= @athlete.name %> </h1>
-<% if @athlete.trainer %>
-  <h2> (My Trainer is <%= @athlete.trainer.name %>) </h2>
-<% end %>
-
-<div class="profile-info">
-  <p>I am an athlete and I know nothing.</p>
-  <p class="personal-info">Here goes some stuff about me</p>
+<div class='athlete-profile'>
+  <%= render 'athlete_show' %>
 </div>
 
 <div>
   <% if current_user.athlete? %>
-    <%= link_to 'Edit Profile', edit_athlete_path(@athlete.id), class: 'btn btn-danger' %></div>
+    <%= link_to 'Edit Profile', edit_athlete_path(@athlete.id), class: 'btn btn-danger', remote: true %></div>
   <% end %>
 </div>
 <div>
@@ -30,5 +24,8 @@
       </ul>
     <% end %>
   </div>
+</div>
+
+<div id='athlete-modal'>
 </div>
 
