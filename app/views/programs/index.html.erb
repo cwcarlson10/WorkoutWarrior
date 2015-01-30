@@ -14,6 +14,6 @@
   <% end %>
   </div>
   <%= link_to 'Create New Program', new_program_path, id: 'new-program-ajax', class: 'btn btn-primary btn-xs', remote: true %>
-  <%= link_to 'Back', trainer_path(@trainer.id), class: 'btn btn-default' %>
+  <%= link_to 'Back', back_path, class: 'btn btn-default back-button', remote: true %>
 
 </div>
