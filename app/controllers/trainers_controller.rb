@@ -1,10 +1,10 @@
 class TrainersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_trainer, only: [:edit, :update, :destroy, :trainer_athletes]
+  before_action :set_trainer, only: [:show, :edit, :update, :destroy, :trainer_athletes, :assign_trainer]
 
   def show
-    @trainer = Trainer.find(params[:id])
     @programs = @trainer.programs
+    @trainer_athletes = @trainer.athletes
     @athletes =
       @programs.map do |program|
         program.athletes
@@ -48,13 +48,23 @@ class TrainersController < ApplicationController
     end
   end
 
+  def assign_trainer
+    @athlete = Athlete.find(params[:athlete_id])
+    @athlete.trainer_id = params[:trainer_id]
+    @athlete.save
+      respond_to do |format|
+        format.js
+        format.html {redirect_to trainer_athletes_path(params[:trainer_id]) }
+      end
+  end
+
   def destroy
     @trainer.delete
     redirect_to root_path
   end
 
   def trainer_athletes
-    @athletes = @trainer.athletes
+    @trainer_athletes = @trainer.athletes
   end
 
   def back_button

@@ -53,13 +53,6 @@ class AthletesController < ApplicationController
     redirect_to root_path
   end
 
-  def assign_trainer
-    @athlete = Athlete.find(params[:athlete_id])
-    @athlete.trainer_id = params[:trainer_id]
-    @athlete.save
-      redirect_to trainer_athletes_path(params[:trainer_id])
-  end
-
   private
 
     def athlete_params
