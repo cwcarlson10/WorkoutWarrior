@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   resources :activities
 
-  patch '/assign_trainer', to: 'athletes#assign_trainer', as: :assign_trainer
+  put '/assign_trainer', to: 'trainers#assign_trainer', as: :assign_trainer
 
   resources :trainers, :athletes
   get 'my_athletes/:id', to: 'trainers#trainer_athletes', as: :trainer_athletes
