@@ -1,5 +1,7 @@
 <div class="programs-div">
   <h1>Programs</h1>
+  <%= link_to 'Create New Program', new_program_path, id: 'new-program-ajax', class: 'btn btn-primary btn-xs', remote: true %>
+  <%= link_to 'Back', back_path, class: 'btn btn-default', remote: true %>
   <div class='row'>
   <% @programs.each do |program| %>
     <div class='col-md-6'>
@@ -13,7 +15,4 @@
     </div>
   <% end %>
   </div>
-  <%= link_to 'Create New Program', new_program_path, id: 'new-program-ajax', class: 'btn btn-primary btn-xs', remote: true %>
-  <%= link_to 'Back', back_path, class: 'btn btn-default back-button', remote: true %>
-
 </div>

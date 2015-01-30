@@ -1,6 +1,6 @@
 <ul class='list-group'>
   <h2 class='text-center'>My Athlete List</h2>
-  <% @athletes.each do |athlete| %>
+  <% @trainer_athletes.each do |athlete| %>
     <li class='list-group-item'>
       <h4><%= link_to athlete.name, athlete_path(athlete) %></h4>
     </li>
