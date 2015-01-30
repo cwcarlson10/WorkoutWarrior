@@ -4,7 +4,7 @@
     <span class="caret"></span>
   </button>
     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-      <li role="presentation"><%= link_to 'All Programs', programs_path %></li>
+      <li role="presentation"><%= link_to 'All Programs', programs_path, remote: true %></li>
       <li role="presentation" class="divider"></li>
       <li role="presentation"><%= link_to 'New Program', new_program_path, id: 'new-program-ajax', remote: true %></li>
       <li role="presentation" class="divider"></li>
@@ -28,15 +28,14 @@
         <ul class="dropdown-menu">
         <li role="presentation" class="dropdown-header">Athletes</li>
           <% @unassigned_athletes.each do |athlete| %>
-          <li role="presentation" id="sidebar-add-athlete-list"><%= link_to athlete.name, assign_trainer_path(trainer_id: current_user.trainer.id, athlete_id: athlete.id ), id: "sidebar-athlete-link", class: "btn btn-default", id: "sidebar-popover-athlete-li", remote: true, method: :put %></li>
+          <li role="presentation" id="sidebar-add-athlete-list">
+            <%= link_to athlete.name, assign_trainer_path(athlete_id: athlete.id, trainer_id: current_user.trainer.id), id: "sidebar-popover-athlete-li", class: "btn btn-default", remote: true, method: :put %></li>
           <% end %>
         </ul>
       </li>
 
       <li role="presentation" class="divider"></li>
-
-      <%= render partial: 'sidebar_athlete_list' %>
-
+      <%= render partial: 'trainers/sidebar_athlete_list', locals: {:trainer_athletes => (trainer_athletes)} %>
     </ul>
 </div>
 
