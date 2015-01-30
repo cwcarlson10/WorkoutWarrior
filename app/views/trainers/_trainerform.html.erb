@@ -1,4 +1,11 @@
-<%= simple_form_for(@trainer, :remote => true) do |f| %>
+<% if @old_trainer.present? %>
+  <% remote_flag = true %>
+  <% button_text = "Update Account" %>
+<% else %>
+  <% remote_flag = false %>
+  <% button_text = "Create User" %>
+<% end %>
+<%= simple_form_for(@trainer, remote: remote_flag) do |f| %>
   <%= f.input :name %>
   <%= f.input :organization %>
   <%= f.input :certifications %>

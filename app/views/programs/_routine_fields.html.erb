@@ -4,10 +4,13 @@
     <div class="col-md-6"><%= f.input :exercise_id, :collection => @exercises, :label_method => :title, :value_method => :id, :label => "Exercises", id: "categories-div" %></div>
     <div class="col-md-2" id="sets"><%= f.input :sets, placeholder: '# of Sets' %></div>
     <div class="col-md-2" id="reps"><%= f.input :reps, placeholder: '# of Reps' %></div>
-    <div class="col-md-2"><%= f.input :duration, placeholder: 'Lenghth of the Exercise' %></div>
+    <div class="col-md-2"><%= f.input :weight, placeholder: 'Lbs' %></div>
   </div>
   <div class='row'>
-    <div class="col-md-12"><%= f.input :instructions, placeholder: 'Special Instructions for the Exercise' %></div>
+    <div class="col-md-6"><%= f.input :instructions, placeholder: 'Special Instructions for the Exercise' %></div>
+    <div class="col-md-3"><%= f.input :duration, placeholder: 'Exercise Duration' %></div>
+    <div class="col-md-3"><%= f.input :rest, placeholder: 'Rest Time', label: 'Rest Time' %></div>
+
   </div>
   <%= link_to_remove_association "remove exercise", f, class: 'btn btn-danger btn-xs' %>
 </div>

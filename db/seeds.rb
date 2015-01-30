@@ -1,5 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+
 5.times do |n|
   email = "trainer#{n+1}@mail.com"
   password = "password"
@@ -18,6 +19,7 @@ users.each_with_index do |user, i|
   Trainer.create!(name: @trainer_names[i], organization: "N/A",
                  certifications: "Lots", user_id: user.id)
 end
+
 
 22.times do |n|
   email = "athlete#{n+1}@mail.com"
