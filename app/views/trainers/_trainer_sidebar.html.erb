@@ -4,8 +4,7 @@
     <span class="caret"></span>
   </button>
     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-      <li role="presentation"><%= link_to 'All Programs', programs_path,
-        remote: true %></li>
+      <li role="presentation"><%= link_to 'All Programs', programs_path %></li>
       <li role="presentation" class="divider"></li>
       <li role="presentation"><%= link_to 'New Program', new_program_path, id: 'new-program-ajax', remote: true %></li>
       <li role="presentation" class="divider"></li>
@@ -14,18 +13,32 @@
         <% end %></li>
     </ul>
 </div>
-<div class="dropdown">
+<div class="dropdown" id="myDropdown">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
       Athletes
     <span class="caret"></span>
   </button>
-    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dLabel">
       <li role="presentation"><%= link_to 'All Athletes', trainer_athletes_path %></li>
       <li role="presentation" class="divider"></li>
-      <li role="presentation"><%= link_to 'Add an Athlete', athletes_path %></li>
+
+      <li class="dropdown-submenu">
+
+        <a tabindex="-1" href="#">Add an Athlete</a>
+        <ul class="dropdown-menu">
+        <li role="presentation" class="dropdown-header">Athletes</li>
+          <% @unassigned_athletes.each do |athlete| %>
+          <li role="presentation" id="sidebar-add-athlete-list"><%= link_to athlete.name, assign_trainer_path(trainer_id: current_user.trainer.id, athlete_id: athlete.id ), id: "sidebar-athlete-link", class: "btn btn-default", id: "sidebar-popover-athlete-li", remote: true, method: :put %></li>
+          <% end %>
+        </ul>
+      </li>
+
       <li role="presentation" class="divider"></li>
-      <li role="presentation"><% @athletes.uniq.each do |athlete| %>
-        <%= link_to athlete.name, athlete_path(athlete) %>
-      <% end %></li>
+
+      <%= render partial: 'sidebar_athlete_list' %>
+
     </ul>
+</div>
+
+<div id="modal">
 </div>

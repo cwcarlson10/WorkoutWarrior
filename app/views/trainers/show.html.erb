@@ -3,7 +3,10 @@
     <div class="row row-offcanvas row-offcanvas-left">
     <!-- sidebar -->
     <div class="col-xs-6 col-sm-3 sidebar" id="sidebar" role="navigation">
-      <%= render 'trainer_sidebar', locals: {programs: @programs, athletes: @athletes } %>
+      <%= render partial: 'trainer_sidebar', locals: { programs: @programs,
+                                                       athletes: @athletes,
+                                                       unassigned_athletes: @unassigned_athletes,
+                                                       trainer_athletes: @trainer_athletes } %>
     </div>
     <!-- main area -->
     <div class="col-xs-12 col-sm-9">
@@ -13,6 +16,8 @@
     </div><!-- /.col-xs-12 main -->
     </div><!--/.row-->
   </div><!--/.container-->
+
 </div><!--/.page-container-->
 <div id="modal">
+
 </div>

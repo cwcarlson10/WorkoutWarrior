@@ -70,7 +70,7 @@
               Add an Athlete
               <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <ul class="dropdown-menu" id="trainer-athletes-for-program" role="menu" aria-labelledby="dropdownMenu1">
               <li role="presentation" class="dropdown-header">My Athletes</li>
               <%= render 'trainer_athletes_dropdown', locals: { @trainer_athletes => @trainer_athletes, @program => @program } %>
             </ul>
