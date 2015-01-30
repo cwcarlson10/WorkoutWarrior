@@ -1,5 +1,4 @@
-<%= simple_form_for @program do |f| %>
-
+<%= simple_form_for @program, url: programs_path, method: :post, remote: true do |f| %>
   <div class="row" id="program_name_div">
     <div class="col-md-8" style="float: left;">
       <%= f.input :name, placeholder: 'Name of the Program' %>

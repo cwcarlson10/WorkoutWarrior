@@ -26,4 +26,5 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
+  get 'back', to: 'trainers#back_button'
 end
