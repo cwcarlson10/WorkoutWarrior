@@ -1,84 +1,46 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+5.times do |n|
+  email = "trainer#{n+1}@mail.com"
+  password = "password"
+  password_confirmation = "password"
+  User.create!(email: email, password: password, password_confirmation: password_confirmation)
+end
 
+@trainer_names = ["Mac", "Joe", "Mark", "Chris", "Thornton"]
+@athlete_names = ["Margie", "Joey", "will", "Sarah", "Thomas", "Bobby", "Blake", "Carson", "George", "Clara", "Christina", "Greg", "Laura", "Max", "Dude", "Joon", "Paul", "Derek", "Conrad", "Craig", "Nick", "Amanda"]
+@program_names = ["First", "Second", "Third", "Fourth"]
 
-lower_body = ['Squats', 'Lunges', 'Calf Raises', 'Glute Kick-Back']
-upper_body = ['Pull-ups', 'Bench Press', 'Rows', 'Push-ups']
-core = ['Leg Lifts', 'Sit-Ups', 'Russian Twists', 'Plank']
-cardio = ['Running', 'Elyptical', 'Jump Rope', 'Stair Climber']
+users = User.where(:role => 0)
 
-lower_body.each do |e|
-  Exercise.find_or_create_by(title: e) do |exercise| 
-  	exercise.category = 'Lower Body'
+users.each_with_index do |user, i|
+  user.update_attributes(:role => 2)
+  Trainer.create!(name: @trainer_names[i], organization: "N/A",
+                 certifications: "Lots", user_id: user.id)
+end
+
+22.times do |n|
+  email = "athlete#{n+1}@mail.com"
+  password = "password"
+  User.create!(email: email, password: password, password_confirmation: password)
+end
+
+users = User.where(:role => 0)
+
+users.each_with_index do |user, i|
+  user.update_attributes(:role => 1)
+  Athlete.create!(name: @athlete_names[i], user_id: user.id)
+end
+
+Trainer.all.each_with_index do |trainer, i|
+  4.times do |n|
+    n = 1
+    Program.create!(name: " #{@program_names[i]} Program", trainer_id: trainer.id)
   end
 end
 
-upper_body.each do |e|
-  Exercise.find_or_create_by(title: e) do |exercise| 
-  	exercise.category = 'Upper Body'
+Program.all.each do |program|
+  4.times do |n|
+    program.routines.push Routine.create(exercise: Exercise.all.sample, sets: 3, reps: 3)
   end
 end
-
-core.each do |e|
-  Exercise.find_or_create_by(title: e) do |exercise| 
-  	exercise.category = 'Core'
-  end
-end
-
-cardio.each do |e|
-  Exercise.find_or_create_by(title: e) do |exercise|
-  	exercise.category = 'Cardio'
-  end
-end
-
-User.create! :email => 'doug@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
-User.create! :email => 'dave@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
-User.create! :email => 'sam@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
-User.create! :email => 'evan@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
-User.create! :email => 'nicholas@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
-User.create! :email => 'kevin@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
-User.create! :email => 'chris@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
-User.create! :email => 'sarah@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
-User.create! :email => 'alice@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
-User.create! :email => 'peter@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
-
-users = User.all
-
-(0..4).each do |id|
-  users[id].update_attribute(:role, 2)
-  Trainer.create(name: users[id].email.split('@')[0], organization: "none",
-                 certifications: "none", user_id: users[id].id)
-end
-
-(5..9).each do |id|
-  users[id].update_attribute(:role, 1)
-  Athlete.create(name: users[id].email.split('@')[0], user_id: users[id].id)
-end
-
-@program1 = Program.new(name: 'First Program')
-@program2 = Program.new(name: 'Second Program')
-@program1.trainer_id = Trainer.first.user_id
-@program2.trainer_id = Trainer.first.user_id
-@routine1 = Routine.create(exercise: Exercise.find(1), sets: 3, reps: 3)
-@routine2 = Routine.create(exercise: Exercise.find(2), sets: 3, reps: 3)
-@routine3 = Routine.create(exercise: Exercise.find(3), sets: 3, reps: 3)
-@routine4 = Routine.create(exercise: Exercise.find(4), sets: 3, reps: 3)
-@routine5 = Routine.create(exercise: Exercise.find(5), sets: 3, reps: 3)
-@routine6 = Routine.create(exercise: Exercise.find(6), sets: 3, reps: 3)
-@routine7 = Routine.create(exercise: Exercise.find(7), sets: 3, reps: 3)
-@routine8 = Routine.create(exercise: Exercise.find(8), sets: 3, reps: 3)
-@program1.routines.push @routine1
-@program1.routines.push @routine2
-@program1.routines.push @routine3
-@program1.routines.push @routine4
-@program2.routines.push @routine5
-@program2.routines.push @routine6
-@program2.routines.push @routine7
-@program2.routines.push @routine8
-@program1.save
-@program2.save
