@@ -26,10 +26,14 @@ class ProgramsController < ApplicationController
   end
 
   def create
+    @programs = Program.where(trainer_id: @trainer.id)
     @program = @trainer.programs.build(program_params)
     @program.athletes = Athlete.where(id: athlete_ids)
     if @program.save
-      redirect_to programs_path
+      respond_to do |format|
+        format.js
+        format.html {redirect_to @trainer}
+      end
     else
       render :new
     end

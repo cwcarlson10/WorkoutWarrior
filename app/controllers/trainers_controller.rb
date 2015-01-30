@@ -57,6 +57,13 @@ class TrainersController < ApplicationController
     @athletes = @trainer.athletes
   end
 
+  def back_button
+    @trainer = Trainer.find(current_user.id)
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
     def trainer_params
       params.require(:trainer).permit(:name, :organization, :certifications, :user_id)
