@@ -4,7 +4,7 @@
 
 <div>
   <% if current_user.athlete? %>
-    <%= link_to 'Edit Profile', edit_athlete_path(@athlete.id), class: 'btn btn-danger', remote: true %></div>
+    <%= link_to 'Edit Profile', edit_athlete_path(@athlete.id), class: 'btn btn-danger', remote: true %>
   <% end %>
 </div>
 <div>
@@ -12,6 +12,7 @@
       <%= link_to 'Add', assign_trainer_path(athlete_id: @athlete.id, trainer_id: current_user.trainer.id), class: 'btn btn-default', method: :patch %>
   <% elsif current_user.trainer? %>
       <%= link_to 'Back', trainer_path(@trainer), class: 'btn btn-danger' %>
+      <%= link_to 'Remove Athlete', '#', class: 'btn btn-danger' %>
   <% end %>
 </div>
 
