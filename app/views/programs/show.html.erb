@@ -15,7 +15,7 @@
     <% @program.routines.each do |r| %>
       <div class='panel panel-default col-md-12'>
         <div class='panel-heading'>
-         <h3 class='text-center'><%= r.exercise.title %></h3>
+         <h3 class='text-center'><%= r.exercise.title.upcase %></h3>
         </div>
         <div class='panel-body'>
           <dl class= 'dl-horizontal'>
