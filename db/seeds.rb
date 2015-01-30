@@ -34,8 +34,7 @@ end
 
 Trainer.all.each_with_index do |trainer, i|
   4.times do |n|
-    n = 1
-    Program.create!(name: " #{@program_names[i]} Program", trainer_id: trainer.id)
+    Program.create!(name: " #{@program_names[n+=1]} Program", trainer_id: trainer.id)
   end
 end
 
