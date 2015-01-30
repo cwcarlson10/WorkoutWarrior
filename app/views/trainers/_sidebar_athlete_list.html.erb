@@ -1,0 +1,3 @@
+<li role="presentation" id="sidebar-trainer-athletes"><% current_user.trainer.athletes.order(:name).uniq.each do |athlete| %>
+  <%= link_to athlete.name, athlete_path(athlete) %>
+<% end %></li>
