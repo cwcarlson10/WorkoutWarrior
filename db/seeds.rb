@@ -7,34 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-lower_body = ['Squats', 'Lunges', 'Calf Raises', 'Glute Kick-Back']
-upper_body = ['Pull-ups', 'Bench Press', 'Rows', 'Push-ups']
-core = ['Leg Lifts', 'Sit-Ups', 'Russian Twists', 'Plank']
-cardio = ['Running', 'Elyptical', 'Jump Rope', 'Stair Climber']
-
-lower_body.each do |e|
-  Exercise.find_or_create_by(title: e) do |exercise| 
-  	exercise.category = 'Lower Body'
-  end
-end
-
-upper_body.each do |e|
-  Exercise.find_or_create_by(title: e) do |exercise| 
-  	exercise.category = 'Upper Body'
-  end
-end
-
-core.each do |e|
-  Exercise.find_or_create_by(title: e) do |exercise| 
-  	exercise.category = 'Core'
-  end
-end
-
-cardio.each do |e|
-  Exercise.find_or_create_by(title: e) do |exercise|
-  	exercise.category = 'Cardio'
-  end
-end
 
 User.create! :email => 'doug@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'
 User.create! :email => 'dave@example.com', :password => 'topsecret', :password_confirmation => 'topsecret'

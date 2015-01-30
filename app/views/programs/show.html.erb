@@ -31,6 +31,14 @@
             <dt>Reps:</dt>
             <dd><%= r.reps %></dd>
           <% end %>
+          <% if r.weight.present? %>
+            <dt>Weight:</dt>
+            <dd><%= r.weight %></dd>
+          <% end %>
+          <% if r.rest.present? %>
+            <dt>Rest Time:</dt>
+            <dd><%= r.rest %></dd>
+          <% end %>
           <% if r.duration.present? %>
             <dt>Duration:</dt>
             <dd><%= r.duration %></dd>
