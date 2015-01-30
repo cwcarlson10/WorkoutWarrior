@@ -1,6 +1,9 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
+# TO EFECTIVELY USE THIS SEED FILE YOU MUST IMPORT THE EXERCISES
+# SO ROUTINES CAN BE BUILT WITH THEM
+
 5.times do |n|
   email = "trainer#{n+1}@mail.com"
   password = "password"
