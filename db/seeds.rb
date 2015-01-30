@@ -40,6 +40,6 @@ end
 
 Program.all.each do |program|
   4.times do |n|
-    program.routines.push Routine.create(exercise: Exercise.all.sample, sets: 3, reps: 3)
+    program.routines << (Routine.create(exercise: Exercise.all.sample, sets: 3, reps: 3))
   end
 end
