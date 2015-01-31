@@ -31,14 +31,6 @@
             <dt>Reps:</dt>
             <dd><%= r.reps %></dd>
           <% end %>
-          <% if r.weight.present? %>
-            <dt>Weight:</dt>
-            <dd><%= r.weight %></dd>
-          <% end %>
-          <% if r.rest.present? %>
-            <dt>Rest Time:</dt>
-            <dd><%= r.rest %></dd>
-          <% end %>
           <% if r.duration.present? %>
             <dt>Duration:</dt>
             <dd><%= r.duration %></dd>
@@ -52,7 +44,10 @@
     <% end %>
       </div>
     <div class="completed">
-      <%= link_to "Completed", '#' , method: :patch, class: 'btn btn-danger' %>
+      <%= simple_form_for @activity do |f| %>
+        <%= f.input :feedback %>
+      <%= link_to "Completed", '#', class: 'btn btn-danger' %>
+       <% end %>
     </div>
   <% if current_user.trainer? %>
   <div class='row'>

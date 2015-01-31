@@ -1,9 +1,9 @@
 class Program < ActiveRecord::Base
   belongs_to :trainer
-  has_and_belongs_to_many :athletes
   has_many :routines
-  has_many :exercises, through: :routines
   has_many :activities
+  has_many :exercises, through: :routines
+  has_many :athletes, through: :activities
 
   accepts_nested_attributes_for :routines, :reject_if => :all_blank, :allow_destroy => true
 
