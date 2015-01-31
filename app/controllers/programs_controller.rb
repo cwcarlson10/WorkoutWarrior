@@ -10,6 +10,7 @@ class ProgramsController < ApplicationController
   end
 
   def show
+    @activity = Activity.new
     @athletes = @program.athletes
     if current_user.trainer
     @trainer_athletes = @trainer.athletes.flatten
