@@ -22,10 +22,8 @@ $(document).on('page:change', function(){
 
 $(document).on('click','.remove-button', function(){
    $(this).parents(".dl-horizontal").hide();
-   console.log("tada");
 });
 
 $(document).on('click','#add-athlete', function(){
-   $(this).parents(".ath-list").hide();
-   console.log("tada");
+   $(this).parents("#ath-list").hide();
 });

@@ -1,2 +1,2 @@
-$('#program-athlete-list-items').replaceWith("<%= j render 'program_athlete_list', program_athletes: @program_athletes, program: @program %>");
+$('#program-athlete-list-items').replaceWith("<%= j render partial: 'program_athlete_list', locals: { program_athletes: @program_athletes, program: @program } %>");
 
