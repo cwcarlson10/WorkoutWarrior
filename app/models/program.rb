@@ -1,5 +1,6 @@
 class Program < ActiveRecord::Base
   belongs_to :trainer
+  has_and_belongs_to_many :athletes, uniq: true
   has_many :routines
   has_many :activities
   has_many :exercises, through: :routines

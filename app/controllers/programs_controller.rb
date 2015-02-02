@@ -13,7 +13,7 @@ class ProgramsController < ApplicationController
     @activity = @program.activities.build
     @athletes = @program.athletes
     if current_user.trainer
-      @trainer_athletes = @trainer.athletes.flatten
+      @trainer_athletes = @trainer.athletes
       @trainer_athletes = @trainer_athletes - @program_athletes
       respond_to do |format|
         format.js
@@ -30,7 +30,7 @@ class ProgramsController < ApplicationController
     @programs = Program.where(trainer_id: @trainer.id)
     @program = @trainer.programs.build(program_params)
     @program.athletes = Athlete.where(id: athlete_ids)
-    if @program.save
+    if @program.save!
       respond_to do |format|
         format.js
         format.html {redirect_to programs_path}
@@ -42,11 +42,13 @@ class ProgramsController < ApplicationController
   end
 
   def update
-    if @program.update_attributes(program_params)
+       @program.update_attributes(program_params)
       # Remove empty strings to avoid collection_select issues
-      (params[:athlete_ids] - []).each do |athlete_id|
+     if @program.save
+       (params[:athlete_ids] - []).each do |athlete_id|
+         @program.athletes << Athlete.find(athlete_id) if @program.athletes.empty?
+       end
 
-      end
       redirect_to program_path
     else
       render :edit
@@ -70,7 +72,7 @@ class ProgramsController < ApplicationController
   def add_athlete_to_program
     athlete = Athlete.find(params[:athlete_id])
     @program_athletes << athlete
-    @trainer_athletes = @trainer.athletes.flatten
+    @trainer_athletes = @trainer.athletes.flatten - @program.athletes
     @trainer_athletes.delete(athlete)
     respond_to do |format|
         format.js
@@ -81,9 +83,12 @@ class ProgramsController < ApplicationController
   def remove_athlete_from_program
     athlete = Athlete.find(params[:athlete_id])
     @program_athletes.delete(athlete)
-    @trainer_athletes = @trainer.athletes.flatten
+    @trainer_athletes = @trainer.athletes.flatten - @program.athletes
     @trainer_athletes << athlete
-      redirect_to program_path
+    respond_to do |format|
+        format.js
+        format.html
+      end
   end
 
   private
