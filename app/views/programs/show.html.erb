@@ -1,4 +1,3 @@
-
 <% if current_user.trainer? %>
   <%= link_to "Back", programs_path, class: 'btn btn-danger btn-xs' %>
 <% elsif current_user.athlete? %>
@@ -49,14 +48,19 @@
         <% end %>
         </dl>
       </div>
-  <% end %>
-    </div>
-  <div class="completed">
-    <%= simple_form_for @activity do |f| %>
-      <%= f.input :feedback %>
-    <%= link_to "Completed", '#', class: 'btn btn-danger' %>
-     <% end %>
-  </div>
+    <div class="completed">
+    <% if current_user.athlete? %>
+      <%= simple_form_for @activity do |f| %>
+        <%= f.input :feedback %>
+        <%= f.association :program, value: @program.id, as: :hidden %>
+        <%= f.association :athlete, value: current_user.athlete.id, as: :hidden %>
+        <%= f.input :completed_at, as: :date, start_year: Date.today.year,
+                              end_year: Date.today.year + 12,
+                              order: [:day, :month, :year] %>
+        <%= f.button :submit, 'Completed', class: 'btn btn-danger' %>
+       <% end %>
+    <% end %>
+        </div>
 <% if current_user.trainer? %>
 <div class='row'>
   <div class='panel panel-default col-md-6'>
@@ -85,4 +89,3 @@
   </div>
 </div>
 <% end %>
-
