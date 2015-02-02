@@ -40,11 +40,18 @@
     <% end %>
   </div>
     <div class="completed">
+    <% if current_user.athlete? %>
       <%= simple_form_for @activity do |f| %>
         <%= f.input :feedback %>
-      <%= link_to "Completed", '#', class: 'btn btn-danger' %>
+        <%= f.association :program, value: @program.id, as: :hidden %>
+        <%= f.association :athlete, value: current_user.athlete.id, as: :hidden %>
+        <%= f.input :completed_at, as: :date, start_year: Date.today.year,
+                              end_year: Date.today.year + 12,
+                              order: [:day, :month, :year] %>
+        <%= f.button :submit, 'Completed', class: 'btn btn-danger' %>
        <% end %>
-    </div>
+    <% end %>
+  </div>
   <% if current_user.trainer? %>
   <div class='row'>
     <div class='panel-default col-md-12'>
@@ -74,5 +81,5 @@
       </div>
     </div>
   </div>
-  <% end %>
-</body>
+</div>
+<% end %>

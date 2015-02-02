@@ -10,11 +10,11 @@ class ProgramsController < ApplicationController
   end
 
   def show
-    @activity = Activity.new
+    @activity = @program.activities.build
     @athletes = @program.athletes
     if current_user.trainer
-    @trainer_athletes = @trainer.athletes
-    @trainer_athletes = @trainer_athletes - @program_athletes
+      @trainer_athletes = @trainer.athletes.flatten
+      @trainer_athletes = @trainer_athletes - @program_athletes
       respond_to do |format|
         format.js
         format.html
@@ -33,8 +33,9 @@ class ProgramsController < ApplicationController
     if @program.save!
       respond_to do |format|
         format.js
-        format.html {redirect_to @trainer}
+        format.html {redirect_to programs_path}
       end
+      # redirect_to programs_path
     else
       render :new
     end

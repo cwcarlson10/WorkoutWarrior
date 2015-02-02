@@ -1,4 +1,27 @@
-<h1>StaticPages#about</h1>
-<p>Find me in app/views/static_pages/about.html.erb</p>
+<div class="row">
+  <div class="col-md-12">
+    <h2>What Is Workout Warrior?</h2>
+    <p>Are you tired of handwriting programs for clients? Tired of keeping files? Do you ever wonder if your clients are actually doing the programs successfully? We've got the solution. Workout Warrior is the ultimate tool for trainers to maximize client progress. Use Workout Warrior to create and assign custom workouts for your clients, track their progress and receive feedback to maximize progress and experience.</p>
+    <p>Create an account today (it's free right now!) and change the way you train!</p>
+    <p><%= link_to 'Get Started', new_user_registration_path, class: "btn btn-danger" %></p>
+  </div>
+</div>
 
-<%= link_to 'Programs', programs_path %>
+<div class="row">
+  <div class="col-sm-4">
+    <!-- <img class="img-circle img-responsive img-center" src="images/ninja31.jpg" alt=""> -->
+    <%= image_tag('skinny_kid.gif', class: "img-circle img-responsive img-center", size: '300x300') %>
+    <h2>Help your clients get from this...</h2>
+    <p>These marketing boxes are a great place to put some information. These can contain summaries of what the company does, promotional information, or anything else that is relevant to the company. These will usually be below-the-fold.</p>
+  </div>
+  <div class="col-sm-4">
+    <%= image_tag('work_out.jpg', class: "img-circle img-responsive img-center", size: '300x300') %>
+    <h2>To this...</h2>
+    <p>The images are set to be circular and responsive. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+  </div>
+  <div class="col-sm-4">
+    <%= image_tag('bodybuilder.jpg', class: "img-circle img-responsive img-center", size: '300x300') %>
+    <h2>And ultimately to this!</h2>
+    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+  </div>
+</div>
