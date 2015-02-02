@@ -1,9 +1,13 @@
 <h1> <%= @athlete.name %> </h1>
-<% if @athlete.trainer %>
-  <h2> (My Trainer is <%= @athlete.trainer.name %>) </h2>
-<% end %>
+<div class='row'>
+  <div class='col-md-4'>
+    <div class="athlete-gravatar"><%= gravatar_image_tag(current_user.email, :gravatar => { :size => 300 }) %></div>
+  </div>
 
-<div class="profile-info">
-  <p>I am an athlete and I know nothing.</p>
-  <p class="personal-info">Here goes some stuff about me</p>
+  <div class='col-md-8 well'>
+    <div class="profile-info">
+      <p>I am an athlete and I know nothing.</p>
+      <p class="personal-info">Here goes some stuff about me</p>
+    </div>
+  </div>
 </div>

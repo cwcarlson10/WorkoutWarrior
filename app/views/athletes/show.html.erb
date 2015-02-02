@@ -19,6 +19,9 @@
 <h1>My Programs</h1>
 <div class="panel panel-default container">
   <div class="panel-body">
+  <% if @athlete.trainer %>
+    <h2><u>My Trainer is <%= @athlete.trainer.name %></u></h2>
+  <% end %>
     <% @athlete.programs.each do |program|%>
       <ul style='list-style-type:none;'>
         <li><%= link_to program.name, program_path(program.id), class: 'btn btn-danger' %></li>

@@ -79,6 +79,7 @@ GEM
       railties (>= 3.0.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
+    gravatar_image_tag (1.2.0)
     hashie (3.3.2)
     hike (1.2.3)
     httparty (0.13.3)
@@ -233,6 +234,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_girl_rails
+  gravatar_image_tag
   httparty
   jbuilder (~> 2.0)
   jquery-rails
