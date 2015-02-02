@@ -8,8 +8,8 @@
 <%= simple_form_for(@athlete, remote: remote_flag) do |f| %>
   <%= f.input :name %>
   <% if @old_athlete.present? %>
-    <%= f.button :submit, button_text %>
+      <%= f.button :submit, button_text %>
   <% else %>
-    <%= f.button :submit, button_text %>
+      <%= f.button :submit, button_text %>
   <% end %>
 <% end %>
