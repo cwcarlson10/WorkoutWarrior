@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WorkoutWarrior</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Workout Warrior - The Ultimate Tool for Creating Workouts</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-  <div class='body-background img-responsive' alt='Responsive image'>
+<body class='body-background img-responsive' alt='Responsive image'>
 
   <%= render 'layouts/navbar' %>
   <% if notice %><div class="notice alert-success text-center"><%= notice %></div><% end %>
   <% if alert %><div class="alert alert-success text-center"><%= alert %></div><% end %>
   <div class="container">
     <%= yield %>
-    <!-- <div
-      class="fb-like"
-      data-share="true"
-      data-width="450"
-      data-show-faces="true">
-    </div> -->
 
      </div>
 
@@ -34,6 +32,6 @@
       <% end %>
     <% end %>
   </div>
-  </div>
+
 </body>
 </html>

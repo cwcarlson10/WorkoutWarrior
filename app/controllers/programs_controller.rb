@@ -33,8 +33,9 @@ class ProgramsController < ApplicationController
     if @program.save
       respond_to do |format|
         format.js
-        format.html {redirect_to @trainer}
+        format.html {redirect_to programs_path}
       end
+      # redirect_to programs_path
     else
       render :new
     end
