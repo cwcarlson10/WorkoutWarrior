@@ -5,22 +5,15 @@ class ApplicationController < ActionController::Base
   before_action :unassigned_athletes
 
   def after_sign_in_path_for(resource_or_scope)
-    if current_user.role != 'newuser'
-      @athlete = Athlete.find_by(user_id: @user.id)
-    end
-    if current_user.role != 'newuser'
-      @trainer = Trainer.find_by(user_id: @user.id)
-    end
-    if current_user.role == 'athlete' && @athlete
-      flash[:notice] = "You have been signed in as an athlete!"
+    if current_user.role == 'athlete'
+      @athlete = Athlete.find_by(user_id: current_user.id)
       athlete_path(@athlete)
-    elsif current_user.role == 'trainer' && @trainer
-      flash[:notice] = "You have been signed in as an trainer!"
+    elsif current_user.role == 'trainer'
+      @trainer = Trainer.find_by(user_id: current_user.id)
       trainer_path(@trainer)
     elsif current_user.role == 'newuser'
       flash[:notice] = "Please finish signing up!"
       role_path
-
     end
   end
 
