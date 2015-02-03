@@ -2,14 +2,14 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @athlete = users(:athlete)
-    @trainer = users(:trainer)
+    @athlete = users(:athlete_user_1)
+    @trainer = users(:trainer_user_1)
     @newuser = users(:newuser)
   end
 
   test "should not create user without email" do
-    user = User.new(email: "", password: "passwor",
-                    password_confirmation: "passwor")
+    user = User.new(email: "",
+                    password: "password")
     assert_not user.save
   end
 
@@ -18,40 +18,33 @@ class UserTest < ActiveSupport::TestCase
     assert_not user.save
   end
 
-  test "should not create user without password confirmation" do
+  test "should not create user with password < 8 characters" do
     user = User.new(email: "an@ema.il", password: "passwor")
     assert_not user.save
   end
 
-  test "should not create user with password < 8 characters" do
-    user = User.new(email: "an@ema.il", password: "passwor",
-                    password_confirmation: "passwor")
-    assert_not user.save
-  end
-
   test "should create user" do
-    user = User.new(email: "an@ema.il", password: "password",
-                    password_confirmation: "password")
+    user = User.new(email: "an@ema.il", password: "password")
     assert user.save
   end
 
   test "role 0 should be new" do
     user = User.new(email: "an@ema.il", password: "password",
-                    password_confirmation: "password", role: 0)
+                    role: 0)
     assert user.save
     assert user.role == "newuser"
   end
 
   test "role 1 should be athlete" do
     user = User.new(email: "an@ema.il", password: "password",
-                    password_confirmation: "password", role: 1)
+                    role: 1)
     assert user.save
     assert user.role == "athlete"
   end
 
   test "role 2 should be trainer" do
     user = User.new(email: "an@ema.il", password: "password",
-                    password_confirmation: "password", role: 2)
+                    role: 2)
     assert user.save
     assert user.role == "trainer"
   end
