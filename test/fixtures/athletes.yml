@@ -1,3 +1,4 @@
+
 athlete_1:
   name: Jimbo Connor
   user: athlete_user_1
@@ -12,3 +13,4 @@ athlete_3:
   name: Stacy Martinez
   user: athlete_user_3
   trainer: trainer_2
+
