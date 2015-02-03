@@ -27,5 +27,5 @@ coverage
 # Do not commit .env
 .env
 
-# Ignore secrets
-config/secrets.yml
+# Do not share secret key
+/config/secrets.yml
