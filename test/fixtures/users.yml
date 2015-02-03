@@ -29,7 +29,7 @@ athlete_user_2:
   encrypted_password: <%= BCrypt::Password.create("password", cost: 4) %>
   role: 1
 
-traineruser_1:
+trainer_user_1:
   email: trainer1@example.com
   encrypted_password: <%= BCrypt::Password.create("password", cost: 4) %>
   role: 2

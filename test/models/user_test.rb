@@ -2,24 +2,25 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @athlete = users(:athlete)
-    @trainer = users(:trainer)
+    @athlete = users(:athlete_user_1)
+    @trainer = users(:trainer_user_1)
     @newuser = users(:newuser)
   end
 
   test "should not create user without email" do
-    user = User.new(email: "", password: "passwor",
-                    password_confirmation: "passwor")
+    user = User.new(email: "",
+                    password: "password",
+                    password_confirmation: "password")
     assert_not user.save
   end
 
   test "should not create user with blank password" do
-    user = User.new(email: "an@ema.il")
+    user = User.new(email: "an@ema.il", password_confirmation: "password")
     assert_not user.save
   end
 
   test "should not create user without password confirmation" do
-    user = User.new(email: "an@ema.il", password: "passwor")
+    user = User.new(email: "an@ema.il", password: "password")
     assert_not user.save
   end
 

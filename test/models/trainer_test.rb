@@ -2,8 +2,8 @@ require 'test_helper'
 
 class TrainerTest < ActiveSupport::TestCase
   def setup
-    @athlete_user = users(:athlete)
-    @trainer_user = users(:trainer)
+    @athlete_user = athletes(:athlete_1)
+    @trainer_user = trainers(:trainer_1)
     @trainer = Trainer.new(name: "Test User", user_id: @trainer_user.id)
     @bad_trainer = Trainer.new(name: "Bad Test User", user_id: @athlete_user.id)
   end
