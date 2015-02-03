@@ -1,0 +1,9 @@
+activity_1:
+  athlete: athlete_1
+  program: program_1
+
+activity_2:
+  athlete: athlete_2
+  program: program_1
+  feedback: "A little hard but I completed everything"
+  completed_at: <%= Time.now %>
