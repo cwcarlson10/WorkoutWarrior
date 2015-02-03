@@ -22,6 +22,4 @@ class StaticPagesController < ApplicationController
 
   def role
   end
-
 end
-
