@@ -27,4 +27,8 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  def unassigned_athletes
+    @unassigned_athletes = Athlete.where( :trainer_id => nil )
+  end
 end

@@ -70,7 +70,7 @@ class TrainersController < ApplicationController
   end
 
   def back_button
-    @trainer = Trainer.find(current_user.id)
+    @trainer = Trainer.find(params[:id])
     respond_to do |format|
       format.js
     end
