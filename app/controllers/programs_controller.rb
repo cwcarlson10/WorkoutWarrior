@@ -27,6 +27,7 @@ class ProgramsController < ApplicationController
   end
 
   def create
+    binding.pry
     @programs = Program.where(trainer_id: @trainer.id)
     @program = @trainer.programs.build(program_params)
     @program.athletes = Athlete.where(id: athlete_ids)
