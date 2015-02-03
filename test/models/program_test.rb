@@ -22,8 +22,10 @@ class ProgramTest < ActiveSupport::TestCase
   end
 
   test "Program.routines should return an array" do
+    assert @program.routines.is_a?(ActiveRecord::Associations::CollectionProxy)
   end
 
   test "Program.exercises should return an array" do
+    assert @program.exercises.is_a?(ActiveRecord::Associations::CollectionProxy)
   end
 end
