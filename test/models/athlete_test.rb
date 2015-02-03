@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class UserTest < ActiveSupport::TestCase
+class AthleteTest < ActiveSupport::TestCase
   def setup
     @athlete_user = users(:athlete)
     @athlete = Athlete.create(name: "Test User", user_id: @athlete_user.id)
