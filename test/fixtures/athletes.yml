@@ -1,0 +1,5 @@
+athlete:
+  name: joe
+  user_id: 2
+  trainer_id: nil
+
