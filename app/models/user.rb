@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauth_providers => [:facebook]
 
-
   validate :role, presence: true
 
   enum role: [:newuser, :athlete, :trainer]

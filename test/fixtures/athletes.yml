@@ -1,5 +1,16 @@
-athlete:
-  name: joe
-  user_id: 2
-  trainer_id: nil
+
+athlete_1:
+  name: Jimbo Connor
+  user: athlete_user_1
+  trainer: trainer_1
+
+athlete_2:
+  name: Paul Gitner
+  user: athlete_user_2
+  trainer: trainer_1
+
+athlete_3:
+  name: Stacy Martinez
+  user: athlete_user_3
+  trainer: trainer_2
 

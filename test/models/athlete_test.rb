@@ -1,17 +1,16 @@
 require 'test_helper'
 
-class UserTest < ActiveSupport::TestCase
+class AthleteTest < ActiveSupport::TestCase
   def setup
-    @athlete_user = users(:athlete)
-    @athlete = Athlete.create(name: "Test User", user_id: @athlete_user.id)
-    @trainer_user = users(:trainer)
+    @athlete = athletes(:athlete_1)
+    @trainer_user = users(:trainer_user_1)
     @bad_athlete = Athlete.create(name: "Bad Test User", user_id: @trainer_user.id)
   end
 
   test "athlete should have a user_id" do
-    assert @athlete.valid?
+    assert @athlete.valid?, "Fixture athlete was invalid."
     @athlete.user_id = nil
-    assert_not @athlete.valid?
+    assert_not @athlete.valid?, "Athlete was valid with no user_id."
   end
 
   test "athlete should have a name" do
