@@ -10,9 +10,9 @@
       </button>
       <% if user_signed_in? %>
         <% if current_user.role == "trainer" %>
-          <% @tag == " for Trainers" %>
+          <% @tag = " for Trainers" %>
         <% elsif %>
-          <% @tag == " for Athletes" %>
+          <% @tag = " for Athletes" %>
         <% end %>
       <% else %>
         <% @tag = "" %>
