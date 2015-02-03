@@ -1,11 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyText
-  category: MyString
+exercise_1:
+  title: "Bench Press"
+  description: "For big breasts"
+  category: 1
 
-two:
-  title: MyString
-  description: MyText
-  category: MyString
+exercise_2:
+  title: "Deadlift"
+  description: "For big hams"
+  category: 2
+
+exercise_3:
+  title: "Squat"
+  description: "For big gams"
+  category: 2

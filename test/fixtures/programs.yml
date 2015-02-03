@@ -1,0 +1,7 @@
+program_1:
+  name: "Program 1"
+  trainer: trainer_1
+
+program_2:
+  name: "Program 2"
+  trainer: trainer_2
