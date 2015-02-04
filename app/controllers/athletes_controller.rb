@@ -48,6 +48,14 @@ class AthletesController < ApplicationController
     end
   end
 
+  def remove_from_trainer
+    @athlete = Athlete.find(params[:athlete_id])
+    @trainer = current_user.trainer
+    @athlete.update_attributes(trainer_id: nil)
+    @athlete.save
+    redirect_to trainer_path(current_user.trainer)
+  end
+
   def destroy
     @athlete.delete
     redirect_to root_path
