@@ -17,20 +17,24 @@
   <%= render 'layouts/navbar' %>
   <% if notice %><div class="notice alert-success text-center"><%= notice %></div><% end %>
   <% if alert %><div class="alert alert-success text-center"><%= alert %></div><% end %>
+
   <div class="container">
     <%= yield %>
-
-     </div>
+  </div>
 
   <div>
     <% unless current_user %>
-      <%= render layout: 'modals/mymodal', locals: {modal_id: 'sign_up', backdrop: 'true', keyboard: 'true'} do %>
+      <%= render layout: 'modals/signup_modal', locals: {modal_id: 'sign_up', backdrop: 'true', keyboard: 'true'} do %>
         <%= render file: 'devise/registrations/new' %>
       <% end %>
-      <%= render layout: 'modals/mymodal', locals: {modal_id: 'sign_in', backdrop: 'true', keyboard: 'true'} do %>
+      <%= render layout: 'modals/signin_modal', locals: {modal_id: 'sign_in', backdrop: 'true', keyboard: 'true'} do %>
         <%= render file: 'devise/sessions/new' %>
       <% end %>
     <% end %>
+  </div>
+
+  <div class="modal">
+
   </div>
 
 </body>
