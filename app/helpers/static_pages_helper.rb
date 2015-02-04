@@ -17,4 +17,10 @@ module StaticPagesHelper
     devise_mapping.to
   end
 
+  def get_started
+    if !current_user
+      link_to 'Get Started', new_user_registration_path, class: "btn btn-danger"
+    end
+  end
+
 end
