@@ -61,7 +61,10 @@ class ProgramsController < ApplicationController
 
   def destroy
     @program.destroy
-    redirect_to programs_url
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def program_athletes

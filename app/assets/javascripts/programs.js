@@ -27,3 +27,7 @@ $(document).on('click','.remove-button', function(){
 $(document).on('click','#add-athlete', function(){
    $(this).parents("#ath-list").hide();
 });
+
+$(document).on('click','#delete-program', function(){
+   $(this).parents(".thumbnail").hide();
+});
