@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   put '/add_athlete/:id', to: 'programs#add_athlete_to_program', as: :assign_to_program
   get '/remove_athlete/:id', to: 'programs#remove_athlete_from_program', as: :remove_from_program
 
+
   resources :users, :only => [:show, :index]
   get '/profile', to: 'users#profile', as: :profile
 
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
   resources :activities
 
   put '/assign_trainer/id', to: 'trainers#assign_trainer', as: :assign_trainer
+  put '/unassign_trainer/id', to: 'athletes#remove_from_trainer', as: :remove_from_trainer
 
   resources :trainers, :athletes
   get 'my_athletes/:id', to: 'trainers#trainer_athletes', as: :trainer_athletes

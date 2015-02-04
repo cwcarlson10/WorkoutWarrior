@@ -12,7 +12,7 @@
       <%= link_to 'Add', assign_trainer_path(trainer_id: current_user.trainer.id, athlete_id: @athlete.id ), class: 'btn btn-default', method: :put %>
   <% elsif current_user.trainer? %>
       <%= link_to 'Back', trainer_path(@trainer), class: 'btn btn-danger' %>
-      <%= link_to 'Remove Athlete', '#', class: 'btn btn-danger' %>
+      <%= link_to 'Remove Athlete', remove_from_trainer_path(athlete_id: @athlete.id, trainer_id: current_user.trainer.id), method: :put, class: 'btn btn-danger' %>
   <% end %>
 </div>
 
