@@ -23,4 +23,17 @@ module StaticPagesHelper
     end
   end
 
+  def navbar_app_title
+    if user_signed_in?
+      if current_user.role == "trainer"
+        @tag = " for Trainers"
+      elsif
+        @tag = " for Athletes"
+      end
+    else
+      @tag = ""
+    end
+    link_to "WORKOUT WARRIOR"+ @tag, root_path, class: 'navbar-brand'
+  end
+
 end
