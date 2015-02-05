@@ -15,14 +15,14 @@
 <body>
 
   <%= render 'layouts/navbar' %>
+  <%= render 'static_pages/home_page_image' %>
 
 
   <% if notice %><div class="notice alert-success text-center"><%= notice %></div><% end %>
   <% if alert %><div class="alert alert-success text-center"><%= alert %></div><% end %>
 
-  <div class="container">
+
     <%= yield %>
-  </div>
 
   <div>
     <% unless current_user %>
