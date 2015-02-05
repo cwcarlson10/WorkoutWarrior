@@ -1,8 +1,6 @@
-<div class="profile">
   <h1 class="profile-title"> <%= @trainer.name.titleize %> (<%= current_user.role.capitalize %>)</h1>
   <div class="gravatar"><%= gravatar_image_tag(current_user.email, :gravatar => { :size => 300 }) %></div>
   <!-- <img src="http://www.personaltrainingbusinessschool.com/wp-content/uploads/2010/01/personal-training-business.jpg", alt="Profile Pic", style="width:250px;height:300px"> -->
-  <br>
   <div class="well">
     <ul>
       <li><u>Organization:</u> <%= @trainer.organization %></li>
@@ -12,7 +10,6 @@
       </p></li>
     </ul>
   </div>
-  <div class="row" id="button-toolbar">
+  <div id="button-toolbar">
     <%= link_to 'Edit Profile', edit_trainer_path(@trainer.id), class: 'btn btn-danger', remote: true %>
   </div>
-</div>

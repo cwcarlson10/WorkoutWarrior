@@ -1,27 +1,14 @@
-<div class="page-container home-page-background">
-  <div class="container">
-    <div class="row row-offcanvas row-offcanvas-left">
-    <!-- sidebar -->
 
-    <div class="col-xs-6 col-sm-3 sidebar" id="sidebar" role="navigation">
-      <%= render partial: 'trainer_sidebar', locals: { programs: @programs,
-                                                       athletes: @athletes,
-                                                       unassigned_athletes: @unassigned_athletes,
-                                                       trainer_athletes: @trainer_athletes } %>
-
-    </div>
-    <!-- main area -->
-    <div class="col-xs-12 col-md-9">
-      <div class="content">
-        <%= render "profile_show" %>
-      </div>
-    </div><!-- /.col-xs-12 main -->
-    </div><!--/.row-->
-  </div><!--/.container-->
-
-
-</div><!--/.page-container-->
-<div id="modal">
-
-</div>
-
+<div class="row">
+  <!-- sidebar -->
+  <div class="col-sm-3 sidebar-well">
+    <%= render partial: 'trainer_sidebar', locals: {  programs: @programs,
+                                                      athletes: @athletes,
+                                                      unassigned_athletes: @unassigned_athletes,
+                                                      trainer_athletes: @trainer_athletes } %>
+  </div>
+  <!-- main area -->
+  <div class="col-sm-9">
+    <%= render "profile_show" %>
+  </div><!-- /.col-xs-12 main -->
+</div><!--/.row-->
