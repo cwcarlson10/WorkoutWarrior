@@ -29,9 +29,7 @@
       Athletes
     </a>
     <div class="collapse collapse1" id="athleteExample">
-      <% @trainer.athletes.each do |athlete| %>
-        <%= link_to athlete.name, athlete_path(id: athlete.id) %>
-      <% end %>
+      <%= render partial: 'trainers/sidebar_athlete_list', locals: {:trainer_athletes => (@trainer_athletes)} %>
     </div>
 
 <br>
@@ -41,7 +39,9 @@
     </a>
     <div class="collapse collapse1" id="athleteExample2">
       <% @unassigned_athletes.each do |athlete| %>
-      <%= link_to athlete.name, assign_trainer_path(athlete_id: athlete.id, trainer_id: current_user.trainer.id), remote: true, method: :put %>
+      <span class="sidebar-add-athlete-list">
+        <%= link_to athlete.name, assign_trainer_path(athlete_id: athlete.id, trainer_id: current_user.trainer.id), remote: true, method: :put, id: "newly-assigned-athlete", data: {confirm: "Do you want to add #{athlete.name} to your athletes?"} %>
+      </span>
       <% end %>
     </div>
 
