@@ -24,6 +24,7 @@ gem "select2-rails"
 gem 'omniauth-facebook'
 gem 'httparty'
 gem 'gravatar_image_tag'
+gem 'font-awesome-sass'
 
 
 

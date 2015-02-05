@@ -1,7 +1,7 @@
 <h1> <%= @athlete.name %> </h1>
 <div class='row'>
   <div class='col-md-4'>
-    <div class="athlete-gravatar"><%= gravatar_image_tag(current_user.email, :gravatar => { :size => 300 }) %></div>
+    <div class="athlete-gravatar"><%= gravatar_image_tag(@athlete.user.email, :gravatar => { :size => 300 }) %></div>
   </div>
 
   <div class='col-md-8 well'>
