@@ -2,32 +2,19 @@ html, body {
     margin: 0;
     height: 100%;
 }
-.navbar {
-
-  background-color: #000;
-
-  border-color: #000;
-  border-width: 2px;
-}
 
 .modal-size {
   width: 900px;
 }
 
 .navbar-brand {
-  color: #FFF;
-  font-size: 26px;
-  &:hover {
-    color: #777;
-  }
+  font-size: 32px;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .navbar-nav > li > a {
-  color: #FFF;
-  font-size: 16px;
-  &:hover {
-    color: #777;
-  }
+  font-size: 18px;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .notice {
