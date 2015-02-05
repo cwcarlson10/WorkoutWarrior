@@ -1,42 +1,50 @@
-<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+<div class="trainer-sidebar">
+
+    <a class="link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
       Programs
-    <span class="caret"></span>
-  </button>
-    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-      <li role="presentation"><%= link_to 'All Programs', programs_path, remote: true %></li>
-      <li role="presentation" class="divider"></li>
-      <li role="presentation"><%= link_to 'New Program', new_program_path, id: 'new-program-ajax', remote: true %></li>
-      <li role="presentation" class="divider"></li>
-      <li role="presentation"><% @programs.each do |program| %>
-        <%= link_to program.name, program_path(program), remote: true %>
-        <% end %></li>
-    </ul>
-</div>
-<div class="dropdown" id="myDropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-      Athletes
-    <span class="caret"></span>
-  </button>
-    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dLabel">
-      <li role="presentation"><%= link_to 'All Athletes', trainer_athletes_path %></li>
-      <li role="presentation" class="divider"></li>
+    </a>
+      <div class="collapse collapse1" id="collapseExample">
+        <a class="link" data-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+          All Programs
+        </a>
 
-      <li class="dropdown-submenu">
-
-        <a tabindex="-1" href="#">Add an Athlete</a>
-        <ul class="dropdown-menu">
-        <li role="presentation" class="dropdown-header">Athletes</li>
-          <% @unassigned_athletes.each do |athlete| %>
-          <li role="presentation" id="sidebar-add-athlete-list">
-            <%= link_to athlete.name, assign_trainer_path(athlete_id: athlete.id, trainer_id: current_user.trainer.id), id: "sidebar-popover-athlete-li", class: "btn btn-default", remote: true, method: :put %></li>
+        <div class="collapse collapse2" id="collapseExample1">
+          <% @programs.each do |program| %>
+          <%= link_to program.name, program_path(program), remote: true %>
           <% end %>
-        </ul>
-      </li>
+        </div>
+      </div>
 
-      <li role="presentation" class="divider"></li>
-      <%= render partial: 'trainers/sidebar_athlete_list', locals: {:trainer_athletes => (trainer_athletes)} %>
-    </ul>
+<br>
+
+    <a class="link" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+      <%= link_to 'New Program', new_program_path, id: 'new-program-ajax', remote: true %>
+    </a>
+    <div class="collapse" id="collapseExample2">
+    </div>
+
+<br>
+
+    <a class="link" data-toggle="collapse" href="#athleteExample" aria-expanded="false" aria-controls="athleteExample">
+      Athletes
+    </a>
+    <div class="collapse collapse1" id="athleteExample">
+      <% @trainer.athletes.each do |athlete| %>
+        <%= link_to athlete.name, athlete_path(id: athlete.id) %>
+      <% end %>
+    </div>
+
+<br>
+
+    <a class="link" data-toggle="collapse" href="#athleteExample2" aria-expanded="false" aria-controls="athleteExample2">
+      Add an Athlete
+    </a>
+    <div class="collapse collapse1" id="athleteExample2">
+      <% @unassigned_athletes.each do |athlete| %>
+      <%= link_to athlete.name, assign_trainer_path(athlete_id: athlete.id, trainer_id: current_user.trainer.id), remote: true, method: :put %>
+      <% end %>
+    </div>
+
 </div>
 
 <div id="modal">
