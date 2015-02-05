@@ -7,7 +7,7 @@ html, body {
 
 .navbar {
 
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: #000;
 
 
   border-color: #000;
@@ -51,7 +51,7 @@ html, body {
 
 .business-header {
     height: 400px;
-    background: image-url('training.jpg');
+    background: image-url('fitness-hero.jpg');
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -63,7 +63,22 @@ html, body {
 .tagline {
     text-shadow: 0 0 10px #000;
     color: #fff;
-    font-size: 40px;
+    font-size: 65px;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.home-list {
+  font-size: 38px;
+  font-family: 'Open Sans Condensed', sans-serif;
+
+}
+
+.home-page-tagline-position {
+  top: 70px;
+}
+
+.home-page-tagline-button {
+  top: 135px;
 }
 
 .img-center {
@@ -74,17 +89,17 @@ footer {
     margin: 50px 0;
 }
 
-.body-background::after {
-  content: "";
-  background: image-url('weight-plates.jpg');
-  opacity: 0.4;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: fixed;
-  z-index: -1;
-}
+// .body-background::after {
+//   content: "";
+//   background: image-url('weight-plates.jpg');
+//   opacity: 0.4;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   right: 0;
+//   position: fixed;
+//   z-index: -1;
+
 
 body {
   padding-top: 50px;

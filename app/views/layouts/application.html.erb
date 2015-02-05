@@ -12,9 +12,11 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class='body-background img-responsive' alt='Responsive image'>
+<body>
 
   <%= render 'layouts/navbar' %>
+  <%= render 'static_pages/home_page_image' %>
+
   <% if notice %><div class="notice alert-success text-center"><%= notice %></div><% end %>
   <% if alert %><div class="alert alert-success text-center"><%= alert %></div><% end %>
 
