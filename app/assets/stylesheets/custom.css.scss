@@ -1,18 +1,11 @@
-
 html, body {
     margin: 0;
     height: 100%;
 }
-
-
 .navbar {
-
   background-color: rgba(0, 0, 0, 0.85);
-
-
   border-color: #000;
   border-width: 2px;
-
 }
 
 .modal-size {
@@ -21,18 +14,18 @@ html, body {
 
 .navbar-brand {
   color: #FFF;
+  font-size: 26px;
   &:hover {
     color: #777;
   }
-  font-size: 26px;
 }
 
 .navbar-nav > li > a {
   color: #FFF;
+  font-size: 16px;
   &:hover {
     color: #777;
   }
-  font-size: 16px;
 }
 
 .notice {
@@ -40,12 +33,9 @@ html, body {
   font-size: 16px;
 }
 
-
 #new-program-header {
   font-size: 22px;
 }
-
-
 
 /* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
 
@@ -59,7 +49,6 @@ html, body {
 }
 
 /* Customize the text color and shadow color and to optimize text legibility. */
-
 .tagline {
     text-shadow: 0 0 10px #000;
     color: #fff;
@@ -217,17 +206,27 @@ bootstrap submenu css
   font-size: 20px;
 }
 
-.trainer-sidebar {
+div.trainer-sidebar {
   color: white;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.85);
-  position: relative;
+  /*position: fixed;*/
   margin-top: -6px;
   margin-left: -80px;
-  height: 600px;
+  height: 100%;
   width: 200px;
+  a {
+    color: #ffffff;
+    font-size: 1.1em;
+    display: block;
+    }
+  .collapse1 {
+    text-indent: 5px;
+  }
+  .collapse2 {
+    text-indent: 10px;
+  }
 }
-
 
 #button-toolbar {
     margin-top: 30px;
