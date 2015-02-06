@@ -189,7 +189,7 @@ div.trainer-sidebar {
   padding-bottom: 60px;
   background-color: rgba(0, 0, 0, 0.85);
   position: inherit;
-  margin-left: -85px;
+  margin-left: -70px;
   height: 90vh;
   width: 210px;
   a {
@@ -197,7 +197,7 @@ div.trainer-sidebar {
     font-size: 1.2em;
     display: block;
     white-space: nowrap;
-    overflow-x: scroll;
+    overflow-x: hidden;
   }
 
   a.link {
