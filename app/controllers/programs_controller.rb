@@ -63,7 +63,7 @@ class ProgramsController < ApplicationController
     @program.destroy
     respond_to do |format|
       format.js
-      format.html
+      format.html {redirect_to trainer_path(@trainer)}
     end
   end
 
