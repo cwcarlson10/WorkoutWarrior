@@ -7,6 +7,10 @@
 <% end %>
 <%= simple_form_for(@athlete, remote: remote_flag) do |f| %>
   <%= f.input :name %>
+
+  <%= f.input :bio %>
+
+  <%= f.input :goals %>
   <% if @old_athlete.present? %>
       <%= f.button :submit, button_text, class: 'btn btn-primary' %>
   <% else %>

@@ -2,8 +2,8 @@
   <div class="gravatar"><%= gravatar_image_tag(current_user.email, :gravatar => { :size => 300 }) %></div>
   <!-- <img src="http://www.personaltrainingbusinessschool.com/wp-content/uploads/2010/01/personal-training-business.jpg", alt="Profile Pic", style="width:250px;height:300px"> -->
   <div class="well">
-    <ul>
-      <li><u>Organization:</u> <%= @trainer.organization %></li>
+    <ul class="personal-info">
+      <li ><u>Organization:</u> <%= @trainer.organization %></li>
       <li><u>Certifications:</u> <%= @trainer.certifications %></li>
       <li><p class="personal-info">
         Here goes some stuff about me

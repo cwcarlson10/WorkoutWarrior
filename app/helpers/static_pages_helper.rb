@@ -19,7 +19,7 @@ module StaticPagesHelper
 
   def get_started
     if !current_user
-      link_to 'Get Started', new_user_registration_path, 'data-target' => '#sign_up', 'data-toggle' => 'modal', class: "btn btn-warning btn-lg"
+      link_to 'Get Started', new_user_registration_path, 'data-target' => '#sign_up', 'data-toggle' => 'modal', class: "btn btn-danger btn-lg"
     end
   end
 
