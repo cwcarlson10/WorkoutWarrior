@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations', :omniauth_callbacks => "users/omniauth_callbacks"  }
 
   get '/about', to: 'static_pages#about', as: :about
+  get '/contact', to: 'static_pages#contact', as: :contact
   get '/role', to: 'static_pages#role', as: :role
 
   get '/programs/:id/athletes', to: 'programs#program_athletes', as: :program_athletes
@@ -26,7 +27,8 @@ Rails.application.routes.draw do
   resources :trainers, :athletes
   get 'my_athletes/:id', to: 'trainers#trainer_athletes', as: :trainer_athletes
 
-  root 'static_pages#home'
 
   get 'back', to: 'trainers#back_button'
+
+  root 'static_pages#home'
 end
