@@ -29,3 +29,5 @@ coverage
 
 # Do not share secret key
 /config/secrets.yml
+
+db/schema.rb
