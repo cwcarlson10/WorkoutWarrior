@@ -17,10 +17,10 @@
   <%= render 'layouts/navbar' %>
 
 
-  <div class="container">
+
   <% if notice %><div class="notice alert-default text-center"><%= notice %></div><% end %>
   <% if alert %><div class="alert alert-default text-center"><%= alert %></div><% end %>
-
+  <div class="container">
     <%= yield %>
   </div>
 

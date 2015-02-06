@@ -1,8 +1,10 @@
-<div id="sidebar-trainer-athletes"><% trainer_athletes.order(:name).uniq.each do |athlete| %>
-  <%= link_to athlete.name, athlete_path(athlete) %>
-<% end %></div>
-
-
+<% if trainer_athletes.any? %>
+  <div id="sidebar-trainer-athletes"><% trainer_athletes.order(:name).uniq.each do |athlete| %>
+    <%= link_to athlete.name, athlete_path(athlete) %>
+  <% end %></div>
+<% else %>
+  (Empty)
+<% end %>
 <!-- this is the one kevin had -->
 <!-- <li id="sidebar-trainer-athletes"><%# @trainer.athletes.each do |athlete| %> -->
   <%# link_to athlete.name, athlete_path(id: athlete.id) %>

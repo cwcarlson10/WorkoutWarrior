@@ -1,15 +1,23 @@
-  <h1 class="profile-title"> <%= @trainer.name.titleize %> (<%= current_user.role.capitalize %>)</h1>
-  <div class="gravatar"><%= gravatar_image_tag(current_user.email, :gravatar => { :size => 300 }) %></div>
-  <!-- <img src="http://www.personaltrainingbusinessschool.com/wp-content/uploads/2010/01/personal-training-business.jpg", alt="Profile Pic", style="width:250px;height:300px"> -->
-  <div class="well">
-    <ul class="personal-info">
-      <li ><u>Organization:</u> <%= @trainer.organization %></li>
-      <li><u>Certifications:</u> <%= @trainer.certifications %></li>
-      <li><p class="personal-info">
-        Here goes some stuff about me
-      </p></li>
-    </ul>
+<div class="row profile">
+  <div class="col-sm-5 text-center">
+    <h1 class="profile-title"> <%= @trainer.name.titleize %> (<%= current_user.role.capitalize %>)</h1>
+    <div class="gravatar"><%= gravatar_image_tag(current_user.email, :gravatar => { :size => 300 }) %></div>
+    <!-- <img src="http://www.personaltrainingbusinessschool.com/wp-content/uploads/2010/01/personal-training-business.jpg", alt="Profile Pic", style="width:250px;height:300px"> -->
+    <div id="button-toolbar">
+      <%= link_to 'Edit Profile', edit_trainer_path(@trainer.id), class: 'btn btn-danger', remote: true %>
+    </div>
   </div>
-  <div id="button-toolbar">
-    <%= link_to 'Edit Profile', edit_trainer_path(@trainer.id), class: 'btn btn-danger', remote: true %>
+
+  <div class="col-sm-5">
+    <div class="trainer-personal-info">
+      <ul class="personal-info">
+        <li><u>Organization:</u> <%= @trainer.organization %></li>
+        <li><u>Certifications:</u> <%= @trainer.certifications %></li>
+        <% unless @trainer.bio.nil? %>
+          <li><u>Bio:</u><%= @trainer.bio %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
+</div>
+

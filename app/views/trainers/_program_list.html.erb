@@ -1,0 +1,9 @@
+<span id="trainer-program-list">
+  <% if programs.any? %>
+    <% programs.order(:name).each do |program| %>
+      <%= link_to program.name, program_path(program), remote: true, id: "trainer-sidebar-program-li" %>
+    <% end %>
+  <% else %>
+    (No Programs)
+  <% end %>
+</span>
