@@ -45,7 +45,7 @@ class ProgramsController < ApplicationController
        @program.update_attributes(program_params)
       # Remove empty strings to avoid collection_select issues
      if @program.save
-       (params[:athlete_ids].to_a).each do |athlete_id|
+       (params[:athlete_ids] - [""]).each do |athlete_id|
          @program.athletes << Athlete.find(athlete_id) if @program.athletes.empty?
        end
 
