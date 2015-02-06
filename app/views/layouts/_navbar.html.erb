@@ -15,7 +15,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Home', root_path %></li>
         <li><%= link_to 'About', about_path %></li>
-        <li><%= link_to 'Contact', "#" %></li>
+        <li><%= link_to 'Contact', contact_path %></li>
         <% if current_user %>
           <% if current_user.role == 'trainer' %>
             <li><%= link_to 'Profile', trainer_path(current_user.trainer) %></li>
