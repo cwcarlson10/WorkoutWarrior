@@ -12,7 +12,7 @@
 end
 
 @trainer_names = ["Mac", "Joe", "Mark", "Chris", "Thornton"]
-@athlete_names = ["Margie", "Joey", "will", "Sarah", "Thomas", "Bobby", "Blake", "Carson", "George", "Clara", "Christina", "Greg", "Laura", "Max", "Dude", "Joon", "Paul", "Derek", "Conrad", "Craig", "Nick", "Amanda"]
+@athlete_names = ["Margie", "Joey", "Will", "Sarah", "Thomas", "Bobby", "Blake", "Carson", "George", "Clara", "Christina", "Greg", "Laura", "Max", "Dude", "Joon", "Paul", "Derek", "Conrad", "Craig", "Nick", "Amanda"]
 @program_names = ["First", "Second", "Third", "Fourth"]
 
 users = User.where(:role => 0)

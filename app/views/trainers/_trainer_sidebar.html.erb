@@ -1,48 +1,41 @@
 <div class="trainer-sidebar">
 
-    <a class="link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    <a class="link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample1">
       Programs
     </a>
       <div class="collapse collapse1" id="collapseExample">
-        <a class="link" data-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
-          All Programs
-        </a>
-
-        <div class="collapse collapse2" id="collapseExample1">
-          <% @programs.each do |program| %>
-          <%= link_to program.name, program_path(program), remote: true %>
-          <% end %>
-        </div>
+        <%= render partial: 'trainers/program_list', locals: {:programs => (@programs)} %>
       </div>
 
-<br>
+    <br>
 
     <a class="link" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
       <%= link_to 'New Program', new_program_path, id: 'new-program-ajax', remote: true %>
     </a>
-    <div class="collapse" id="collapseExample2">
-    </div>
 
-<br>
+    <br>
 
     <a class="link" data-toggle="collapse" href="#athleteExample" aria-expanded="false" aria-controls="athleteExample">
       Athletes
     </a>
-    <div class="collapse collapse1" id="athleteExample">
-      <%= render partial: 'trainers/sidebar_athlete_list', locals: {:trainer_athletes => (@trainer_athletes)} %>
-    </div>
-
-<br>
+        <div class="collapse collapse1" id="athleteExample">
+          <%= render partial: 'trainers/sidebar_athlete_list', locals: {:trainer_athletes => (@trainer_athletes)} %>
+        </div>
+    <br>
 
     <a class="link" data-toggle="collapse" href="#athleteExample2" aria-expanded="false" aria-controls="athleteExample2">
       Add an Athlete
     </a>
     <div class="collapse collapse1" id="athleteExample2">
-      <% @unassigned_athletes.each do |athlete| %>
+    <% if @unassigned_athletes.any? %>
+      <% @unassigned_athletes.order(:name).each do |athlete| %>
       <span class="sidebar-add-athlete-list">
-        <%= link_to athlete.name, assign_trainer_path(athlete_id: athlete.id, trainer_id: current_user.trainer.id), remote: true, method: :put, id: "newly-assigned-athlete", data: {confirm: "Do you want to add #{athlete.name} to your athletes?"} %>
+        <%= link_to athlete.name, assign_trainer_path(athlete_id: athlete.id, trainer_id: current_user.trainer.id), remote: true, method: :put, id: "newly-assigned-athlete", data: {confirm: "Are you sure you want to add '#{athlete.name}' to your athletes?"} %>
       </span>
       <% end %>
+    <% else %>
+      (Empty)
+    <% end %>
     </div>
 
 </div>
