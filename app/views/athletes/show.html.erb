@@ -1,12 +1,5 @@
-<div class='athlete-profile'>
-  <%= render 'athlete_show' %>
-</div>
 
-<div>
-  <% if current_user.athlete? %>
-    <%= link_to 'Edit Profile', edit_athlete_path(@athlete.id), class: 'btn btn-danger', remote: true %>
-  <% end %>
-</div>
+  <%= render 'athlete_show' %>
 <div>
   <% if current_user.trainer? && @athlete.trainer_id.nil? %>
       <%= link_to 'Add', assign_trainer_path(trainer_id: current_user.trainer.id, athlete_id: @athlete.id ), class: 'btn btn-default', method: :put %>
@@ -14,20 +7,6 @@
       <%= link_to 'Back', trainer_path(@trainer), class: 'btn btn-danger' %>
       <%= link_to 'Remove Athlete', remove_from_trainer_path(athlete_id: @athlete.id, trainer_id: current_user.trainer.id), method: :put, class: 'btn btn-danger' %>
   <% end %>
-</div>
-
-<h1>My Programs</h1>
-<div class="panel panel-default container">
-  <div class="panel-body">
-  <% if @athlete.trainer %>
-    <h2><u>My Trainer is <%= @athlete.trainer.name %></u></h2>
-  <% end %>
-    <% @athlete.programs.each do |program|%>
-      <ul style='list-style-type:none;'>
-        <li><%= link_to program.name, program_path(program.id), class: 'btn btn-danger' %></li>
-      </ul>
-    <% end %>
-  </div>
 </div>
 
 <div id='athlete-modal'>
