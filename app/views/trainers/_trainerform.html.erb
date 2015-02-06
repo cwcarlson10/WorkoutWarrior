@@ -10,7 +10,11 @@
   <%= f.input :organization %>
   <%= f.input :certifications %>
   <% if @old_trainer.present? %>
+  <%= f.input :bio %>
     <%= f.button :submit, "Update Account", remote: true %>
+    <button class="btn btn-danger btn-md pull-right"  data-dismiss="modal">
+      back
+    </button>
   <% else %>
     <%= f.button :submit, "Create Account" %>
   <% end %>

@@ -1,14 +1,14 @@
 
 <div class="row">
   <!-- sidebar -->
-  <div class="col-sm-3 sidebar-well">
+  <div class="col-md-2 sidebar-well hidden-sm hidden-xs">
     <%= render partial: 'trainer_sidebar', locals: {  programs: @programs,
                                                       athletes: @athletes,
                                                       unassigned_athletes: @unassigned_athletes,
                                                       trainer_athletes: @trainer_athletes } %>
   </div>
   <!-- main area -->
-  <div class="col-sm-9">
+  <div class="col-md-10">
     <%= render "profile_show" %>
   </div><!-- /.col-xs-12 main -->
 </div><!--/.row-->
