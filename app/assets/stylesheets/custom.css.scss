@@ -53,6 +53,7 @@ html, body {
 
 .home-page-tagline-position {
   top: 70px;
+  text-align: center;
 }
 
 .home-page-tagline-button {
@@ -67,21 +68,8 @@ footer {
     margin: 50px 0;
 }
 
-// .body-background::after {
-//   content: "";
-//   background: image-url('weight-plates.jpg');
-//   opacity: 0.4;
-//   top: 0;
-//   left: 0;
-//   bottom: 0;
-//   right: 0;
-//   position: fixed;
-//   z-index: -1;
-
-
 body {
   padding-top: 50px;
-  color:#000;
 }
 
 #program_name {
@@ -111,7 +99,8 @@ body {
 }
 
 h1 {
-  text-align: center;
+  color: #222;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 h2 {
@@ -182,33 +171,6 @@ bootstrap submenu css
 
 /* Trainer Profile Page */
 
-.athlete-gravatar {
-  float: left;
-
-}
-
-.profile-pic {
-  float: left;
-  margin-left: -50px;
-  height: 308px;
-  width: 258px;
-  border: solid black 4px;
-  border-radius: 8px;
-}
-
-.profile-title {
-  margin-left: -35px;
-  text-align: left;
-}
-
-.profile-info {
-  position: relative;
-  margin-top: 100px;
-  float: left;
-  width: 150px;
-  text-align: center;
-  font-size: 20px;
-}
 
 div.trainer-sidebar {
   overflow: auto;
@@ -236,6 +198,26 @@ div.trainer-sidebar {
 #button-toolbar {
     margin-top: 30px;
     margin-left: -53px;
+}
+
+/* Athlete Profile Page */
+
+.personal-info {
+  font-size: 25px;
+  color: #222;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.well {
+  min-height: 300px;
+}
+
+.athlete-gravatar {
+  float: left;
+}
+
+.btn-margin {
+  margin-top: 12px;
 }
 
 /* Exercise */
