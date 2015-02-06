@@ -6,9 +6,9 @@
     <div class='row'>
       <% @programs.each do |program| %>
       <div class='col-md-6'>
-        <div class='thumbnail'>
+        <div class='thumbnail text-center'>
           <h1><%= image_tag("barbell.jpg", class: "img-thumbnail") %><%= link_to "#{program.name}", program_path(program), remote: true %></h1>
-          <div class='text-center'>
+          <div>
           <%= link_to 'Edit', edit_program_path(program.id), id: 'edit-program-ajax', class: 'btn btn-primary btn-xs', remote: true %>
           <%= link_to 'Delete', program_path(program), class: 'btn btn-danger btn-xs', method: :delete, remote: true, id: "delete-program", data: { confirm: "Are you sure?" } %>
           </div>
