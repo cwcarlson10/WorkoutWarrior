@@ -13,12 +13,14 @@ class ExerciseTest < ActiveSupport::TestCase
     assert @exercise.valid?
   end
 
+=begin
   test "An exercise should have a description" do
     @exercise.description = nil
     assert_not @exercise.valid?
     @exercise.description = "Exercise Description"
     assert @exercise.valid?
   end
+=end
 
   test "The exercise model should initialize @categories" do
     @categories = Exercise.categories

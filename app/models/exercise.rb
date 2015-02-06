@@ -3,7 +3,7 @@ class Exercise < ActiveRecord::Base
   has_many :programs, through: :routines
 
   validates :title, presence: true, uniqueness: true
-  validates :description, presence: true
+  #validates :description, presence: true
 
   @categories = ["Upper Body", "Lower Body", "Cardio", "Core"]
 
