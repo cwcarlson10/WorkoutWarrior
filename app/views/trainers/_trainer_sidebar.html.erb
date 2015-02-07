@@ -30,7 +30,8 @@
     <% if @unassigned_athletes.any? %>
       <% @unassigned_athletes.order(:name).each do |athlete| %>
       <span class="sidebar-add-athlete-list">
-        <%= link_to athlete.name, assign_trainer_path(athlete_id: athlete.id, trainer_id: current_user.trainer.id), remote: true, method: :put, id: "newly-assigned-athlete", data: {confirm: "Are you sure you want to add '#{athlete.name}' to your athletes?"} %>
+        <%= link_to athlete.name, athlete_path(athlete) %>
+        <%# link_to athlete.name, assign_trainer_path(athlete_id: athlete.id, trainer_id: current_user.trainer.id), remote: true, method: :put, id: "newly-assigned-athlete", data: {confirm: "Are you sure you want to add '#{athlete.name}' to your athletes?"} %>
       </span>
       <% end %>
     <% else %>
