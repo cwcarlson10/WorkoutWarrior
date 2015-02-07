@@ -56,7 +56,7 @@ class TrainersController < ApplicationController
     @athlete.save!
       respond_to do |format|
         format.js
-        format.html {redirect_to trainer_athletes_path(params[:trainer_id])}
+        format.html {redirect_to trainer_path(params[:trainer_id])}
       end
   end
 
