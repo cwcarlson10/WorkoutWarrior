@@ -21,10 +21,14 @@
   <div class="well col-md-4 well-position-2 personal-info">
 
   <h3 class="text-center">My Programs</h3>
+    <% @temp = Program.new %>
     <% @athlete.programs.each do |program|%>
-      <ul class="fa-ul">
-        <li><i class="fa-li fa fa-bolt"></i><%= link_to program.name, program_path(program.id), class: 'panel' %></li>
-      </ul>
+      <% unless @temp == program %>
+        <ul class="fa-ul">
+          <li><i class="fa-li fa fa-bolt"></i><%= link_to program.name, program_path(program.id), class: 'panel' %></li>
+        </ul>
+        <% @temp = program %>
+      <% end %>
     <% end %>
 
   </div>

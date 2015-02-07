@@ -7,6 +7,16 @@
         <%= link_to "Profile", athlete_path(athlete), class: 'btn btn-danger btn-xs pull-right' %>
         <%= link_to "Remove", remove_from_program_path(program, :athlete_id => athlete.id), remote: true, class: 'btn btn-danger btn-xs remove-button pull-right' %>
       </dd>
+      <dd>
+       <% athlete.activities.each do |a| %>
+        <% if a.program_id == @program.id %>
+          <%= a.completed_at.strftime('%m/%d/%Y') if a.completed_at != nil %>
+      </dd>
+      <dd>
+          <%= a.feedback %>
+      </dd>
+        <% end %>
+      <% end %>
     </dl>
   <% end %>
 </div>

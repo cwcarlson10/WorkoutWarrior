@@ -19,6 +19,8 @@ class ProgramsController < ApplicationController
         format.js
         format.html
       end
+    elsif current_user.athlete
+      @activity.athlete_id = current_user.athlete.id
     end
   end
 
