@@ -49,7 +49,7 @@ class ProgramsControllerTest < ActionController::TestCase
       delete :destroy, id: Program.last.id
     end
     assert_response :redirect
-      assert_redirected_to programs_path
+      assert_redirected_to trainer_path(@trainer.id)
   end
 
   test 'should verify athlete exists' do
