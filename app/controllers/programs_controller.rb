@@ -35,7 +35,7 @@ class ProgramsController < ApplicationController
     if @program.save!
       respond_to do |format|
         format.js
-        format.html {redirect_to programs_path}
+        format.html {redirect_to trainer_path(@trainer)}
       end
       # redirect_to programs_path
     else
