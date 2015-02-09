@@ -269,6 +269,21 @@ dl {
   background-color: #E6E6E6;
 }
 
+/* Contact Page */
+
+#team-members {
+  ul {
+    list-style-type: none;
+    li {
+      padding: 0.2em;
+    }
+  }
+}
+
+#contact-info {
+  padding: 2em;
+}
+
 /*****************
    Sign in/up
 *****************/
