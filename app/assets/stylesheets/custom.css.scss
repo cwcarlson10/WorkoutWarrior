@@ -205,11 +205,15 @@ div.trainer-sidebar {
   }
 
   div.panel-heading {
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: transparent;
+    padding: 0px;
   }
 
   div.panel {
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
   }
 
   a.link {
