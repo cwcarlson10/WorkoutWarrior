@@ -1,5 +1,7 @@
 if (window.location.pathname.contains("athletes")) {
   location.reload();
 }
+else
+  $('#trainer-program-list').replaceWith("<%= j render partial: 'trainers/program_list', locals: {:programs => (@programs)} %>");
 $('#new_program').modal('hide');
 console.log("Hit create program js");
