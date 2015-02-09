@@ -1,43 +1,65 @@
 <div class="trainer-sidebar">
 
-    <a class="link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample1">
-      Programs <span class="caret"></span>
-    </a>
-      <div class="collapse collapse1" id="collapseExample">
-        <%= render partial: 'trainers/program_list', locals: {:programs => (@programs)} %>
+  <a class="link" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+    <%= link_to 'New Program', new_program_path, id: 'new-program-ajax', remote: true %>
+  </a>
+
+  <br>
+
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample1">
+            Programs <span class="caret"></span>
+          </a>
+        </h4>
+      </div>
+      <div class="panel-collapse collapse collapse1" id="collapseExample" aria-labelledby="headingOne">
+        <div class="list-group">
+          <%= render partial: 'trainers/program_list', locals: {:programs => (@programs)} %>
+        </div>
       </div>
 
-    <br>
+      <br>
 
-    <a class="link" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
-      <%= link_to 'New Program', new_program_path, id: 'new-program-ajax', remote: true %>
-    </a>
-
-    <br>
-
-    <a class="link" data-toggle="collapse" href="#athleteExample" aria-expanded="false" aria-controls="athleteExample">
-      Athletes <span class="caret"></span>
-    </a>
-        <div class="collapse collapse1" id="athleteExample">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#athleteExample" aria-expanded="true" aria-controls="athleteExample">
+            Athletes <span class="caret"></span>
+          </a>
+        </h4>
+      </div>
+      <div class="panel-collapse collapse collapse1" id="athleteExample" aria-labelledby="headingTwo">
+        <div class="list-group">
           <%= render partial: 'trainers/sidebar_athlete_list', locals: {:trainer_athletes => (@trainer_athletes)} %>
         </div>
-    <br>
+      </div>
+      <br>
 
-    <a class="link" data-toggle="collapse" href="#athleteExample2" aria-expanded="false" aria-controls="athleteExample2">
-      Add an Athlete <span class="caret"></span>
-    </a>
-    <div class="collapse collapse1" id="athleteExample2">
-    <% if @unassigned_athletes.any? %>
-      <% @unassigned_athletes.order(:name).each do |athlete| %>
-      <span class="sidebar-add-athlete-list">
-        <%= link_to athlete.name, athlete_path(athlete) %>
-        <%# link_to athlete.name, assign_trainer_path(athlete_id: athlete.id, trainer_id: current_user.trainer.id), remote: true, method: :put, id: "newly-assigned-athlete", data: {confirm: "Are you sure you want to add '#{athlete.name}' to your athletes?"} %>
-      </span>
-      <% end %>
-    <% else %>
-      (Empty)
-    <% end %>
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#athleteExample2" aria-expanded="true" aria-controls="athleteExample2">
+            Add an Athlete <span class="caret"></span>
+          </a>
+        </h4>
+      </div>
+      <div class="panel-collapse collapse collapse1" id="athleteExample2" aria-labelledby="headingThree">
+        <div class="list-group">
+          <% if @unassigned_athletes.any? %>
+            <% @unassigned_athletes.order(:name).each do |athlete| %>
+            <span class="sidebar-add-athlete-list">
+              <%= link_to athlete.name, athlete_path(athlete) %>
+              <%# link_to athlete.name, assign_trainer_path(athlete_id: athlete.id, trainer_id: current_user.trainer.id), remote: true, method: :put, id: "newly-assigned-athlete", data: {confirm: "Are you sure you want to add '#{athlete.name}' to your athletes?"} %>
+            </span>
+            <% end %>
+          <% else %>
+            (Empty)
+          <% end %>
+        </div>
+      </div>
     </div>
+  </div>
 
 </div>
 
