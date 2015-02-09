@@ -49,10 +49,10 @@
         <%= f.association :program, value: @program.id, as: :hidden %>
         <%= f.association :athlete, value: current_user.athlete.id, as: :hidden %>
         <%= f.input :completed_at, as: :date, start_year: Date.today.year,
-                              end_year: Date.today.year + 12,
-                              order: [:day, :month, :year] %>
+                                end_year: Date.today.year + 12,
+                                order: [:day, :month, :year] %>
         <%= f.button :submit, 'Completed', class: 'btn btn-danger' %>
-       <% end %>
+      <% end %>
     <% end %>
   </div>
   <% if current_user.trainer? %>
