@@ -28,5 +28,5 @@ coverage
 .env
 
 # Do not share secret key
-/config/secrets.yml
+#/config/secrets.yml
 
