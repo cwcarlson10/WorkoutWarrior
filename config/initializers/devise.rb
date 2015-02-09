@@ -63,7 +63,7 @@ Devise.setup do |config|
 
   # If 401 status code should be returned for AJAX requests. True by default.
   # config.http_authenticatable_on_xhr = true
-  config.secret_key = '37ca1c836f237bec123c789f1595de149c8986a93cd642f5a989dc276ba4aec9c353fd4f66ec2130c4458834ab8951d28639e378ee8c3ef5ad655490b9c290b9'
+   # config.secret_key = '37ca1c836f237bec123c789f1595de149c8986a93cd642f5a989dc276ba4aec9c353fd4f66ec2130c4458834ab8951d28639e378ee8c3ef5ad655490b9c290b9'
   # The realm used in Http Basic Authentication. 'Application' by default.
   # config.http_authentication_realm = 'Application'
 
