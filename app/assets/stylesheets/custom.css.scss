@@ -10,6 +10,9 @@ html, body {
 .navbar-brand {
   font-size: 32px;
   font-family: 'Open Sans Condensed', sans-serif;
+  @media (max-width: 640px) {
+    font-size: 24px;
+  }
 }
 
 .navbar-nav > li > a {
