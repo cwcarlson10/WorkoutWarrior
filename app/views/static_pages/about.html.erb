@@ -22,14 +22,9 @@
   </div>
   <br>
   <div class="row">
+  <% if !current_user %>
     <p>Create an account today, and change the way you train!</p>
     <p><%= link_to 'Get Started', new_user_registration_path, class: "btn btn-danger" %></p>
+  <% end %>
   </div>
 </div>
-
-
-
-
-
-
-

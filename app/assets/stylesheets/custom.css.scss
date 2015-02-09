@@ -190,8 +190,7 @@ bootstrap submenu css
 div.trainer-sidebar {
   overflow: scroll;
   color: white;
-  padding: 25px;
-  padding-bottom: 60px;
+  padding: 25px 10px 60px 30px;
   background-color: rgba(0, 0, 0, 0.85);
   position: inherit;
   margin-left: -70px;
@@ -226,7 +225,7 @@ div.trainer-sidebar {
 .profile-information-divs {
   height: 400px;
   overflow-y: scroll;
-  word-wrap:break-word;
+  word-wrap: break-word;
 }
 
 /* Athlete Profile Page */
