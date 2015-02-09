@@ -27,7 +27,7 @@ module StaticPagesHelper
     if user_signed_in?
       if current_user.role == "trainer"
         @tag = " for Trainers"
-      elsif
+      else
         @tag = " for Athletes"
       end
     else
