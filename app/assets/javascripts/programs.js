@@ -5,7 +5,8 @@ function myselect() {
     });
     var this_id = ids[ids.length -1];
     console.log(this_id);
-    $('#'+this_id).select2({
+    this_id_with_hash = '#'+this_id;
+    $(this_id_with_hash).select2({
       placeholder: "Select or Type an Exercise"
     });
 };
