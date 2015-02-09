@@ -8,10 +8,11 @@
       <%= link_to 'Edit Profile', edit_athlete_path(@athlete.id), class: 'btn btn-danger btn-margin', remote: true %>
   <% end %>
   <div>
-      <%= link_to 'Back', trainer_path(@trainer), class: 'btn btn-danger btn-margin' %>
   <% if current_user.trainer? && @athlete.trainer_id.nil? %>
+      <%= link_to 'Back', trainer_path(@trainer), class: 'btn btn-danger btn-margin' %>
       <%= link_to 'Add', assign_trainer_path(trainer_id: current_user.trainer.id, athlete_id: @athlete.id ), class: 'btn btn-danger btn-margin', method: :put %>
   <% elsif current_user.trainer? %>
+      <%= link_to 'Back', trainer_path(@trainer), class: 'btn btn-danger btn-margin' %>
       <%= link_to 'Remove Athlete', remove_from_trainer_path(athlete_id: @athlete.id, trainer_id: current_user.trainer.id), method: :put, class: 'btn btn-danger btn-margin' %>
        <%= link_to 'New Program', new_program_path, class: 'btn btn-primary btn-margin', remote: true  %>
   <% end %>
