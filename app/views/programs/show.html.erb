@@ -1,6 +1,6 @@
 <body class='home-page-background'>
 
-  <h1><%= @program.name %></h1>
+  <h1 class="text-center"><%= @program.name %></h1>
    <% if current_user.trainer? %>
     <%= link_to "Edit", edit_program_path(@program), class: 'btn btn-danger btn-xs', remote: true %>
     <%= link_to "Delete Program", program_path(@program), class: 'btn btn-danger btn-xs pull-right', method: :delete, data: {confirm: "Are you sure you want to delete this program?"} %>

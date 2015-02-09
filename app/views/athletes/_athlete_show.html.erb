@@ -12,13 +12,14 @@
       <%= link_to 'Back', trainer_path(@trainer), class: 'btn btn-danger btn-margin' %>
       <%= link_to 'Add', assign_trainer_path(trainer_id: current_user.trainer.id, athlete_id: @athlete.id ), class: 'btn btn-danger btn-margin', method: :put %>
   <% elsif current_user.trainer? %>
+      <%= link_to 'Back', trainer_path(@trainer), class: 'btn btn-danger btn-margin' %>
       <%= link_to 'Remove Athlete', remove_from_trainer_path(athlete_id: @athlete.id, trainer_id: current_user.trainer.id), method: :put, class: 'btn btn-danger btn-margin' %>
        <%= link_to 'New Program', new_program_path, class: 'btn btn-primary btn-margin', remote: true  %>
   <% end %>
 </div>
   </div>
 
-  <div class='col-md-4 well-position well'>
+  <div class='col-md-4 well-position well profile-information-divs'>
     <ul class="personal-info">
       <li>Bio: &nbsp;<blockquote><%= @athlete.bio %></blockquote></li>
       <li>Goals: <blockquote><%= @athlete.goals %></blockquote></li>
@@ -27,7 +28,7 @@
       <% end %>
     </ul>
   </div>
-  <div class="well col-md-4 well-position-2 personal-info">
+  <div class="well col-md-4 well-position-2 personal-info  profile-information-divs">
 
   <h3 class="text-center">Programs</h3>
     <% @temp = Program.new %>
