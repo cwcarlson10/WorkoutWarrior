@@ -204,6 +204,14 @@ div.trainer-sidebar {
     overflow-x: hidden;
   }
 
+  div.panel-heading {
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+
+  div.panel {
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+
   a.link {
     font-size: 1.5em;
   }
@@ -267,7 +275,6 @@ div.trainer-sidebar {
 }
 .panel-heading>h3 {
   background-color: #BABABA;
-
 }
 
 dl {
