@@ -5,7 +5,7 @@
       <dd>
         <%= athlete.name %>
         <%= link_to "Profile", athlete_path(athlete), class: 'btn btn-danger btn-xs pull-right' %>
-        <%= link_to "Remove", remove_from_program_path(program, :athlete_id => athlete.id), remote: true, class: 'btn btn-danger btn-xs remove-button pull-right' %>
+        <%= link_to "Remove", remove_from_program_path(program, :athlete_id => athlete.id), remote: true, class: 'btn btn-danger btn-xs remove-button pull-right', data: { confirm: "Are you sure you want to ramove #{athlete.name} from this program?" } %>
       </dd>
       <dd>
        <% athlete.activities.each do |a| %>
