@@ -54,10 +54,11 @@ class TrainersController < ApplicationController
     @trainer_athletes = @trainer.athletes
     @athlete.trainer_id = current_user.trainer.id
     @athlete.save!
-      respond_to do |format|
-        format.js
-        format.html {redirect_to trainer_path(params[:trainer_id])}
-      end
+      # respond_to do |format|
+      #   format.js
+      #   format.html {redirect_to trainer_path(params[:trainer_id])}
+      # end
+      redirect_to @athlete
   end
 
   def destroy
