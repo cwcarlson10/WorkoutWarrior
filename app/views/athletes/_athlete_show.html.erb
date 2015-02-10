@@ -6,6 +6,9 @@
     <% if current_user.athlete? %>
     <br>
       <%= link_to 'Edit Profile', edit_athlete_path(@athlete.id), class: 'btn btn-danger btn-margin', remote: true %>
+      <% if @athlete.trainer %>
+        <%= link_to 'My Trainer', trainer_path(@athlete.trainer), class: 'btn btn-danger btn-margin'%>
+      <% end %>
   <% end %>
   <div>
   <% if current_user.trainer? && @athlete.trainer_id.nil? %>
