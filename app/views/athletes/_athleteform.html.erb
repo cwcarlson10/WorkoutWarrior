@@ -8,11 +8,12 @@
 <%= simple_form_for(@athlete, remote: remote_flag) do |f| %>
   <%= f.input :name %>
 
-  <%= f.input :bio %>
+  <%= f.input :bio, placeholder: "Please include Age and Weight" %>
 
   <%= f.input :goals %>
   <% if @old_athlete.present? %>
       <%= f.button :submit, button_text, class: 'btn btn-primary' %>
+      <%= link_to 'Cancel', athlete_path(@athlete.id), class: "btn btn-danger btn-md" %>
   <% else %>
       <%= f.button :submit, button_text, class: 'btn btn-primary' %>
   <% end %>
