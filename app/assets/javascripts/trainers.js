@@ -3,7 +3,7 @@ $(document).on('click','#newly-assigned-athlete', function(){
    console.log("tada");
 });
 
-$(document).ready(function() {
+$(document).on('page:change', function() {
   $('[data-toggle=offcanvas]').click(function() {
     $('.row-offcanvas').toggleClass('active');
   });
