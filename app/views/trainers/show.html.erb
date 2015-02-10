@@ -22,13 +22,16 @@
 <!-- <div class="row"> -->
   <!-- sidebar -->
 <!-- <div class="container"> -->
+<% if current_user.trainer %>
 <div class="row row-offcanvas row-offcanvas-left">
   <div class="col-xs-6 col-sm-3 sidebar-well sidebar-offcanvas" id="sidebar" role="navigation">
+
     <%= render partial: 'trainer_sidebar', locals: {  programs: @programs,
                                                       athletes: @athletes,
                                                       unassigned_athletes: @unassigned_athletes,
                                                       trainer_athletes: @trainer_athletes } %>
   </div>
+  <% end %>
   <!-- main area -->
   <div class="col-xs-12 col-sm-9 main-content profie-position">
     <%= render "profile_show" %>

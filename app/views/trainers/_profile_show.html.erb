@@ -7,9 +7,13 @@
   <div class="col-md-5 col-sm-5 col-xs-12">
     <div class="gravatar resize"><%= gravatar_image_tag(current_user.email, :gravatar => { :size => 330 }, class: "img-rounded trainer-gravatar") %></div>
     <!-- <img src="http://www.personaltrainingbusinessschool.com/wp-content/uploads/2010/01/personal-training-business.jpg", alt="Profile Pic", style="width:250px;height:300px"> -->
+    <% if current_user.trainer %>
     <div id="button-toolbar">
       <%= link_to 'Edit Profile', edit_trainer_path(@trainer.id), class: 'btn btn-danger', remote: true %>
     </div>
+    <% else %>
+    <%= link_to 'Back', 'javascript:history.go(-1);', class: 'btn btn-danger btn-margin'  %>
+    <% end %>
   </div>
 
   <div class="col-md-5 col-sm-5 col-xs-12 well-position well  profile-information-divs">
