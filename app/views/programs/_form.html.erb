@@ -2,10 +2,10 @@
 <%= simple_form_for(@program, remote: true) do |f| %>
 
   <div class="row" id="program_name_div">
-    <div class="col-md-8" style="float: left;">
+    <div class="col-md-8 col-xs-12" style="float: left;">
       <%= f.input :name, placeholder: 'Name of the Program' %>
     </div>
-    <div class="col-md-4" id="athlete_selector">
+    <div class="col-md-4 col-xs-12" id="athlete_selector">
       <%= f.label 'Athlete(s)' %>
       <%= f.collection_select 'athlete_ids', @trainer.athletes, :id, :name, {}, { name: 'athlete_ids[]', multiple: true, id: 'program-athlete-select-box', remote: true } %>
     </div>
