@@ -74,18 +74,11 @@
         <div class="col-md-1"></div>
         <div class="col-md-4">
           <div class="dropup">
-            <button class="btn btn-default dropdown-toggle" type="button" style="width: 60%" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+            <button class="btn btn-default dropdown-toggle pull-right" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
               Add an Athlete
               <span class="caret"></span>
             </button>
-            <% if current_page?(program_path(@program)) %>
-              <%= link_to 'OK', 'javascript:history.go(-1);', class: "btn btn-success", style: "width: 20%;"  %>
-            <% else %>
-            <button class="btn btn-success close-modal-btn" style="width: 20%;" data-dismiss="modal">
-              OK
-            </button>
-            <% end %>
-              <%= render partial: 'trainer_athletes_dropdown', locals: { :trainer_athletes => (@trainer_athletes), :program => (@program)} %>
+            <%= render partial: 'trainer_athletes_dropdown', locals: { :trainer_athletes => (@trainer_athletes), :program => (@program)} %>
           </div>
         </div>
         <div class="col-md-1"></div>
