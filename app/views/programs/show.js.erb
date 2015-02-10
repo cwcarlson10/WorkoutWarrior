@@ -1,6 +1,10 @@
 $('#modal').html('<%= j render 'show_modal' %>');
 $('[id^=show_program]').modal('show');
-
+$('#back-button-hide').hide();
+$('#back-button-show').toggleClass("hidden");
+// $(document).on('change', function()
+//   $('#back-button-show').hide();
+//   )};
 alert.log('hi');
 
 // var list = $("#trainerAthleteList").html();

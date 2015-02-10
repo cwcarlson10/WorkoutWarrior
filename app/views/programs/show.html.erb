@@ -2,15 +2,10 @@
 
   <h1 class="text-center"><%= @program.name %></h1>
    <% if current_user.trainer? %>
-    <%= link_to "Edit", edit_program_path(@program), class: 'btn btn-danger btn-xs', remote: true %>
+    <%= link_to "Edit", edit_program_path(@program), class: 'btn btn-danger btn-xs pull-right', remote: true %>
     <%= link_to "Delete Program", program_path(@program), class: 'btn btn-danger btn-xs pull-right', method: :delete, data: {confirm: "Are you sure you want to delete this program?"} %>
-    <% if current_page?(program_path(@program)) %>
-      <%= link_to 'Back', 'javascript:history.go(-1);', class: 'btn btn-danger btn-xs' %>
-    <% else %>
-    <button class="btn btn-danger btn-xs"  data-dismiss="modal">
-        Back
-    </button>
-    <% end %>
+    <%= link_to 'Back', 'javascript:history.go(-1);', class: 'btn btn-danger btn-xs', id: "back-button-hide" %>
+    <button class="btn btn-danger btn-xs hidden" id="back-button-show" data-dismiss="modal">Back</button>
   <% elsif current_user.athlete? %>
     <%= link_to 'Back', athlete_path(current_user.athlete), class: 'btn btn-danger btn-xs' %>
   <% end %>
@@ -58,35 +53,7 @@
         <%= f.button :submit, 'Completed', class: 'btn btn-danger' %>
       <% end %>
     <% end %>
-  </div>
-  <% if current_user.trainer? %>
-  <div class='row'>
-    <div class='panel-default col-md-12'>
-      <div class='panel-heading'>
-        <h3 class='text-center'>Athletes Assigned to this Program</h3>
-      </div>
-      <div class="row">
-        <div class="col-md-6 panel-body" id="prog-athlete-list">
 
-        <%= render partial: 'program_athlete_list', locals: { :program_athletes => @program_athletes, :program => @program } %>
-
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-4">
-          <div class="dropup">
-            <button class="btn btn-default dropdown-toggle pull-right" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-              Add an Athlete
-              <span class="caret"></span>
-            </button>
-            <%= render partial: 'trainer_athletes_dropdown', locals: { :trainer_athletes => (@trainer_athletes), :program => (@program)} %>
-          </div>
-        </div>
-        <div class="col-md-1"></div>
-      </div>
-    </div>
-  </div>
-</div>
-<% end %>
 
 
 <div id="modal">
