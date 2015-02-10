@@ -1,14 +1,37 @@
+<div class="page-container">
 
-<div class="row">
+  <!-- top navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top hidden-md hidden-lg" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+             <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+             </button>
+             <%= navbar_app_title %>
+        </div>
+      </div>
+    </div>
+<!-- <div class="row"> -->
   <!-- sidebar -->
-  <div class="col-md-2 sidebar-well hidden-sm hidden-xs">
+<!-- <div class="container"> -->
+<div class="row row-offcanvas row-offcanvas-left">
+  <div class="col-xs-6 col-sm-3 sidebar-well sidebar-offcanvas" id="sidebar" role="navigation">
     <%= render partial: 'trainer_sidebar', locals: {  programs: @programs,
                                                       athletes: @athletes,
                                                       unassigned_athletes: @unassigned_athletes,
                                                       trainer_athletes: @trainer_athletes } %>
   </div>
   <!-- main area -->
-  <div class="col-md-10 main-content profie-position">
+  <div class="col-xs-12 col-sm-9 main-content profie-position">
     <%= render "profile_show" %>
   </div><!-- /.col-xs-12 main -->
 </div><!--/.row-->
+</div>
