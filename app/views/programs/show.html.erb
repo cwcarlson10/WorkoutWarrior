@@ -4,7 +4,7 @@
    <% if current_user.trainer? %>
     <%= link_to "Edit", edit_program_path(@program), class: 'btn btn-danger btn-xs', remote: true %>
     <%= link_to "Delete Program", program_path(@program), class: 'btn btn-danger btn-xs pull-right', method: :delete, data: {confirm: "Are you sure you want to delete this program?"} %>
-    <% if current_page?('/program/') %>
+    <% if current_page?(program_path(@program)) %>
       <%= link_to 'Back', 'javascript:history.go(-1);', class: 'btn btn-danger btn-xs' %>
     <% else %>
     <button class="btn btn-danger btn-xs"  data-dismiss="modal">
@@ -78,9 +78,13 @@
               Add an Athlete
               <span class="caret"></span>
             </button>
+            <% if current_page?(program_path(@program)) %>
+              <%= link_to 'OK', 'javascript:history.go(-1);', class: "btn btn-success", style: "width: 20%;"  %>
+            <% else %>
             <button class="btn btn-success close-modal-btn" style="width: 20%;" data-dismiss="modal">
               OK
             </button>
+            <% end %>
               <%= render partial: 'trainer_athletes_dropdown', locals: { :trainer_athletes => (@trainer_athletes), :program => (@program)} %>
           </div>
         </div>
