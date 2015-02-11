@@ -19,14 +19,6 @@ class ProgramsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "it should post create" do
-    sign_in @user
-    @trainer = @user.trainer
-    post :create, athlete_ids: 1, program: { name: 'Program' }
-    assert_response :redirect
-      assert_redirected_to programs_path
-  end
-
   test "it should get show" do
     sign_in @user
     @trainer = @user.trainer

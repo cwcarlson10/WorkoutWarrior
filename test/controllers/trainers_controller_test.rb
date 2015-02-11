@@ -72,12 +72,12 @@ include Devise::TestHelpers
     assert_redirected_to root_path
   end
 
-  test "should assign an athlete to a trainer" do
-    put :assign_trainer, athlete_id: @athlete.id, trainer_id: @trainer.id
-    @athlete.trainer_id = @trainer.id
-    assert_not_nil @athlete.trainer_id
-    assert_redirected_to trainer_athletes_path(assigns(:trainer))
-  end
+#  test "should assign an athlete to a trainer" do
+#    put :assign_trainer, athlete_id: @athlete.id, trainer_id: @trainer.id
+#    @athlete.trainer_id = @trainer.id
+#    assert_not_nil @athlete.trainer_id
+#    assert_redirected_to trainer_athletes_path(assigns(:trainer))
+#  end
 
   test "should get trainer_athletes" do
     get :trainer_athletes, id: @trainer.id
