@@ -46,10 +46,12 @@ class ProgramsController < ApplicationController
   def update
        @program.update_attributes(program_params)
       # Remove empty strings to avoid collection_select issues
-     if @program.save
+    if @program.save
+      if @program.athletes.any?
        (params[:athlete_ids].to_a).each do |athlete_id|
          @program.athletes << Athlete.find(athlete_id) if @program.athletes.empty?
        end
+     end
 
       redirect_to program_path
     else
