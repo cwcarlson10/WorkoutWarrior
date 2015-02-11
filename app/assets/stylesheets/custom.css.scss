@@ -189,6 +189,7 @@ bootstrap submenu css
 }
 
 div.trainer-sidebar {
+  font-family: 'Open Sans Condensed', sans-serif;
   overflow: scroll;
   color: white;
   padding: 25px 10px 60px 30px;
@@ -203,14 +204,22 @@ div.trainer-sidebar {
     display: block;
     white-space: nowrap;
     overflow-x: hidden;
+    height: 30px;
   }
 
   div.panel-heading {
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: transparent;
+    padding: 0px;
+  }
+  div.panel-title {
+    font-family: 'Open Sans Condensed', sans-serif;
     background-color: transparent;
     padding: 0px;
   }
 
   div.panel {
+    font-family: 'Open Sans Condensed', sans-serif;
     background-color: transparent;
     padding: 0px;
     margin: 0px;
