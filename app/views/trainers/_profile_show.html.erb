@@ -1,10 +1,10 @@
 <div class="row">
-  <div class="col-md-5 col-sm-5 col-xs-12">
+  <div class="col-md-5 col-sm-5 col-xs-9">
     <h1 class="profile-title"> <%= @trainer.name.titleize %> <!-- (<%= current_user.role.capitalize %>) --></h1>
   </div>
 </div>
 <div class="row">
-  <div class="col-md-5 col-sm-5 col-xs-12">
+  <div class="col-md-5 col-sm-5 col-xs-9">
     <div class="gravatar resize"><%= gravatar_image_tag(current_user.email, :gravatar => { :size => 330 }, class: "img-rounded trainer-gravatar") %></div>
     <!-- <img src="http://www.personaltrainingbusinessschool.com/wp-content/uploads/2010/01/personal-training-business.jpg", alt="Profile Pic", style="width:250px;height:300px"> -->
     <% if current_user.trainer %>

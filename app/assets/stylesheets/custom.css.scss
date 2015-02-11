@@ -356,6 +356,9 @@ body {
 
 /* collapsed sidebar styles */
 @media screen and (max-width: 767px) {
+  .well-position {
+    left: 15px;
+  }
   .row-offcanvas {
     position: relative;
     -webkit-transition: all 0.25s ease-out;
@@ -369,15 +372,15 @@ body {
 
   .row-offcanvas-left
   .sidebar-offcanvas {
-    left: -27.6%;
+    left: -47.6%;
     div.trainer-sidebar {
       overflow: scroll;
       color: white;
       padding: 25px 10px 60px 30px;
       background-color: rgba(0, 0, 0, 0.85);
       position: inherit;
-      // margin-left: -70px;
-      height: 90vh;
+      margin-left: 0px;
+      height: 1000px;
       width: 50vw;
       a {
         color: #ffffff;
