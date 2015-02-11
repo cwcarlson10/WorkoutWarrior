@@ -20,13 +20,18 @@ class AthletesController < ApplicationController
   def create
     @athlete = Athlete.new(athlete_params)
     @user = User.find(current_user.id)
-    @athlete.user_id = @user.id
-    @user.update_attributes(role: "athlete")
-    if @athlete.save
-      redirect_to @athlete
+    if @user.role == "newuser"
+      @athlete.user_id = @user.id
+      @user.update_attributes(role: "athlete")
+      if @athlete.save
+        redirect_to @athlete
+      else
+        @user.update_attributes(role: "newuser")
+        render :new
+      end
     else
-      @user.update_attributes(role: "newuser")
-      render :new
+      flash[:notice] = "You are already a trainer!"
+      redirect_to root_path
     end
   end
 
