@@ -11,6 +11,13 @@ function myselect() {
     });
 };
 
+$(document).on('touchcancel', '.js-combobox', function(e) {
+  var field;
+  field = $(e.target);
+  field.trigger('touchstart');
+  return field.trigger('touchend');
+});
+
 $(document).on('page:change', function(){
   console.log('hit page:change');
   $('#modal').on('shown.bs.modal', function() {
