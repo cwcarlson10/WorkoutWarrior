@@ -6,7 +6,7 @@
   <% button_text = "Create User" %>
 <% end %>
 <%= simple_form_for(@trainer, remote: remote_flag) do |f| %>
-  <%= f.input :name %>
+  <%= f.input :name, placeholder: "First and Last name" %>
   <%= f.input :organization %>
   <%= f.input :certifications %>
   <% if @old_trainer.present? %>

@@ -6,7 +6,7 @@
   <% button_text = "Create Athlete" %>
 <% end %>
 <%= simple_form_for(@athlete, remote: remote_flag) do |f| %>
-  <%= f.input :name %>
+  <%= f.input :name, placeholder: "First and Last name" %>
 
   <%= f.input :bio, placeholder: "Please include Age and Weight" %>
 
