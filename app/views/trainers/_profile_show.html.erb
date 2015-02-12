@@ -4,9 +4,8 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-5 col-sm-5 col-xs-9">
+  <div class="col-md-5 col-sm-9 col-xs-9">
     <div class="gravatar resize"><%= gravatar_image_tag(current_user.email, :gravatar => { :size => 330 }, class: "img-rounded trainer-gravatar") %></div>
-    <!-- <img src="http://www.personaltrainingbusinessschool.com/wp-content/uploads/2010/01/personal-training-business.jpg", alt="Profile Pic", style="width:250px;height:300px"> -->
     <% if current_user.trainer %>
     <div id="button-toolbar">
       <%= link_to 'Edit Profile', edit_trainer_path(@trainer.id), class: 'btn btn-danger', remote: true %>
@@ -16,7 +15,7 @@
     <% end %>
   </div>
 
-  <div class="col-md-5 col-sm-5 col-xs-12 well-position well  profile-information-divs">
+  <div class="col-md-5 col-sm-9 col-xs-12 well-position well  profile-information-divs">
       <ul class="personal-info">
         <li>Organization: <blockquote><%= @trainer.organization %></blockquote></li>
         <li>Certifications: <blockquote><%= @trainer.certifications %></blockquote></li>
