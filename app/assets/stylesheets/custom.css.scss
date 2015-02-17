@@ -2,7 +2,7 @@
 .navbar-brand {
   font-size: 32px;
   font-family: 'Open Sans Condensed', sans-serif;
-  @media (max-width: 640px) {
+  @media (max-width: 787px) {
     font-size: 21px;
   }
 }
@@ -193,13 +193,13 @@ div.trainer-sidebar {
   overflow: scroll;
   color: white;
   padding: 25px 10px 60px 30px;
-  background-color: rgba(0, 0, 0, 0.85);
+  // background-color: rgba(0, 0, 0, 0.85);
   position: inherit;
   margin-left: -70px;
   height: 90vh;
   width: 210px;
   a {
-    color: #ffffff;
+    color: #222;
     font-size: 1.2em;
     display: block;
     white-space: nowrap;
@@ -355,7 +355,7 @@ body {
 }
 
 /* collapsed sidebar styles */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 787px) {
   .well-position {
     left: 15px;
   }
@@ -381,13 +381,13 @@ body {
       overflow: scroll;
       color: white;
       padding: 25px 10px 60px 30px;
-      background-color: rgba(0, 0, 0, 0.85);
+      // background-color: rgba(0, 0, 0, 0.85);
       position: inherit;
       margin-left: 0px;
       height: 1000px;
       width: 50vw;
       a {
-        color: #ffffff;
+        color: #222;
         font-size: 0.9em;
         display: block;
         white-space: nowrap;
@@ -433,5 +433,17 @@ body {
   }
   #sidebar {
     padding-top:0;
+  }
+}
+
+@media (min-width: 768px){
+  .container{
+    max-width:100%;
+  }
+}
+
+@media (min-width: 992px){
+  .container{
+    max-width:100%;
   }
 }
