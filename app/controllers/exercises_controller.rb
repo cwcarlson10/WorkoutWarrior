@@ -1,5 +1,5 @@
 class ExercisesController < ApplicationController
-  before_action :set_exercie, only: [:show, :edit, :update, :destroy]
+  before_action :set_exercise, only: [:show, :edit, :update, :destroy]
 
   def index
     @exercise = Exercise.all
@@ -40,7 +40,7 @@ class ExercisesController < ApplicationController
   private
 
     def exercise_params
-      params.require(:exercise).permit(:name, :description, :category)
+      params.require(:exercise).permit(:title, :description, :category)
     end
 
     def set_exercise
