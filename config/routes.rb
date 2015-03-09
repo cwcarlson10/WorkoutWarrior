@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :programs do
     resources :routines
   end
+  resources :exercises
 
   resources :activities
 

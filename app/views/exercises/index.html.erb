@@ -1,6 +1,6 @@
-<!-- <!-- <!-- <!-- <!-- 
+<!-- <!-- <!-- <!-- <!--
 
-<!-- <%# @exercises.each do |exercise| %> -->
+<div><!-- <%# @exercises.each do |exercise| %></div> -->
   <%#= form_for @exercise do |f| %>
 
     <%#= f.select :category, [ 'Upper Body', 'Lower Body', 'Core', 'Cardio' ] %>
@@ -18,3 +18,11 @@
 
 <%# end %> -->
  --> --> --> --> -->
+<ul>
+  <% @exercise.each do |exercise| %>
+    <li><%= exercise.title %></li>
+    <li><%= exercise.description %></li>
+    <li><%= exercise.category %></li>
+  <% end %>
+</ul>
+<%= link_to "New Exercise", new_exercise_path, class: "btn btn-warning" %>
