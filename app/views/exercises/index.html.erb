@@ -1,9 +1,10 @@
-
-<ul>
+<h1>Exercise List</h1>
   <% @exercise.each do |exercise| %>
-    <li><%= exercise.title %></li>
-    <li><%= exercise.description %></li>
-    <li><%= exercise.category %></li>
-  <% end %>
+<ul class="list-group">
+    <li class="list-group-item"><h5>Name:</h5> <%= exercise.title.html_safe %></li>
+    <li class="list-group-item"><h5>Description:</h5> <%= exercise.description.html_safe %></li>
+    <li class="list-group-item"><h5>Category:</h5> <%= exercise.category %></li>
+    <li class="list-group-item"><%= link_to "Edit Exercise", edit_exercise_path(exercise.id) %></li>
 </ul>
+  <% end %>
 <%= link_to "New Exercise", new_exercise_path, class: "btn btn-danger" %>

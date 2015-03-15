@@ -2,7 +2,7 @@ class ExercisesController < ApplicationController
   before_action :set_exercise, only: [:show, :edit, :update, :destroy]
 
   def index
-    @exercise = Exercise.all
+    @exercise = Exercise.all.order(:category)
   end
 
   def show

@@ -1,7 +1,7 @@
-<h1>Exercises</h1>
+<h1>Exercise</h1>
 
-<ul>
-  <li><%= @exercise.title %></li>
-  <li><%= @exercise.description %></li>
-  <li><%= @exercise.category %></li>
+<ul class="list-group">
+  <li class="list-group-item"><%= @exercise.title %></li>
+  <li class="list-group-item"><%= @exercise.description.html_safe %></li>
+  <li class="list-group-item"><%= @exercise.category %></li>
 </ul>
