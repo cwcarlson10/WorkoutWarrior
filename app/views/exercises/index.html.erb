@@ -1,28 +1,10 @@
-<!-- <!-- <!-- <!-- <!--
-
-<div><!-- <%# @exercises.each do |exercise| %></div> -->
-  <%#= form_for @exercise do |f| %>
-
-    <%#= f.select :category, [ 'Upper Body', 'Lower Body', 'Core', 'Cardio' ] %>
-    <%#= f.select :title, [ @upper_body, @lower_body, @core, @cardio ] %>
-
-    <%#= f.submit %>
-
- <!-- <%# end %> -->
-
-<!-- <%# @exercises.each do |exercise| %>
-
-  <%# exercise.title %>
-  <%# exercise.description %>
-  <%# exercise.category %>
-
-<%# end %> -->
- --> --> --> --> -->
-<ul>
+<h1>Exercise List</h1>
   <% @exercise.each do |exercise| %>
-    <li><%= exercise.title %></li>
-    <li><%= exercise.description %></li>
-    <li><%= exercise.category %></li>
-  <% end %>
+<ul class="list-group">
+    <li class="list-group-item"><h5>Name:</h5> <%= exercise.title.html_safe %></li>
+    <li class="list-group-item"><h5>Description:</h5> <%= exercise.description.html_safe %></li>
+    <li class="list-group-item"><h5>Category:</h5> <%= exercise.category %></li>
+    <li class="list-group-item"><%= link_to "Edit Exercise", edit_exercise_path(exercise.id) %></li>
 </ul>
-<%= link_to "New Exercise", new_exercise_path, class: "btn btn-warning" %>
+  <% end %>
+<%= link_to "New Exercise", new_exercise_path, class: "btn btn-danger" %>
