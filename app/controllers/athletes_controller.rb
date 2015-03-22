@@ -1,4 +1,4 @@
-class AthletesController < ApplicationController
+ class AthletesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_athlete, only: [:edit, :update, :destroy]
 
