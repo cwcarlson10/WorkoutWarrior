@@ -1,4 +1,8 @@
 <h1>Exercise List</h1>
+<p>
+  Download:
+  <%= link_to "CSV", exercises_path(format: "csv") %>
+</p>
   <% @exercises.each do |exercise| %>
 <ul class="list-group">
     <li class="list-group-item"><h5>Name:</h5> <%= exercise.title.html_safe %></li>
