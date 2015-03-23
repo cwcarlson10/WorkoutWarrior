@@ -3,6 +3,10 @@ class ExercisesController < ApplicationController
 
   def index
     @exercises = Exercise.all.order(:category)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @exercises.to_csv }
+    end
   end
 
   def show
