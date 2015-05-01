@@ -44,15 +44,14 @@ class ProgramsController < ApplicationController
   end
 
   def update
-       @program.update_attributes(program_params)
+    @program.update_attributes(program_params)
       # Remove empty strings to avoid collection_select issues
     if @program.save
       if @program.athletes.any?
-       (params[:athlete_ids].to_a).each do |athlete_id|
-         @program.athletes << Athlete.find(athlete_id) if @program.athletes.empty?
-       end
-     end
-
+      	(params[:athlete_ids].to_a).each do |athlete_id|
+      		@program.athletes << Athlete.find(athlete_id) if @program.athletes.empty?
+      	end
+      end
       redirect_to program_path
     else
       render :edit
@@ -82,9 +81,9 @@ class ProgramsController < ApplicationController
     @trainer_athletes = @trainer.athletes.flatten - @program.athletes
     @trainer_athletes.delete(athlete)
     respond_to do |format|
-        format.js
-        format.html
-      end
+      format.js
+      format.html
+    end
   end
 
   def remove_athlete_from_program
@@ -93,9 +92,9 @@ class ProgramsController < ApplicationController
     @trainer_athletes = @trainer.athletes.flatten - @program.athletes
     @trainer_athletes << athlete
     respond_to do |format|
-        format.js
-        format.html
-      end
+      format.js
+      format.html
+    end
   end
 
   private
@@ -111,7 +110,7 @@ class ProgramsController < ApplicationController
 
     def set_trainer
       @trainer = current_user.trainer
-   end
+    end
 
     def program_params
       params.require(:program).permit(:name, :trainer_id, routines_attributes: [:id, :sets, :reps, :weight, :rest, :duration, :instructions, :exercise_id, :_destroy ])
